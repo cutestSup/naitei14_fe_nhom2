@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "server": "json-server --watch server/db.json --port 3001",
     "build": "tsc && vite build",
     "lint": "sunlint --all --input=src",
     "lint:changed": "sunlint --all --changed-files",
@@ -13,11 +12,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.553.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.66.0",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^6.26.0",
     "tailwind-merge": "^3.3.1"
   },
@@ -32,7 +31,6 @@
     "eslint": "^8.57.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "json-server": "^1.0.0-beta.3",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.9.3",
