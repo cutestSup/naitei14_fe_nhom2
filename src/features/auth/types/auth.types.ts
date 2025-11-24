@@ -21,9 +21,6 @@ export interface LoginFormData {
 }
 
 /**
-<<<<<<< HEAD
- * Data structure for the registration request.
-=======
  * Data structure for the forgot password form inputs.
  */
 export interface ForgotPasswordFormData {
@@ -39,8 +36,7 @@ export interface ResetPasswordFormData {
 }
 
 /**
- * Data structure for the Register request.
->>>>>>> 3e53aa6 (feat(auth): add forgot password and reset password email features)
+ * Data structure for the registration request.
  */
 export interface RegisterRequest {
   fullName: string;
