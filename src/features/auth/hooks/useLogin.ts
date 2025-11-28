@@ -19,8 +19,8 @@ export const useLogin = () => {
     try {
       const user = await loginUser(credentials.email, credentials.password);
 
-      const userForStorage = { ...user };
-      delete userForStorage.password;
+      const { password, ...userForStorage } = user;
+
       // Lưu user vào Context và Storage
       authLogin(userForStorage, credentials.rememberMe);
       navigate("/");

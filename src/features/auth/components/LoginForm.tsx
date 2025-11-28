@@ -11,6 +11,7 @@ import {
   AlertWithAction,
 } from "@/components/ui";
 import { resendActivationEmail } from "../services/authAPI";
+import { cn } from "@/lib/utils";
 
 const customLoginResolver = async (values: LoginFormData) => {
   const errors: FieldErrors<LoginFormData> = {};
@@ -99,9 +100,10 @@ const LoginForm: React.FC = () => {
                 id="email"
                 type="email"
                 {...register("email")}
-                className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 ${
+                className={cn(
+                  "w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500",
                   errors.email ? "border-red-500" : "border-gray-300"
-                }`}
+                )}
                 placeholder="Email của bạn"
               />
               {errors.email?.message && (
@@ -124,9 +126,10 @@ const LoginForm: React.FC = () => {
                   id="password"
                   type={showPassword ? "text" : "password"}
                   {...register("password")}
-                  className={`w-full px-4 py-3 pr-12 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 ${
+                  className={cn(
+                    "w-full px-4 py-3 pr-12 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500",
                     errors.password ? "border-red-500" : "border-gray-300"
-                  }`}
+                  )}
                   placeholder="Mật khẩu"
                 />
                 <button

@@ -14,7 +14,7 @@ import {
   CLASS_ERROR,
 } from "@/constants/common";
 import { cn } from "@/lib/utils";
-import { Alert, StatusAlert } from "@/components/ui";
+import { Alert, StatusAlert, RenderButton } from "@/components/ui";
 
 const customResolver = async (values: RegisterFormData) => {
   const errors: FieldErrors<RegisterFormData> = {};
@@ -29,7 +29,14 @@ const customResolver = async (values: RegisterFormData) => {
 };
 
 const RegisterForm: React.FC = () => {
-  const { createUser, loading, error, successMessage, clearError, clearSuccessMessage } = useRegister();
+  const {
+    createUser,
+    loading,
+    error,
+    successMessage,
+    clearError,
+    clearSuccessMessage,
+  } = useRegister();
 
   const {
     register,
@@ -231,9 +238,7 @@ const RegisterForm: React.FC = () => {
         </div>
 
         {/* Error message */}
-        {error && (
-          <Alert type="error" message={error} className="mb-4" />
-        )}
+        {error && <Alert type="error" message={error} className="mb-4" />}
 
         {/* Success message */}
         {successMessage && (
@@ -246,20 +251,22 @@ const RegisterForm: React.FC = () => {
 
         {/* Buttons */}
         <div className="flex gap-4">
-          <button
+          <RenderButton
             type="button"
             onClick={handleReset}
-            className="px-8 py-3 border-2 border-green-primary text-green-primary rounded-full hover:bg-green-50 transition-colors"
+            variant="outline"
+            className="rounded-full"
           >
             ĐẶT LẠI
-          </button>
-          <button
+          </RenderButton>
+          <RenderButton
             type="submit"
-            disabled={loading}
-            className="px-8 py-3 bg-green-primary text-white rounded-full hover:bg-green-dark transition-colors disabled:opacity-50"
+            variant="primary-rounded"
+            isLoading={loading}
+            loadingText="ĐĂNG KÝ..."
           >
-            {loading ? "ĐANG ĐĂNG KÝ..." : "ĐĂNG KÝ"}
-          </button>
+            ĐĂNG KÝ
+          </RenderButton>
         </div>
       </form>
     </div>
