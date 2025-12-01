@@ -9,8 +9,11 @@ export interface User {
   password?: string;
   emailVerified: boolean;
   activationToken?: string;
+  resetToken?: string;
+  resetTokenExpiry?: string;
   website?: string;
   subscribeEmail?: boolean;
   createdAt: string;
   activatedAt?: string;
+  passwordResetAt?: string;
 }

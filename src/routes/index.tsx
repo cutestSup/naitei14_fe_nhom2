@@ -1,9 +1,14 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { RenderHome } from "@/features/home";
-import { RegisterPage, ActivatePage, LoginPage } from "@/features/auth";
+import {
+  RegisterPage,
+  ActivatePage,
+  LoginPage,
+  ForgotPasswordPage,
+  ResetPasswordPage,
+} from "@/features/auth";
 import { RenderProducts } from "@/features/product-list";
-
 const LayoutWrapper = () => {
   return (
     <MainLayout>
@@ -33,12 +38,16 @@ export const router = createBrowserRouter([
         element: <LoginPage />,
       },
       {
-        path: "/products",
-        element: <RenderProducts />,
+        path: "auth/forgot-password",
+        element: <ForgotPasswordPage />,
       },
       {
-        path: "auth/activate",
-        element: <ActivatePage />,
+        path: "auth/reset-password",
+        element: <ResetPasswordPage />,
+      },
+      {
+        path: "/products",
+        element: <RenderProducts />,
       },
     ],
   },

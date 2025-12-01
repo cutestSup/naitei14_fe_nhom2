@@ -21,7 +21,26 @@ export interface LoginFormData {
 }
 
 /**
+<<<<<<< HEAD
  * Data structure for the registration request.
+=======
+ * Data structure for the forgot password form inputs.
+ */
+export interface ForgotPasswordFormData {
+  email: string;
+}
+
+/**
+ * Data structure for the reset password form inputs.
+ */
+export interface ResetPasswordFormData {
+  newPassword: string;
+  confirmPassword: string;
+}
+
+/**
+ * Data structure for the Register request.
+>>>>>>> 3e53aa6 (feat(auth): add forgot password and reset password email features)
  */
 export interface RegisterRequest {
   fullName: string;
@@ -57,5 +76,19 @@ export class EmailError extends Error {
   constructor(message: string, public originalError?: Error | unknown) {
     super(message);
     this.name = "EmailError";
+  }
+}
+
+export class ForgotPasswordError extends Error {
+  constructor(message: string, public originalError?: Error) {
+    super(message);
+    this.name = "ForgotPasswordError";
+  }
+}
+
+export class ResetPasswordError extends Error {
+  constructor(message: string, public originalError?: Error) {
+    super(message);
+    this.name = "ResetPasswordError";
   }
 }

@@ -10,7 +10,7 @@ export default {
         "gray-light": "#727272",
       },
       textColor: {
-        "primary-text": "#374151", // text-gray-700 equivalent
+        "primary-text": "#374151",
       },
     },
   },

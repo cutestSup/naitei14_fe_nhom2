@@ -1,81 +1,92 @@
-import { useState, useEffect, useRef } from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { Container } from '@/components/ui/Container'
-import { MESSAGE_DEVELOPING, CLASS_DISABLED, CLASS_SVG_ICON, CLASS_NAV_HOVER } from '@/constants/common'
+import { useState, useEffect, useRef } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Container } from "@/components/ui/Container";
+import {
+  MESSAGE_DEVELOPING,
+  CLASS_DISABLED,
+  CLASS_SVG_ICON,
+  CLASS_NAV_HOVER,
+} from "@/constants/common";
 import {
   MagnifyingGlassIcon,
   ShoppingCartIcon,
   Bars3Icon,
-} from '@heroicons/react/24/outline'
+} from "@heroicons/react/24/outline";
 
-const MAX_SEARCH_LENGTH = 100
+const MAX_SEARCH_LENGTH = 100;
 
 const handleSanitizeInput = (input: string): string => {
-  return input
-    .replace(/[<>]/g, '')
-    .slice(0, MAX_SEARCH_LENGTH)
-}
+  return input.replace(/[<>]/g, "").slice(0, MAX_SEARCH_LENGTH);
+};
 
 export const RenderMainHeader = () => {
-  const [searchQuery, setSearchQuery] = useState('')
-  const navigate = useNavigate()
-  const location = useLocation()
-  const debounceTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(null)
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const debounceTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(
+    null
+  );
 
   useEffect(() => {
-    const searchParam = new URLSearchParams(location.search).get('search')
+    const searchParam = new URLSearchParams(location.search).get("search");
     if (searchParam !== null) {
-      setSearchQuery(searchParam)
-    } else if (location.pathname !== '/products') {
-      setSearchQuery('')
+      setSearchQuery(searchParam);
+    } else if (location.pathname !== "/products") {
+      setSearchQuery("");
     }
-  }, [location])
+  }, [location]);
 
   useEffect(() => {
     if (debounceTimerRef.current) {
-      clearTimeout(debounceTimerRef.current)
+      clearTimeout(debounceTimerRef.current);
     }
 
-    if (location.pathname === '/products') {
+    if (location.pathname === "/products") {
       debounceTimerRef.current = window.setTimeout(() => {
-        const trimmedQuery = searchQuery.trim()
+        const trimmedQuery = searchQuery.trim();
         if (trimmedQuery) {
-          navigate(`/products?search=${encodeURIComponent(trimmedQuery)}`, { replace: true })
+          navigate(`/products?search=${encodeURIComponent(trimmedQuery)}`, {
+            replace: true,
+          });
         } else {
-          navigate('/products', { replace: true })
+          navigate("/products", { replace: true });
         }
-      }, 500)
+      }, 500);
     }
 
     return () => {
       if (debounceTimerRef.current) {
-        clearTimeout(debounceTimerRef.current)
+        clearTimeout(debounceTimerRef.current);
       }
-    }
-  }, [searchQuery, navigate, location.pathname])
+    };
+  }, [searchQuery, navigate, location.pathname]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const sanitized = handleSanitizeInput(e.target.value)
-    setSearchQuery(sanitized)
-  }
+    const sanitized = handleSanitizeInput(e.target.value);
+    setSearchQuery(sanitized);
+  };
 
   const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const trimmedQuery = searchQuery.trim()
+    e.preventDefault();
+    const trimmedQuery = searchQuery.trim();
     if (trimmedQuery) {
-      navigate(`/products?search=${encodeURIComponent(trimmedQuery)}`)
+      navigate(`/products?search=${encodeURIComponent(trimmedQuery)}`);
     } else {
-      navigate('/products')
+      navigate("/products");
     }
-  }
+  };
 
   return (
     <header className="bg-white shadow-sm">
       <Container>
         <div className="flex items-center justify-between py-4">
           <Link to="/" className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-green-primary">Green Shop</div>
-            <div className="text-xs text-gray-light">Món quà từ thiên nhiên</div>
+            <div className="text-2xl font-bold text-green-primary">
+              Green Shop
+            </div>
+            <div className="text-xs text-gray-light">
+              Món quà từ thiên nhiên
+            </div>
           </Link>
 
           <div className="flex items-center gap-4">
@@ -84,8 +95,11 @@ export const RenderMainHeader = () => {
               <span className="text-gray-300">-</span>
               <span className="text-sm">(04) 3786 8504</span>
             </div>
-            
-            <form onSubmit={handleSearchSubmit} className="relative hidden md:block">
+
+            <form
+              onSubmit={handleSearchSubmit}
+              className="relative hidden md:block"
+            >
               <input
                 type="text"
                 value={searchQuery}
@@ -140,5 +154,5 @@ export const RenderMainHeader = () => {
         </Container>
       </nav>
     </header>
-  )
-}
+  );
+};
