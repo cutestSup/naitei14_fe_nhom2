@@ -3,6 +3,7 @@ import {
   LoginFormData,
   ForgotPasswordFormData,
   ResetPasswordFormData,
+  ChangePasswordFormData,
 } from "../types/auth.types";
 import { checkEmailExists } from "../services/authAPI";
 
@@ -132,6 +133,35 @@ export const validateResetPasswordForm = async (
   formData: ResetPasswordFormData
 ): Promise<ValidationErrors> => {
   const errors: ValidationErrors = {};
+
+  // New password: required, min 8 chars, at least one letter and one number
+  if (!formData.newPassword) {
+    errors.newPassword = VALIDATION_PASSWORD_REQUIRED;
+  } else if (formData.newPassword.length < 8) {
+    errors.newPassword = VALIDATION_PASSWORD_MIN_LENGTH;
+  } else if (!/(?=.*[a-zA-Z])(?=.*\d)/.test(formData.newPassword)) {
+    errors.newPassword = VALIDATION_PASSWORD_STRENGTH;
+  }
+
+  // Confirm password: required and matches new password
+  if (!formData.confirmPassword) {
+    errors.confirmPassword = VALIDATION_CONFIRM_PASSWORD_REQUIRED;
+  } else if (formData.newPassword !== formData.confirmPassword) {
+    errors.confirmPassword = VALIDATION_PASSWORD_MISMATCH;
+  }
+
+  return errors;
+};
+
+export const validateChangePasswordForm = async (
+  formData: ChangePasswordFormData
+): Promise<ValidationErrors> => {
+  const errors: ValidationErrors = {};
+
+  // Current password: required
+  if (!formData.currentPassword) {
+    errors.currentPassword = VALIDATION_PASSWORD_REQUIRED;
+  }
 
   // New password: required, min 8 chars, at least one letter and one number
   if (!formData.newPassword) {

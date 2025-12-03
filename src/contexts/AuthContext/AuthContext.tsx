@@ -8,6 +8,7 @@ export interface AuthState {
     isLoading: boolean;
     login: (user: User, rememberMe: boolean) => void;
     logout: () => void;
+    updateUser: (user: User) => void;
 }
 
 const AuthContext = createContext<AuthState | undefined>(undefined);
@@ -74,12 +75,29 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
         }
     };
 
+    const updateUser = (userData: User) => {
+        setUser(userData);
+        try {
+            const userString = JSON.stringify(userData);
+            const sessionUser = sessionStorage.getItem(STORAGE_KEY);
+            const localUser = localStorage.getItem(STORAGE_KEY);
+            if (sessionUser) {
+                sessionStorage.setItem(STORAGE_KEY, userString);
+            } else if (localUser) {
+                localStorage.setItem(STORAGE_KEY, userString);
+            }
+        } catch (error) {
+            console.error("Failed to update user data:", error);
+        }
+    };
+
     const value: AuthState = {
         user,
         isLoggedIn: user !== null,
         isLoading,
         login,
         logout,
+        updateUser,
     };
 
     if (isLoading) {

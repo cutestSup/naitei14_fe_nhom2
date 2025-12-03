@@ -13,6 +13,7 @@ export interface User {
   resetTokenExpiry?: string;
   website?: string;
   subscribeEmail?: boolean;
+  role: string;
   createdAt: string;
   activatedAt?: string;
   passwordResetAt?: string;

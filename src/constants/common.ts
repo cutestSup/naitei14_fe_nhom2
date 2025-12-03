@@ -95,14 +95,17 @@ export const CLASS_VIEW_TOGGLE_BUTTON = "p-2 rounded transition-colors";
 export const CLASS_VIEW_TOGGLE_ACTIVE = "bg-green-primary text-white";
 export const CLASS_VIEW_TOGGLE_INACTIVE = "text-gray-600 hover:bg-gray-100";
 export const CLASS_TEXT_CENTER_PY12 = "text-center py-12";
-export const CLASS_QUANTITY_BUTTON = "p-2 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors";
+export const CLASS_QUANTITY_BUTTON =
+  "p-2 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors";
 export const CLASS_ICON_SIZE_SM = "w-4 h-4";
 export const CLASS_IMAGE_COVER = "w-full h-full object-cover";
 export const CLASS_FLEX_ITEMS_GAP3 = "flex items-center gap-3";
-export const CLASS_ICON_BUTTON_ROUND = "p-3 rounded-full border border-gray-300 hover:bg-green-primary hover:text-white hover:border-green-primary transition-colors bg-white";
+export const CLASS_ICON_BUTTON_ROUND =
+  "p-3 rounded-full border border-gray-300 hover:bg-green-primary hover:text-white hover:border-green-primary transition-colors bg-white";
 export const CLASS_TEXT_GRAY_RELAXED = "text-gray-700 leading-relaxed";
 export const CLASS_TEXT_GRAY_600 = "text-gray-600";
-export const CLASS_NAV_BUTTON = "p-2 rounded-full border border-gray-300 hover:bg-green-primary hover:text-white hover:border-green-primary transition-colors";
+export const CLASS_NAV_BUTTON =
+  "p-2 rounded-full border border-gray-300 hover:bg-green-primary hover:text-white hover:border-green-primary transition-colors";
 export const CLASS_ICON_SIZE_MD_5 = "w-5 h-5";
 
 // Icon size classes
@@ -176,7 +179,8 @@ export const QUERY_PARAM_PRICE_LTE = "price_lte";
 export const DEFAULT_CATEGORY = "Cây cảnh";
 
 // API error messages
-export const ERROR_GET_FEATURED_PRODUCTS = "Không thể lấy danh sách sản phẩm nổi bật";
+export const ERROR_GET_FEATURED_PRODUCTS =
+  "Không thể lấy danh sách sản phẩm nổi bật";
 export const ERROR_GET_ALL_PRODUCTS = "Không thể lấy danh sách sản phẩm";
 export const ERROR_SEARCH_PRODUCTS = "Không thể tìm kiếm sản phẩm";
 export const ERROR_GET_PRODUCT = "Không thể lấy thông tin sản phẩm";
@@ -188,8 +192,12 @@ export const ERROR_CREATE_REVIEW = "Không thể tạo đánh giá";
 // Component class names
 export const CLASS_MT_8 = "mt-8";
 export const CLASS_SPACE_Y_6 = "space-y-6";
-export const CLASS_LABEL_REVIEW = "block text-sm font-medium text-gray-700 mb-2";
+export const CLASS_LABEL_REVIEW =
+  "block text-sm font-medium text-gray-700 mb-2";
 export const CLASS_TEXT_RED_500 = "text-red-500";
 export const CLASS_ERROR_TEXT = "text-red-500 text-sm mt-1";
 export const CLASS_SVG_FILL_CURRENT = "currentColor";
 export const CONTEXT_PRODUCT_TABS = "ProductTabs";
+
+// Default user role
+export const DEFAULT_USER_ROLE = "user";
