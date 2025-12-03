@@ -51,11 +51,7 @@ export const RenderMainHeader = () => {
         } else {
           navigate("/products", { replace: true });
         }
-<<<<<<< HEAD
-      }, 500);
-=======
-      }, 300)
->>>>>>> f7a634b (feat: add product's detailed page)
+      }, 300);
     }
 
     return () => {

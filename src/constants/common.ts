@@ -167,3 +167,29 @@ export const AUTO_SLIDE_INTERVAL_MS = Number(
 export const FACEBOOK_SHARE_URL = "https://www.facebook.com/sharer/sharer.php";
 export const TWITTER_SHARE_URL = "https://twitter.com/intent/tweet";
 export const GOOGLE_PLUS_SHARE_URL = "https://plus.google.com/share";
+
+// API constants
+export const CONTENT_TYPE_JSON = "application/json";
+export const FIELD_CREATED_AT = "createdAt";
+export const QUERY_PARAM_PRICE_GTE = "price_gte";
+export const QUERY_PARAM_PRICE_LTE = "price_lte";
+export const DEFAULT_CATEGORY = "Cây cảnh";
+
+// API error messages
+export const ERROR_GET_FEATURED_PRODUCTS = "Không thể lấy danh sách sản phẩm nổi bật";
+export const ERROR_GET_ALL_PRODUCTS = "Không thể lấy danh sách sản phẩm";
+export const ERROR_SEARCH_PRODUCTS = "Không thể tìm kiếm sản phẩm";
+export const ERROR_GET_PRODUCT = "Không thể lấy thông tin sản phẩm";
+export const ERROR_CREATE_ORDER = "Không thể tạo đơn hàng";
+export const ERROR_GET_ORDERS = "Không thể lấy danh sách đơn hàng";
+export const ERROR_GET_REVIEWS = "Không thể lấy danh sách đánh giá";
+export const ERROR_CREATE_REVIEW = "Không thể tạo đánh giá";
+
+// Component class names
+export const CLASS_MT_8 = "mt-8";
+export const CLASS_SPACE_Y_6 = "space-y-6";
+export const CLASS_LABEL_REVIEW = "block text-sm font-medium text-gray-700 mb-2";
+export const CLASS_TEXT_RED_500 = "text-red-500";
+export const CLASS_ERROR_TEXT = "text-red-500 text-sm mt-1";
+export const CLASS_SVG_FILL_CURRENT = "currentColor";
+export const CONTEXT_PRODUCT_TABS = "ProductTabs";
