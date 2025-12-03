@@ -94,7 +94,12 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
 
       <div>
         <p className="text-sm text-gray-600 mb-2">Chia sẻ:</p>
-        <RenderSocialShareButtons title={product.name} />
+        <RenderSocialShareButtons
+          title={product.name}
+          description={`${product.shortDescription || product.description || ''} - Giá: ${product.price.toLocaleString(LOCALE)} ₫`}
+          image={product.image}
+          url={typeof window !== 'undefined' ? window.location.href : ''}
+        />
       </div>
     </div>
   )
