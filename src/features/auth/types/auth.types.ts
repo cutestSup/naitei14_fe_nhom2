@@ -36,7 +36,16 @@ export interface ResetPasswordFormData {
 }
 
 /**
- * Data structure for the registration request.
+ * Data structure for the change password form inputs.
+ */
+export interface ChangePasswordFormData {
+  currentPassword: string;
+  newPassword: string;
+  confirmPassword: string;
+}
+
+/**
+ * Data structure for the Register request.
  */
 export interface RegisterRequest {
   fullName: string;
@@ -86,5 +95,12 @@ export class ResetPasswordError extends Error {
   constructor(message: string, public originalError?: Error) {
     super(message);
     this.name = "ResetPasswordError";
+  }
+}
+
+export class ChangePasswordError extends Error {
+  constructor(message: string, public originalError?: Error) {
+    super(message);
+    this.name = "ChangePasswordError";
   }
 }

@@ -6,8 +6,13 @@ import {
   LoginError,
   ForgotPasswordError,
   ResetPasswordError,
+  ChangePasswordError,
 } from "../types/auth.types";
-import { API_BASE_URL, TOKEN_EXPIRY_HOURS } from "@/constants/common";
+import {
+  API_BASE_URL,
+  TOKEN_EXPIRY_HOURS,
+  DEFAULT_USER_ROLE,
+} from "@/constants/common";
 import { sendActivationEmail, sendResetPasswordEmail } from "./emailService";
 import { User } from "@/types/user";
 
@@ -22,6 +27,7 @@ export const registerUser = async (data: RegisterRequest): Promise<User> => {
     password: hashedPassword,
     emailVerified: false,
     activationToken,
+    role: DEFAULT_USER_ROLE,
     createdAt: new Date().toISOString(),
   };
 
@@ -195,6 +201,78 @@ export const activateUserEmail = async (
     });
     throw new ActivationError(
       "Kích hoạt tài khoản thất bại",
+      new Error(errorMessage)
+    );
+  }
+
+  return updateResponse.json();
+};
+
+export const changePassword = async (
+  userId: string,
+  currentPassword: string,
+  newPassword: string
+): Promise<User> => {
+  // Lấy thông tin user
+  const getResponse = await fetch(`${API_BASE_URL}/users/${userId}`);
+  if (!getResponse.ok) {
+    const errorMessage = `User fetch failed with status ${getResponse.status}`;
+    console.error("User fetch error for change password", {
+      message: errorMessage,
+      userId,
+      status: getResponse.status,
+      timestamp: new Date().toISOString(),
+    });
+    throw new ChangePasswordError(
+      "Không tìm thấy người dùng",
+      new Error(errorMessage)
+    );
+  }
+
+  const user = await getResponse.json();
+
+  // Kiểm tra mật khẩu hiện tại
+  if (!user.password) {
+    throw new ChangePasswordError("Dữ liệu mật khẩu bị thiếu");
+  }
+
+  const isCurrentPasswordValid = await bcrypt.compare(
+    currentPassword,
+    user.password
+  );
+  if (!isCurrentPasswordValid) {
+    const errorMessage = "Current password is incorrect";
+    console.error("Change password error", {
+      message: errorMessage,
+      timestamp: new Date().toISOString(),
+    });
+    throw new ChangePasswordError("Mật khẩu hiện tại không chính xác");
+  }
+
+  // Hash mật khẩu mới
+  const hashedNewPassword = await bcrypt.hash(newPassword, 10);
+
+  // Cập nhật mật khẩu
+  const updateResponse = await fetch(`${API_BASE_URL}/users/${userId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      password: hashedNewPassword,
+      passwordChangedAt: new Date().toISOString(),
+    }),
+  });
+
+  if (!updateResponse.ok) {
+    const errorMessage = `Password change failed with status ${updateResponse.status}`;
+    console.error("Password change error", {
+      message: errorMessage,
+      status: updateResponse.status,
+      timestamp: new Date().toISOString(),
+    });
+    throw new ChangePasswordError(
+      "Không thể đổi mật khẩu",
       new Error(errorMessage)
     );
   }
