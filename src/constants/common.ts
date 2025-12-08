@@ -169,7 +169,6 @@ export const AUTO_SLIDE_INTERVAL_MS = Number(
 // Social share URLs
 export const FACEBOOK_SHARE_URL = "https://www.facebook.com/sharer/sharer.php";
 export const TWITTER_SHARE_URL = "https://twitter.com/intent/tweet";
-export const GOOGLE_PLUS_SHARE_URL = "https://plus.google.com/share";
 
 // API constants
 export const CONTENT_TYPE_JSON = "application/json";
@@ -201,3 +200,9 @@ export const CONTEXT_PRODUCT_TABS = "ProductTabs";
 
 // Default user role
 export const DEFAULT_USER_ROLE = "user";
+
+// Social share constants
+export const COPY_LINK_TIMEOUT_MS = 2000;
+export const WHATSAPP_SHARE_BASE_URL = "https://wa.me/";
+export const CLASS_ICON_SIZE_SM_4 = "w-4 h-4";
+export const CLASS_HIDDEN_SM_INLINE = "hidden sm:inline";
