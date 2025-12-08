@@ -44,7 +44,6 @@ export const RenderButton = ({
     <button
       type={type}
       onClick={onClick}
-      disabled={isDisabled}
       className={cn(
         "font-semibold rounded-md transition-colors duration-200",
         variantClasses[variant],
@@ -53,7 +52,7 @@ export const RenderButton = ({
         className
       )}
     >
-      {isLoading && loadingText ? loadingText : children}
+      {children}
     </button>
   );
 };
