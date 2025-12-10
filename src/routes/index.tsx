@@ -14,6 +14,8 @@ import { RenderProductDetail } from "@/features/product-detail";
 import { ProfilePage } from "@/features/profile";
 import { CartPage } from "@/features/cart";
 import { CheckoutPage } from "@/features/checkout";
+import { OrderHistoryPage } from "@/features/order/pages/OrderHistoryPage";
+import { OrderDetailPage } from "@/features/order/pages/OrderDetailPage";
 
 const LayoutWrapper = () => {
   return (
@@ -74,6 +76,14 @@ export const router = createBrowserRouter([
       {
         path: "checkout",
         element: <CheckoutPage />,
+      },
+      {
+        path: "orders",
+        element: <OrderHistoryPage />,
+      },
+      {
+        path: "orders/:id",
+        element: <OrderDetailPage />,
       },
     ],
   },

@@ -19,6 +19,7 @@ import {
   MdKeyboardArrowDown,
   MdPerson,
   MdLock,
+  MdReceipt,
 } from "react-icons/md";
 import { useAuth } from "@/contexts/AuthContext";
 import { cn } from "@/lib/utils";
@@ -50,6 +51,11 @@ export const RenderTopHeader = () => {
       navigate(`/profile/${user.id}`);
       setIsDropdownOpen(false);
     }
+  };
+
+  const handleOrderHistoryClick = () => {
+    navigate("/orders");
+    setIsDropdownOpen(false);
   };
 
   const handleChangePasswordClick = () => {
@@ -113,6 +119,19 @@ export const RenderTopHeader = () => {
                             <MdPerson className="w-5 h-5 text-green-primary" />
                           </div>
                           <span>Profile</span>
+                        </button>
+                        <div className="border-t border-gray-200 my-1 mx-3"></div>
+                        <button
+                          onClick={handleOrderHistoryClick}
+                          className={cn(
+                            "flex items-center w-full text-left px-4 py-1 text-sm text-gray-800 font-medium rounded-none",
+                            "hover:bg-green-primary hover:bg-opacity-10 hover:text-green-primary transition-all duration-200"
+                          )}
+                        >
+                          <div className="flex items-center justify-center w-8 h-8 bg-green-primary bg-opacity-10 rounded-lg mr-4">
+                            <MdReceipt className="w-5 h-5 text-green-primary" />
+                          </div>
+                          <span>Lịch sử đơn hàng</span>
                         </button>
                         <div className="border-t border-gray-200 my-1 mx-3"></div>
                         <button
