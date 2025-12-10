@@ -1,5 +1,6 @@
 import { RenderButton } from "@/components/ui/Button";
 import { VAT_RATE } from "@/constants/common";
+import { Link } from "react-router-dom";
 
 interface Props {
   totalPrice: number;
@@ -38,9 +39,11 @@ export const CartSummary = ({ totalPrice }: Props) => {
       </div>
 
       <div className="mt-6 flex justify-end">
-        <RenderButton className="uppercase font-bold py-3 px-8 bg-green-primary hover:bg-green-dark text-white rounded-full transition-colors">
-          THANH TOÁN
-        </RenderButton>
+        <Link to="/checkout">
+          <RenderButton className="uppercase font-bold py-3 px-8 bg-green-primary hover:bg-green-dark text-white rounded-full transition-colors">
+            THANH TOÁN
+          </RenderButton>
+        </Link>
       </div>
     </div>
   );

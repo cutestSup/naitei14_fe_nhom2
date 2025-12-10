@@ -399,6 +399,181 @@
       "status": "completed",
       "createdAt": "2024-01-18T14:00:00.000Z",
       "completedAt": "2024-01-18T14:30:00.000Z"
+    },
+    {
+      "userId": "a6fdc6fe-d39a-46b4-b4e1-c6cea0f04bc8",
+      "items": [
+        {
+          "productId": 6,
+          "productName": "Cây đa búp đỏ",
+          "productImage": "/images/products/spx2-6.png",
+          "quantity": 1,
+          "price": 500000
+        }
+      ],
+      "totalAmount": 550000,
+      "shippingInfo": {
+        "fullName": "Tạ Quang Hữu",
+        "email": "huutaquang23@gmail.com",
+        "phone": "0935629524",
+        "address": "ngo si lien",
+        "city": "đà nẵng",
+        "note": ""
+      },
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2025-12-10T03:13:22.240Z",
+      "id": "0rpVi5z"
+    },
+    {
+      "userId": "a6fdc6fe-d39a-46b4-b4e1-c6cea0f04bc8",
+      "items": [
+        {
+          "productId": 4,
+          "productName": "Cây cọ ta",
+          "productImage": "/images/products/spx2-4.png",
+          "quantity": 2,
+          "price": 150000
+        }
+      ],
+      "totalAmount": 330000,
+      "shippingInfo": {
+        "fullName": "Tạ Quang Hữu",
+        "email": "huutaquang23@gmail.com",
+        "phone": "0935629524",
+        "address": "ngo si lien",
+        "city": "đà nẵng",
+        "note": ""
+      },
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2025-12-10T03:14:13.463Z",
+      "id": "Kk2ORkR"
+    },
+    {
+      "userId": "a6fdc6fe-d39a-46b4-b4e1-c6cea0f04bc8",
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Cây chân chim",
+          "productImage": "/images/products/spx2-1.png",
+          "quantity": 3,
+          "price": 250000
+        }
+      ],
+      "totalAmount": 825000,
+      "shippingInfo": {
+        "fullName": "Tạ Quang Hữu",
+        "email": "huutaquang23@gmail.com",
+        "phone": "0935629524",
+        "address": "ngo si lien",
+        "city": "đà nẵng",
+        "note": ""
+      },
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2025-12-10T03:14:40.998Z",
+      "id": "kUnjTA7"
+    },
+    {
+      "userId": "a6fdc6fe-d39a-46b4-b4e1-c6cea0f04bc8",
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Cây chân chim",
+          "productImage": "/images/products/spx2-1.png",
+          "quantity": 2,
+          "price": 250000
+        }
+      ],
+      "totalAmount": 550000,
+      "shippingInfo": {
+        "fullName": "Tạ Quang Hữu",
+        "email": "huutaquang23@gmail.com",
+        "phone": "0935629524",
+        "address": "ngo si lien",
+        "city": "đà nẵng",
+        "note": ""
+      },
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2025-12-10T03:20:36.193Z",
+      "id": "HiIuq_V"
+    },
+    {
+      "userId": "a6fdc6fe-d39a-46b4-b4e1-c6cea0f04bc8",
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Cây chân chim",
+          "productImage": "/images/products/spx2-1.png",
+          "quantity": 1,
+          "price": 250000
+        }
+      ],
+      "totalAmount": 275000,
+      "shippingInfo": {
+        "fullName": "Tạ Quang Hữu",
+        "email": "huutaquang23@gmail.com",
+        "phone": "0935629524",
+        "address": "ngo si lien",
+        "city": "đà nẵng",
+        "note": ""
+      },
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2025-12-10T03:20:56.719Z",
+      "id": "KmUeQl4"
+    },
+    {
+      "userId": "a6fdc6fe-d39a-46b4-b4e1-c6cea0f04bc8",
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Cây chân chim",
+          "productImage": "/images/products/spx2-1.png",
+          "quantity": 2,
+          "price": 250000
+        }
+      ],
+      "totalAmount": 550000,
+      "shippingInfo": {
+        "fullName": "Tạ Quang Hữu",
+        "email": "huutaquang23@gmail.com",
+        "phone": "0935629524",
+        "address": "ngo si lien",
+        "city": "đà nẵng",
+        "note": ""
+      },
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2025-12-10T03:21:16.574Z",
+      "id": "tEg_4UE"
+    },
+    {
+      "userId": "a6fdc6fe-d39a-46b4-b4e1-c6cea0f04bc8",
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Cây chân chim",
+          "productImage": "/images/products/spx2-1.png",
+          "quantity": 1,
+          "price": 250000
+        }
+      ],
+      "totalAmount": 275000,
+      "shippingInfo": {
+        "fullName": "Tạ Quang Hữu",
+        "email": "huutaquang23@gmail.com",
+        "phone": "0935629524",
+        "address": "ngo si lien",
+        "city": "đà nẵng",
+        "note": ""
+      },
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2025-12-10T03:21:29.774Z",
+      "id": "me82Fn1"
     }
   ],
   "reviews": [

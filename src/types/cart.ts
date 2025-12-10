@@ -1,14 +1,12 @@
-export interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-  image?: string;
+import { Product } from './product';
+
+export interface CartItem extends Product {
   quantity: number;
 }
 
 export interface CartContextType {
   cart: CartItem[];
-  addToCart: (product: CartItem, quantity?: number) => void;
+  addToCart: (product: Product, quantity?: number) => void;
   removeFromCart: (productId: number) => void;
   updateQuantity: (productId: number, quantity: number) => void;
   clearCart: () => void;

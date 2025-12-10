@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { CartItem, CartContextType } from "@/types/cart";
+import { Product } from "@/types/product";
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
@@ -25,7 +26,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [cart]);
 
-  const addToCart = (product: CartItem, quantity = 1) => {
+  const addToCart = (product: Product, quantity = 1) => {
     setCart((prev) => {
       const existingItem = prev.find((item) => item.id === product.id);
       if (existingItem) {
@@ -33,7 +34,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
           item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
         );
       }
-      return [...prev, { ...product, quantity }];
+      return [...prev, { ...product, quantity } as CartItem];
     });
   };
 

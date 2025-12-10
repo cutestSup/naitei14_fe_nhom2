@@ -13,6 +13,7 @@ import { RenderProducts } from "@/features/product-list";
 import { RenderProductDetail } from "@/features/product-detail";
 import { ProfilePage } from "@/features/profile";
 import { CartPage } from "@/features/cart";
+import { CheckoutPage } from "@/features/checkout";
 
 const LayoutWrapper = () => {
   return (
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
       {
         path: "cart",
         element: <CartPage />,
+      },
+      {
+        path: "checkout",
+        element: <CheckoutPage />,
       },
     ],
   },

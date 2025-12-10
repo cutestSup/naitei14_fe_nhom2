@@ -21,7 +21,6 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
 
   const handleBuyNow = () => {
     addToCart(product, quantity)
-    alert("Đã thêm sản phẩm vào giỏ hàng!")
   }
 
   const handleToggleFavorite = () => {
