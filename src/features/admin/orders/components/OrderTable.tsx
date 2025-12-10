@@ -1,4 +1,3 @@
-import React from "react";
 import { ordersApi } from "../api";
 import { Order } from "../types";
 

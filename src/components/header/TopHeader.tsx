@@ -20,7 +20,7 @@ import {
   MdPerson,
   MdLock,
 } from "react-icons/md";
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts";
 import { cn } from "@/lib/utils";
 
 export const RenderTopHeader = () => {
@@ -161,6 +161,5 @@ export const RenderTopHeader = () => {
         </div>
       </Container>
     </div>
-  )
-}
-
+  );
+};

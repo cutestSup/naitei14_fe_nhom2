@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts";
 import ProfileForm from "./components/ProfileForm";
 
 const ProfilePage: React.FC = () => {

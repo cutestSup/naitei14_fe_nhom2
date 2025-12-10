@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Product } from "./types";
 import { productsApi } from "../../../apis/admin/productsIndex";
 import ProductTable from "./components/ProductTable";

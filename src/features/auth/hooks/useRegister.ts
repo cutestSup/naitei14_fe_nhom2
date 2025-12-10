@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { registerUser } from "../services/authAPI";
-import { RegisterRequest, RegistrationError } from "../types/auth.types";
+import { RegisterRequest } from "../types/auth.types";
 import { MESSAGE_REGISTER_FAILED } from "@/constants/common";
 
 export const useRegister = () => {
@@ -15,7 +15,9 @@ export const useRegister = () => {
 
     try {
       const registeredUser = await registerUser(data);
-      setSuccessMessage("Registration successful! Please check your email to activate your account.");
+      setSuccessMessage(
+        "Đăng ký thành công! Email xác nhận đã được gửi đến hộp thư của bạn."
+      );
       return registeredUser;
     } catch (err) {
       const errorMessage =
@@ -25,10 +27,6 @@ export const useRegister = () => {
         message: errorMessage,
         error: err,
       });
-      throw new RegistrationError(
-        errorMessage,
-        err instanceof Error ? err : undefined
-      );
     } finally {
       setLoading(false);
     }
@@ -36,5 +34,12 @@ export const useRegister = () => {
   const clearError = () => setError(null);
   const clearSuccessMessage = () => setSuccessMessage(null);
 
-  return { createUser, loading, error, successMessage, clearError, clearSuccessMessage };
+  return {
+    createUser,
+    loading,
+    error,
+    successMessage,
+    clearError,
+    clearSuccessMessage,
+  };
 };

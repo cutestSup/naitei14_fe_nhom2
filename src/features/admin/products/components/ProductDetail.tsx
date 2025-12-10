@@ -1,4 +1,3 @@
-import React from "react";
 import { Product } from "../types";
 
 interface Props {
@@ -7,18 +6,32 @@ interface Props {
 
 export default function ProductDetail({ product }: Props) {
   if (!product) {
-    return <div className="mt-4 text-gray-500">Select a product to view details.</div>;
+    return (
+      <div className="mt-4 text-gray-500">
+        Select a product to view details.
+      </div>
+    );
   }
 
   return (
     <div className="mt-4 p-4 border rounded shadow-sm bg-white">
       <h2 className="text-xl font-bold mb-2">Product Detail</h2>
 
-      <p><strong>ID:</strong> {product.id}</p>
-      <p><strong>Name:</strong> {product.name}</p>
-      <p><strong>Price:</strong> ${product.price}</p>
-      <p><strong>Stock:</strong> {product.stock}</p>
-      <p><strong>Category:</strong> {product.categoryId}</p>
+      <p>
+        <strong>ID:</strong> {product.id}
+      </p>
+      <p>
+        <strong>Name:</strong> {product.name}
+      </p>
+      <p>
+        <strong>Price:</strong> ${product.price}
+      </p>
+      <p>
+        <strong>Stock:</strong> {product.stock}
+      </p>
+      <p>
+        <strong>Category:</strong> {product.categoryId}
+      </p>
 
       {product.thumbnail && (
         <img

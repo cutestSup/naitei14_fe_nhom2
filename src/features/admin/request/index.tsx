@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { requestApi } from "../../../apis/admin/requestIndex";
 import { Request } from "./types";
 

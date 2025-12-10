@@ -1,4 +1,3 @@
-import React from "react";
 import { TopProduct } from "../../../../apis/admin/dashboardIndex";
 
 interface Props {
