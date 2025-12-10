@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Container } from "@/components/ui/Container";
+import { useCart } from "@/contexts/CartContext";
 import {
   MESSAGE_DEVELOPING,
   CLASS_DISABLED,
@@ -24,6 +25,7 @@ export const RenderMainHeader = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const debounceTimerRef = useRef<number | null>(null);
+  const { totalItems } = useCart();
 
   useEffect(() => {
     const searchParam = new URLSearchParams(location.search).get("search");
@@ -112,14 +114,13 @@ export const RenderMainHeader = () => {
               </div>
             </form>
 
-            <button
-              className={`relative flex items-center gap-2 bg-green-primary text-white px-4 py-2 rounded-md hover:bg-green-dark transition-colors ${CLASS_DISABLED}`}
-              disabled
-              title={MESSAGE_DEVELOPING}
+            <Link
+              to="/cart"
+              className="relative flex items-center gap-2 bg-green-primary text-white px-4 py-2 rounded-md hover:bg-green-dark transition-colors"
             >
               <ShoppingCartIcon className={CLASS_SVG_ICON} />
-              <span className="text-sm">0 Sản phẩm</span>
-            </button>
+              <span className="text-sm">{totalItems} Sản phẩm</span>
+            </Link>
           </div>
         </div>
       </Container>

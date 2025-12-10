@@ -70,6 +70,13 @@ export class ActivationError extends Error {
   }
 }
 
+export class LoginError extends Error {
+  constructor(message: string, public originalError?: Error) {
+    super(message);
+    this.name = "LoginError";
+  }
+}
+
 export class EmailError extends Error {
   constructor(message: string, public originalError?: Error | unknown) {
     super(message);

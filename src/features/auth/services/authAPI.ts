@@ -1,6 +1,5 @@
 import {
   RegisterRequest,
-  User,
   RegistrationError,
   ActivationError,
   LoginError,
@@ -16,12 +15,16 @@ import {
 import { sendActivationEmail, sendResetPasswordEmail } from "./emailService";
 import { User } from "@/types/user";
 
+import bcrypt from "bcryptjs";
+
 export const registerUser = async (data: RegisterRequest): Promise<User> => {
   const activationToken = crypto.randomUUID();
+  const hashedPassword = await bcrypt.hash(data.password, 10);
 
   const userData = {
     id: crypto.randomUUID(),
     ...data,
+    password: hashedPassword,
     emailVerified: false,
     activationToken,
     role: DEFAULT_USER_ROLE,

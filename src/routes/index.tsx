@@ -12,6 +12,8 @@ import {
 import { RenderProducts } from "@/features/product-list";
 import { RenderProductDetail } from "@/features/product-detail";
 import { ProfilePage } from "@/features/profile";
+import { CartPage } from "@/features/cart";
+
 const LayoutWrapper = () => {
   return (
     <MainLayout>
@@ -63,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: "/profile/:userId",
         element: <ProfilePage />,
+      },
+      {
+        path: "cart",
+        element: <CartPage />,
       },
     ],
   },

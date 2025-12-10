@@ -69,6 +69,19 @@
       "emailVerified": true,
       "activationToken": "e93c164f-c8b1-41b4-811e-82bd798f6a46",
       "createdAt": "2025-11-26T13:05:00.112Z"
+    },
+    {
+      "id": "a6fdc6fe-d39a-46b4-b4e1-c6cea0f04bc8",
+      "fullName": "Tạ Quang Hữu",
+      "phone": "0935629524",
+      "email": "huutaquang23@gmail.com",
+      "password": "$2b$10$5IHHOuoo.XWbO7N.U41cteRbz7v5oz4wj.RpRxTPpmNgiPACMq5za",
+      "website": "",
+      "subscribeEmail": false,
+      "emailVerified": true,
+      "activationToken": "c9604376-5a1c-40d9-a6e3-b2f173d101c0",
+      "role": "user",
+      "createdAt": "2025-12-10T01:02:43.025Z"
     }
   ],
   "products": [

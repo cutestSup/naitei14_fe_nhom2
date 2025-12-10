@@ -10,7 +10,7 @@ import {
   CLASS_ERROR,
 } from "@/constants/common";
 import { cn } from "@/lib/utils";
-import { useAuth } from "@/contexts/AuthContext/useAuth";
+import { useAuth } from "@/contexts/AuthContext";
 import {
   MdPerson,
   MdPhone,
