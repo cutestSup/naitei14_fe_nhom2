@@ -6,13 +6,16 @@ import { MESSAGE_REGISTER_FAILED } from "@/constants/common";
 export const useRegister = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const createUser = async (data: RegisterRequest) => {
     setLoading(true);
     setError(null);
+    setSuccessMessage(null);
 
     try {
       const registeredUser = await registerUser(data);
+      setSuccessMessage("Registration successful! Please check your email to activate your account.");
       return registeredUser;
     } catch (err) {
       const errorMessage =
@@ -31,6 +34,7 @@ export const useRegister = () => {
     }
   };
   const clearError = () => setError(null);
+  const clearSuccessMessage = () => setSuccessMessage(null);
 
-  return { createUser, loading, error, clearError };
+  return { createUser, loading, error, successMessage, clearError, clearSuccessMessage };
 };

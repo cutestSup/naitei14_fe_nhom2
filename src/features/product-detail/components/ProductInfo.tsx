@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useCart } from '@/contexts/CartContext'
 import { Product } from '@/types/product'
 import { StarRating } from '@/components/ui/StarRating'
 import { QuantitySelector } from '@/components/ui/QuantitySelector'
@@ -16,10 +17,11 @@ interface ProductInfoProps {
 export const ProductInfo = ({ product }: ProductInfoProps) => {
   const [quantity, setQuantity] = useState(1)
   const [isFavorite, setIsFavorite] = useState(false)
+  const { addToCart } = useCart()
 
   const handleBuyNow = () => {
-    // TODO: Implement buy now functionality
-    // Implementation pending
+    addToCart(product, quantity)
+    alert("Đã thêm sản phẩm vào giỏ hàng!")
   }
 
   const handleToggleFavorite = () => {
