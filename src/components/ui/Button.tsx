@@ -7,6 +7,7 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   type?: "button" | "submit" | "reset";
+  form?: string;
   disabled?: boolean;
   isLoading?: boolean;
   loadingText?: string;
@@ -19,6 +20,7 @@ export const RenderButton = ({
   onClick,
   className,
   type = "button",
+  form,
   disabled = false,
   isLoading = false,
   loadingText,
@@ -43,6 +45,7 @@ export const RenderButton = ({
   return (
     <button
       type={type}
+      form={form}
       onClick={onClick}
       disabled={isDisabled}
       className={cn(

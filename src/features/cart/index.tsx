@@ -1,21 +1,35 @@
+import { useEffect } from "react";
 import { useCart } from "@/contexts/CartContext";
+import { useAuth } from "@/contexts/AuthContext";
 import { Container } from "@/components/ui/Container";
 import { CartItemRow } from "./components/CartItemRow";
 import { CartSummary } from "./components/CartSummary";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RenderButton } from "@/components/ui/Button";
 
 export const CartPage = () => {
   const { cart, updateQuantity, removeFromCart, totalPrice, clearCart } = useCart();
+  const { isLoggedIn } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/auth/login");
+    }
+  }, [isLoggedIn, navigate]);
+
+  if (!isLoggedIn) return null;
 
   if (cart.length === 0) {
     return (
       <Container className="py-20 text-center">
         <div className="flex flex-col items-center justify-center">
           <img src="/images/empty_cart.jpg" alt="Empty Cart" className="mb-6" />
-          <Link to="/">
-            <RenderButton className="text-green-primary border border-green-primary px-6 py-2 rounded hover:bg-green-primary hover:text-white transition uppercase">
-              Tiếp tục mua sắm
+          <Link to="/products">
+            <RenderButton 
+              variant="outline"
+              className="px-6 py-2 rounded transition uppercase text-green-primary border-green-primary hover:bg-green-primary hover:text-white"
+            >Tiếp tục mua sắm
             </RenderButton>
           </Link>
         </div>
@@ -60,14 +74,13 @@ export const CartPage = () => {
         <div className="flex justify-end gap-4 mt-6">
           <RenderButton 
             variant="outline" 
-            className="uppercase text-green-primary border-green-primary hover:bg-green-50 rounded-full px-6"
+            className="uppercase text-green-primary border-green-primary rounded-full px-6"
             onClick={() => {
               if (window.confirm("Bạn có chắc chắn muốn hủy đơn hàng?")) {
                 clearCart();
               }
             }}
-          >
-            HỦY ĐƠN HÀNG
+          >HỦY ĐƠN HÀNG
           </RenderButton>
           <Link to="/products">
             <RenderButton className="uppercase bg-green-primary hover:bg-green-dark text-white rounded-full px-6">
