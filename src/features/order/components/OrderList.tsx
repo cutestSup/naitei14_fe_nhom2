@@ -26,7 +26,9 @@ export const OrderList: React.FC<OrderListProps> = ({ orders }) => {
         <div key={order.id} className="bg-white border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex justify-between items-start mb-4">
             <div>
-              <p className="font-medium text-gray-900">Đơn hàng #{order.id.slice(0, 8)}</p>
+              <p className="font-medium text-gray-900">
+                Đơn hàng #{typeof order.id === 'string' && order.id.length > 0 ? order.id.slice(0, 8) : 'N/A'}
+              </p>
               <p className="text-sm text-gray-500">
                 Ngày đặt: {new Date(order.createdAt).toLocaleDateString('vi-VN')}
               </p>

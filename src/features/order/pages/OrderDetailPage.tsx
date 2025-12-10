@@ -6,6 +6,7 @@ import { Order } from '@/types/order';
 import { Container } from '@/components/ui/Container';
 import { OrderStatusBadge } from '../components/OrderStatusBadge';
 import { RenderButton } from '@/components/ui/Button';
+import { ConfirmationModal, StatusAlert } from '@/components/ui';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 export const OrderDetailPage: React.FC = () => {
@@ -16,6 +17,8 @@ export const OrderDetailPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isCancelling, setIsCancelling] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [notification, setNotification] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -41,8 +44,13 @@ export const OrderDetailPage: React.FC = () => {
     fetchOrder();
   }, [id, isLoggedIn, navigate]);
 
-  const handleCancelOrder = async () => {
-    if (!order || !window.confirm('Bạn có chắc chắn muốn hủy đơn hàng này?')) return;
+  const handleCancelOrder = () => {
+    if (!order) return;
+    setShowConfirmModal(true);
+  };
+
+  const handleConfirmCancel = async () => {
+    if (!order) return;
 
     try {
       setIsCancelling(true);
@@ -50,12 +58,13 @@ export const OrderDetailPage: React.FC = () => {
       // Refresh order data
       const updatedOrder = await getOrderById(order.id);
       setOrder(updatedOrder);
-      alert('Đã hủy đơn hàng thành công');
+      setNotification({ type: 'success', message: 'Đã hủy đơn hàng thành công' });
     } catch (err) {
-      alert('Không thể hủy đơn hàng');
+      setNotification({ type: 'error', message: 'Không thể hủy đơn hàng' });
       console.error(err);
     } finally {
       setIsCancelling(false);
+      setShowConfirmModal(false);
     }
   };
 
@@ -90,6 +99,15 @@ export const OrderDetailPage: React.FC = () => {
             <ArrowLeftIcon className="w-4 h-4 mr-1" />
             Quay lại danh sách
           </Link>
+          
+          {notification && (
+            <StatusAlert 
+              type={notification.type} 
+              message={notification.message} 
+              className="mb-4"
+            />
+          )}
+
           <div className="flex justify-between items-start">
             <div>
               <h1 className="text-2xl font-bold text-gray-900 uppercase">Chi tiết đơn hàng</h1>
@@ -191,6 +209,17 @@ export const OrderDetailPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <ConfirmationModal
+        isOpen={showConfirmModal}
+        title="Hủy đơn hàng"
+        message="Bạn có chắc chắn muốn hủy đơn hàng này? Hành động này không thể hoàn tác."
+        onConfirm={handleConfirmCancel}
+        onCancel={() => setShowConfirmModal(false)}
+        isLoading={isCancelling}
+        confirmLabel="Hủy đơn hàng"
+        cancelLabel="Đóng"
+      />
     </Container>
   );
 };

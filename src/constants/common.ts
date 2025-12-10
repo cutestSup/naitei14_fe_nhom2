@@ -48,6 +48,17 @@ export const VALIDATION_EMAIL_REQUIRED = "Email là bắt buộc.";
 export const VALIDATION_EMAIL_INVALID = "Email không hợp lệ.";
 export const VALIDATION_EMAIL_EXISTS = "Email đã tồn tại.";
 export const VALIDATION_WEBSITE_INVALID = "Website không hợp lệ.";
+
+// Order errors
+export const ERROR_GET_ORDER = "Không thể tải thông tin đơn hàng";
+export const ERROR_CANCEL_ORDER = "Không thể hủy đơn hàng";
+export const ERROR_INVALID_ORDER_STATUS = "Không thể hủy đơn hàng không ở trạng thái chờ xử lý";
+
+// Order validation messages
+export const VALIDATION_USER_ID_REQUIRED = "User ID là bắt buộc";
+export const VALIDATION_ORDER_ITEMS_REQUIRED = "Đơn hàng phải có ít nhất một sản phẩm";
+export const VALIDATION_TOTAL_AMOUNT_INVALID = "Tổng tiền không hợp lệ";
+export const VALIDATION_SHIPPING_INFO_REQUIRED = "Thông tin giao hàng là bắt buộc";
 export const VALIDATION_PASSWORD_REQUIRED = "Mật khẩu là bắt buộc.";
 export const VALIDATION_PASSWORD_MIN_LENGTH =
   "Mật khẩu phải có ít nhất 8 ký tự.";
