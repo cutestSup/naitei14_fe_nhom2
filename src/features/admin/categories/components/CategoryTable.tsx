@@ -1,4 +1,3 @@
-import React from "react";
 import { categoriesApi } from "../api";
 import { Category } from "../types";
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ordersApi } from "./api";
 import { Order } from "./types";
 import OrderForm from "./components/OrderForm";

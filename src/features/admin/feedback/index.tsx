@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { feedbackApi } from "../../../apis/admin/feedbackIndex"; // import mock API
 import { Feedback } from "./types";
 

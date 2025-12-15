@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { categoriesApi } from "./api";
 import { Category } from "./types";
 import CategoryForm from "./components/CategoryForm";

@@ -6,6 +6,7 @@ import {
   ChangePasswordFormData,
 } from "../types/auth.types";
 import { checkEmailExists } from "../services/authAPI";
+
 import {
   VALIDATION_FULL_NAME_REQUIRED,
   VALIDATION_PHONE_REQUIRED,
