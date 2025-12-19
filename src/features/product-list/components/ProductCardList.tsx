@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Badge } from '@/components/ui/Badge'
 import { Product } from '@/types/product'
 import {
-  LOCALE,
   MAX_RATING,
   DEFAULT_RATING,
   CLASS_ICON_SIZE_MD_GRAY,
@@ -10,6 +9,8 @@ import {
   MESSAGE_REMOVE_FAVORITE,
   MESSAGE_ADD_FAVORITE,
 } from '@/constants/common'
+import { useTranslation } from '@/hooks'
+import { formatCurrency } from '@/i18n'
 import { MagnifyingGlassIcon, HeartIcon, StarIcon } from '@heroicons/react/24/outline'
 import { StarIcon as StarIconSolid, HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid'
 
@@ -20,6 +21,7 @@ interface ProductCardListProps {
 const CLASS_ICON_BUTTON = 'bg-white border border-gray-300 p-2 rounded-md hover:bg-gray-50 transition-colors'
 
 export const RenderProductCardList = ({ product }: ProductCardListProps) => {
+  const { t } = useTranslation();
   const [isFavorite, setIsFavorite] = useState(false)
 
   const handleToggleFavorite = () => {
@@ -67,11 +69,11 @@ export const RenderProductCardList = ({ product }: ProductCardListProps) => {
           <div className="mt-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className={CLASS_FLEX_ITEMS_GAP2}>
               <span className="text-xl font-bold text-green-primary">
-                {product.price.toLocaleString(LOCALE)} ₫
+                {formatCurrency(product.price)}
               </span>
               {product.oldPrice && product.oldPrice !== product.price && (
                 <span className="text-sm text-gray-400 line-through">
-                  {product.oldPrice.toLocaleString(LOCALE)} ₫
+                  {formatCurrency(product.oldPrice)}
                 </span>
               )}
             </div>
@@ -79,23 +81,23 @@ export const RenderProductCardList = ({ product }: ProductCardListProps) => {
             <div className={CLASS_FLEX_ITEMS_GAP2}>
               <button
                 className="bg-green-primary text-white px-4 py-2 rounded-md hover:bg-green-dark transition-colors font-semibold text-sm"
-                aria-label="Mua ngay sản phẩm"
+                aria-label={t("products.buyNow")}
               >
-                MUA NGAY
+                {t("products.buyNow").toUpperCase()}
               </button>
               <button
                 onClick={() => {
                   // TODO: Open quick view modal
                 }}
                 className={CLASS_ICON_BUTTON}
-                aria-label="Xem nhanh sản phẩm"
+                aria-label={t("products.viewDetails")}
               >
                 <MagnifyingGlassIcon className={CLASS_ICON_SIZE_MD_GRAY} />
               </button>
               <button
                 onClick={handleToggleFavorite}
                 className={CLASS_ICON_BUTTON}
-                aria-label={isFavorite ? MESSAGE_REMOVE_FAVORITE : MESSAGE_ADD_FAVORITE}
+                aria-label={isFavorite ? t(MESSAGE_REMOVE_FAVORITE) : t(MESSAGE_ADD_FAVORITE)}
               >
                 {isFavorite ? (
                   <HeartIconSolid className="w-5 h-5 text-red-500" />

@@ -14,6 +14,7 @@ import {
 import { getReviewsByProductId } from "@/apis/reviews";
 import { hasUserPurchasedProduct } from "@/apis/orders";
 import { useAuth } from "@/contexts";
+import { useTranslation } from "@/hooks";
 import { ReviewForm } from "./ReviewForm";
 import { Link } from "react-router-dom";
 import { logError } from "@/lib/logger";
@@ -25,6 +26,7 @@ interface ProductTabsProps {
 type TabType = "info" | "reviews" | "tags";
 
 export const ProductTabs = ({ product }: ProductTabsProps) => {
+  const { t } = useTranslation();
   const { user, isLoggedIn } = useAuth();
   const [activeTab, setActiveTab] = useState<TabType>("info");
   const [reviews, setReviews] = useState<ProductReview[]>([]);
@@ -108,9 +110,9 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
   };
 
   const tabs = [
-    { id: "info" as TabType, label: "THÔNG TIN SẢN PHẨM" },
-    { id: "reviews" as TabType, label: "KHÁCH HÀNG ĐÁNH GIÁ" },
-    { id: "tags" as TabType, label: "THẺ TAG" },
+    { id: "info" as TabType, label: t("products.productInfo") },
+    { id: "reviews" as TabType, label: t("products.customerReviews") },
+    { id: "tags" as TabType, label: t("products.tags") },
   ];
 
   return (
@@ -147,7 +149,7 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
               <div className={CLASS_TEXT_GRAY_RELAXED}>
                 <p>
                   {product.description ||
-                    "Không có thông tin chi tiết về sản phẩm."}
+                    t("products.noProductInfo")}
                 </p>
               </div>
             )}
@@ -159,7 +161,7 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
             {/* Form bình luận */}
             {checkingPurchase ? (
               <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 text-center">
-                <p className="text-gray-600">Đang kiểm tra...</p>
+                <p className="text-gray-600">{t("products.checking")}</p>
               </div>
             ) : canReview ? (
               <ReviewForm
@@ -169,20 +171,20 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
             ) : isLoggedIn ? (
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                 <p className="text-yellow-800">
-                  Bạn cần mua sản phẩm này thành công trước khi có thể đánh giá.
+                  {t("products.needPurchaseToReview")}
                 </p>
               </div>
             ) : (
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <p className="text-blue-800 mb-2">
-                  Vui lòng{" "}
+                  {t("products.pleaseLoginToReview")}{" "}
                   <Link
                     to="/auth/login"
                     className="text-blue-600 hover:text-blue-800 underline font-medium"
                   >
-                    đăng nhập
+                    {t("products.loginToReview")}
                   </Link>{" "}
-                  để có thể đánh giá sản phẩm.
+                  {t("products.toReviewProduct")}
                 </p>
               </div>
             )}
@@ -190,11 +192,11 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
             {/* Danh sách đánh giá */}
             <div className="mt-8">
               <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                Đánh giá khách hàng ({reviews.length})
+                {t("products.customerReviewsCount")} ({reviews.length})
               </h4>
               {loadingReviews ? (
                 <div className="text-center py-8">
-                  <p className="text-gray-500">Đang tải đánh giá...</p>
+                  <p className="text-gray-500">{t("products.loadingReviews")}</p>
                 </div>
               ) : reviews.length > 0 ? (
                 <div className={CLASS_SPACE_Y_6}>
@@ -222,7 +224,7 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
                 </div>
               ) : (
                 <p className={CLASS_TEXT_GRAY_600}>
-                  Chưa có đánh giá nào cho sản phẩm này.
+                  {t("products.noReviews")}
                 </p>
               )}
             </div>
@@ -241,7 +243,7 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
                 </span>
               ))
             ) : (
-              <p className={CLASS_TEXT_GRAY_600}>Không có thẻ tag nào.</p>
+              <p className={CLASS_TEXT_GRAY_600}>{t("products.noTags")}</p>
             )}
           </div>
         )}

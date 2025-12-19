@@ -9,9 +9,11 @@ import { ProductInfo } from './components/ProductInfo'
 import { ProductTabs } from './components/ProductTabs'
 import { RelatedProducts } from './components/RelatedProducts'
 import { CLASS_SECTION_WHITE, CLASS_TEXT_CENTER_PY12 } from '@/constants/common'
+import { useTranslation } from '@/hooks'
 import { logError } from '@/lib/logger'
 
 export const RenderProductDetail = () => {
+  const { t, currentLanguage } = useTranslation();
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const [product, setProduct] = useState<Product | null>(null)
@@ -55,14 +57,14 @@ export const RenderProductDetail = () => {
     }
 
     fetchProduct()
-  }, [id, navigate])
+  }, [id, navigate, currentLanguage])
 
   if (loading) {
     return (
       <section className={CLASS_SECTION_WHITE}>
         <Container>
           <div className={CLASS_TEXT_CENTER_PY12}>
-            <div className="text-gray-500">Đang tải...</div>
+            <div className="text-gray-500">{t("common.loading")}</div>
           </div>
         </Container>
       </section>
@@ -74,12 +76,12 @@ export const RenderProductDetail = () => {
       <section className={CLASS_SECTION_WHITE}>
         <Container>
           <div className={CLASS_TEXT_CENTER_PY12}>
-            <div className="text-gray-500 mb-2">Không tìm thấy sản phẩm</div>
+            <div className="text-gray-500 mb-2">{t("products.notFound")}</div>
             <button
               onClick={() => navigate('/products')}
               className="text-green-primary hover:underline"
             >
-              Quay lại danh sách sản phẩm
+              {t("products.backToProducts")}
             </button>
           </div>
         </Container>
@@ -94,7 +96,7 @@ export const RenderProductDetail = () => {
       <Container>
         <Breadcrumbs
           items={[
-            { label: 'Home', path: '/' },
+            { label: t("common.home"), path: '/' },
             { label: product.name },
           ]}
           className="mb-6"

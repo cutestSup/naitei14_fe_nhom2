@@ -10,6 +10,8 @@ import {
   DEFAULT_CATEGORY,
 } from '@/constants/common'
 import { ProductError } from '@/lib/errors'
+import i18n from '@/i18n/config'
+import { translateProduct } from '@/i18n/utils/productTranslations'
 
 export const getFeaturedProducts = async (): Promise<Product[]> => {
   const response = await fetch(`${API_BASE_URL}/products?_limit=6`)
@@ -18,7 +20,9 @@ export const getFeaturedProducts = async (): Promise<Product[]> => {
     throw new ProductError(ERROR_GET_FEATURED_PRODUCTS)
   }
   
-  return response.json()
+  const products: Product[] = await response.json()
+  // Apply translations based on current language
+  return products.map(translateProduct)
 }
 
 export const getAllProducts = async (): Promise<Product[]> => {
@@ -28,7 +32,9 @@ export const getAllProducts = async (): Promise<Product[]> => {
     throw new ProductError(ERROR_GET_ALL_PRODUCTS)
   }
   
-  return response.json()
+  const products: Product[] = await response.json()
+  // Apply translations based on current language
+  return products.map(translateProduct)
 }
 
 export interface ProductFilters {
@@ -46,9 +52,8 @@ export const searchProducts = async (filters: ProductFilters): Promise<Product[]
     params.append('q', filters.search)
   }
   
-  if (filters.category) {
-    params.append('category', filters.category)
-  }
+  // Note: We don't filter by category in API query because category might be translated
+  // Instead, we'll filter after translation
   
   if (filters.minPrice !== undefined) {
     params.append(QUERY_PARAM_PRICE_GTE, filters.minPrice.toString())
@@ -85,7 +90,17 @@ export const searchProducts = async (filters: ProductFilters): Promise<Product[]
     )
   }
   
-  return products
+  // Apply translations based on current language
+  let translatedProducts = products.map(translateProduct)
+  
+  // Filter by category after translation (category might be translated)
+  if (filters.category) {
+    translatedProducts = translatedProducts.filter(
+      (product) => product.category === filters.category
+    )
+  }
+  
+  return translatedProducts
 }
 
 export const getProductById = async (id: number): Promise<Product | null> => {
@@ -118,26 +133,30 @@ export const getProductById = async (id: number): Promise<Product | null> => {
   
   if (!product.fullDescription) {
     const category = product.category || DEFAULT_CATEGORY
+    const t = (key: string) => i18n.t(key)
     product.fullDescription = `
-      <p><strong>Tên phổ thông:</strong> ${product.name}</p>
-      <p><strong>Tên khoa học:</strong> ${product.name}</p>
-      <p><strong>Họ thực vật:</strong> ${category}</p>
-      <p><strong>Chiều cao:</strong> 0,8-1,2m</p>
-      <p>${product.description || 'Sản phẩm chất lượng cao, phù hợp cho không gian sống của bạn.'}</p>
-      <p>Cây có nguồn gốc từ nhiều nơi trên thế giới, được du nhập và phân bố rộng khắp ở Việt Nam. Cây phát triển tốt trong môi trường trong nhà, thích hợp với ánh sáng gián tiếp và độ ẩm vừa phải.</p>
+      <p><strong>${t("products.commonName")}:</strong> ${product.name}</p>
+      <p><strong>${t("products.scientificName")}:</strong> ${product.name}</p>
+      <p><strong>${t("products.plantFamily")}:</strong> ${category}</p>
+      <p><strong>${t("products.height")}:</strong> 0,8-1,2m</p>
+      <p>${product.description || t("products.highQualityProduct")}</p>
+      <p>${t("products.plantOrigin")}</p>
     `
   }
-  
+
   if (!product.tags) {
-    product.tags = [DEFAULT_CATEGORY, 'Trang trí', product.category || 'Phổ biến']
+    const t = (key: string) => i18n.t(key)
+    product.tags = [DEFAULT_CATEGORY, t("products.decorative"), product.category || t("products.popular")]
   }
   
-  // Get related products
-  const allProducts = await getAllProducts()
-  product.relatedProducts = allProducts
-    .filter((p) => p.id !== product.id && (p.category === product.category || Math.random() > 0.5))
+  // Get related products (before translation to avoid infinite loop)
+  const allProductsRaw = await fetch(`${API_BASE_URL}/products`).then(res => res.json())
+  product.relatedProducts = allProductsRaw
+    .filter((p: Product) => p.id !== product.id && (p.category === product.category || Math.random() > 0.5))
     .slice(0, 4)
+    .map(translateProduct)
   
-  return product
+  // Apply translations based on current language
+  return translateProduct(product)
 }
 

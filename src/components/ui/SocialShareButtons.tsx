@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { logError } from "@/lib/logger";
 import { useAuth } from "@/contexts";
+import { useTranslation } from "@/hooks";
 import {
   FACEBOOK_SHARE_URL,
   TWITTER_SHARE_URL,
@@ -30,6 +31,7 @@ export const RenderSocialShareButtons = ({
   onCopySuccess,
 }: SocialShareButtonsProps) => {
   const { isLoggedIn } = useAuth();
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const shareUrl = encodeURIComponent(url);
 
@@ -144,12 +146,12 @@ export const RenderSocialShareButtons = ({
           <button
             onClick={onCopyLink}
             className={cn(buttonClass, copied ? "bg-green-600" : "bg-gray-600")}
-            aria-label="Sao chép liên kết"
-            title="Sao chép liên kết"
+            aria-label={t("social.copyLink")}
+            title={t("social.copyLink")}
           >
             <FaLink className={CLASS_ICON_SIZE_SM_4} />
             <span className={CLASS_HIDDEN_SM_INLINE}>
-              {copied ? "Đã sao chép!" : "Sao chép"}
+              {copied ? t("social.linkCopied") : t("common.copy")}
             </span>
           </button>
         </div>
@@ -192,12 +194,12 @@ export const RenderSocialShareButtons = ({
       <button
         onClick={onCopyLink}
         className={cn(buttonClass, copied ? "bg-green-600" : "bg-gray-600")}
-        aria-label="Sao chép liên kết"
-        title="Sao chép liên kết"
+        aria-label={t("social.copyLink")}
+        title={t("social.copyLink")}
       >
         <FaLink className={CLASS_ICON_SIZE_SM_4} />
         <span className={CLASS_HIDDEN_SM_INLINE}>
-          {copied ? "Đã sao chép!" : "Sao chép"}
+          {copied ? t("social.linkCopied") : t("common.copy")}
         </span>
       </button>
     </div>

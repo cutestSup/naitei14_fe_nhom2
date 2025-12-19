@@ -1,21 +1,23 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useAuth } from "@/contexts";
+import { useTranslation } from "@/hooks";
 import ProfileForm from "./components/ProfileForm";
 
 const ProfilePage: React.FC = () => {
   const { userId } = useParams<{ userId: string }>();
   const { user, isLoggedIn } = useAuth();
+  const { t } = useTranslation();
 
   if (!isLoggedIn || !user) {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">
-            Cần đăng nhập
+            {t("profile.loginRequired")}
           </h1>
           <p className="text-gray-600">
-            Vui lòng đăng nhập để xem và chỉnh sửa hồ sơ.
+            {t("profile.loginRequiredMessage")}
           </p>
         </div>
       </div>
@@ -28,10 +30,10 @@ const ProfilePage: React.FC = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">
-            Không có quyền truy cập
+            {t("profile.accessDenied")}
           </h1>
           <p className="text-gray-600">
-            Bạn chỉ có thể xem hồ sơ của chính mình.
+            {t("profile.accessDeniedMessage")}
           </p>
         </div>
       </div>
@@ -45,10 +47,10 @@ const ProfilePage: React.FC = () => {
           <div className="flex items-center space-x-6">
             <div>
               <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                Hồ sơ cá nhân
+                {t("profile.personalProfile")}
               </h1>
               <p className="text-gray-600 text-lg">
-                Cập nhật thông tin cá nhân của bạn
+                {t("profile.updatePersonalInfo")}
               </p>
             </div>
           </div>

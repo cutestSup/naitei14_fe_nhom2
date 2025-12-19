@@ -1,5 +1,6 @@
 import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/hooks";
 
 interface ChatBubbleProps {
   onClick: () => void;
@@ -7,11 +8,12 @@ interface ChatBubbleProps {
 }
 
 export const ChatBubble = ({ onClick, unreadCount }: ChatBubbleProps) => {
+  const { t } = useTranslation();
   return (
     <button
       onClick={onClick}
       className="relative bg-green-primary hover:bg-green-dark text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-      aria-label="Mở chat"
+      aria-label={t("chat.openChat")}
     >
       <IoChatbubbleEllipsesSharp className="w-6 h-6" />
 

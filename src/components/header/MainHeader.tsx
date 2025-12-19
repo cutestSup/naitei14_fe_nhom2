@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Container } from "@/components/ui/Container";
+import { LanguageSwitcher } from "@/components/ui";
 import { useCart } from "@/contexts/CartContext";
+import { useTranslation } from "@/hooks";
 import {
   MESSAGE_DEVELOPING,
   CLASS_DISABLED,
@@ -21,6 +23,7 @@ const handleSanitizeInput = (input: string): string => {
 };
 
 export const RenderMainHeader = () => {
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -85,7 +88,7 @@ export const RenderMainHeader = () => {
               Green Shop
             </div>
             <div className="text-xs text-gray-light">
-              Món quà từ thiên nhiên
+              {t("header.tagline")}
             </div>
           </Link>
 
@@ -104,10 +107,10 @@ export const RenderMainHeader = () => {
                 type="text"
                 value={searchQuery}
                 onChange={handleSearchChange}
-                placeholder="Tìm kiếm..."
+                placeholder={t("header.search")}
                 maxLength={MAX_SEARCH_LENGTH}
                 className="pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-primary focus:border-transparent"
-                aria-label="Tìm kiếm sản phẩm"
+                aria-label={t("header.search")}
               />
               <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
                 <MagnifyingGlassIcon className={CLASS_SVG_ICON} />
@@ -119,8 +122,9 @@ export const RenderMainHeader = () => {
               className="relative flex items-center gap-2 bg-green-primary text-white px-4 py-2 rounded-md hover:bg-green-dark transition-colors"
             >
               <ShoppingCartIcon className={CLASS_SVG_ICON} />
-              <span className="text-sm">{totalItems} Sản phẩm</span>
+              <span className="text-sm">{totalItems} {t("common.products")}</span>
             </Link>
+            <LanguageSwitcher />
           </div>
         </div>
       </Container>
@@ -132,22 +136,22 @@ export const RenderMainHeader = () => {
               <Bars3Icon className="w-6 h-6" />
             </button>
             <Link to="/" className={CLASS_NAV_HOVER}>
-              TRANG CHỦ
+              {t("header.home").toUpperCase()}
             </Link>
-            <span className={CLASS_DISABLED} title={MESSAGE_DEVELOPING}>
-              GIỚI THIỆU
+            <span className={CLASS_DISABLED} title={t(MESSAGE_DEVELOPING)}>
+              {t("header.about").toUpperCase()}
             </span>
             <Link to="/products" className={CLASS_NAV_HOVER}>
-              SẢN PHẨM
+              {t("header.products").toUpperCase()}
             </Link>
-            <span className={CLASS_DISABLED} title={MESSAGE_DEVELOPING}>
-              SẢN PHẨM MỚI
+            <span className={CLASS_DISABLED} title={t(MESSAGE_DEVELOPING)}>
+              {t("products.new").toUpperCase()}
             </span>
-            <span className={CLASS_DISABLED} title={MESSAGE_DEVELOPING}>
-              TIN TỨC
+            <span className={CLASS_DISABLED} title={t(MESSAGE_DEVELOPING)}>
+              {t("common.news").toUpperCase()}
             </span>
-            <span className={CLASS_DISABLED} title={MESSAGE_DEVELOPING}>
-              LIÊN HỆ
+            <span className={CLASS_DISABLED} title={t(MESSAGE_DEVELOPING)}>
+              {t("header.contact").toUpperCase()}
             </span>
           </div>
         </Container>

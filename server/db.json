@@ -23,7 +23,7 @@
       "fullName": "Đỗ Quân",
       "phone": "0779562271",
       "email": "haudreywilliam13@gmail.com",
-      "password": "$2b$10$iv.fQPOFqXbCmPptL5T3meaRlVY/2ZRPc9yHjXpYQ8iyFRLRVu8We",
+      "password": "$2b$10$SFXxOm1gFn15uI1/88kU1ePX7GtGH3tvPa/zN51TzvaIgHVfe1yZ.",
       "website": "",
       "subscribeEmail": false,
       "emailVerified": true,
@@ -615,6 +615,293 @@
       "status": "pending",
       "createdAt": "2025-12-10T05:13:13.271Z",
       "id": "mx1ymia"
+    },
+    {
+      "userId": "01064237-c8a8-4091-a87e-309c806a2020",
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Cây chân chim",
+          "productImage": "/images/products/spx2-1.png",
+          "quantity": 2,
+          "price": 250000
+        }
+      ],
+      "totalAmount": 550000,
+      "shippingInfo": {
+        "fullName": "Đoàn Nhật Quang",
+        "email": "doannhatquang0@gmail.com",
+        "phone": "0332915004",
+        "address": "1 Dai Co Viet",
+        "city": "Ha Noi",
+        "note": ""
+      },
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2025-12-19T12:20:21.339Z",
+      "id": "0Fqk6RJ"
+    },
+    {
+      "userId": "01064237-c8a8-4091-a87e-309c806a2020",
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Umbrella Tree",
+          "productImage": "/images/products/spx2-1.png",
+          "quantity": 4,
+          "price": 250000
+        },
+        {
+          "productId": 11,
+          "productName": "Chinese Evergreen",
+          "productImage": "/images/products/spx2-11.png",
+          "quantity": 3,
+          "price": 350000
+        }
+      ],
+      "totalAmount": 2255000,
+      "shippingInfo": {
+        "fullName": "Đoàn Nhật Quang",
+        "email": "doannhatquang0@gmail.com",
+        "phone": "0332915004",
+        "address": "test",
+        "city": "test",
+        "note": ""
+      },
+      "paymentMethod": "cod",
+      "status": "pending",
+      "createdAt": "2025-12-19T12:33:59.823Z",
+      "id": "WqniO7l"
+    }
+  ],
+  "product-translations": [
+    {
+      "id": 1,
+      "productId": 1,
+      "lang": "en",
+      "name": "Umbrella Tree",
+      "description": "Umbrella tree is a popular ornamental plant, easy to care for, suitable for decorating homes and offices.",
+      "shortDescription": "Umbrella tree is a popular ornamental plant, easy to care for, suitable for decorating homes and offices.",
+      "fullDescription": "<p><strong>Common Name:</strong> Umbrella Tree, Schefflera</p><p><strong>Scientific Name:</strong> Schefflera arboricola</p><p><strong>Plant Family:</strong> Araliaceae (Ginseng family)</p><p><strong>Height:</strong> 0.5-1.5m</p><p>The umbrella tree originates from Taiwan and southern China, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity. The leaves have a characteristic hand-like shape with 5-8 leaflets, dark glossy green color.</p><p>The plant is easy to care for, does not require too much watering, suitable for beginners in ornamental plants. The plant has good air purification ability, helping to remove harmful substances in the living environment.</p>",
+      "category": "Indoor Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Indoor Plants",
+        "Easy Care"
+      ]
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "lang": "en",
+      "name": "Zebra Plant",
+      "description": "Zebra plant has dark green leaves with creamy white stripes, creating a cool green space for your home.",
+      "shortDescription": "Zebra plant has dark green leaves with creamy white stripes, creating a cool green space for your home.",
+      "fullDescription": "<p><strong>Common Name:</strong> Zebra Plant, Calathea</p><p><strong>Scientific Name:</strong> Calathea zebrina</p><p><strong>Plant Family:</strong> Marantaceae (Arrowroot family)</p><p><strong>Height:</strong> 0.8-1.2m</p><p>The zebra plant originates from Brazil, has been introduced and widely distributed in Vietnam. The plant has egg-shaped leaves, 15-20cm wide, dark green with very beautiful creamy white stripes. The underside of the leaves is lighter green.</p><p>The plant prefers shade or indirect light, needs high humidity and always moist soil. The plant grows quickly, suitable for decorating indoors, offices or spaces with heating equipment. The plant also has air purification ability, helping to make the living environment fresher.</p>",
+      "category": "Indoor Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Indoor Plants",
+        "Air Purifying"
+      ]
+    },
+    {
+      "id": 3,
+      "productId": 3,
+      "lang": "en",
+      "name": "Ti Plant",
+      "description": "Ti plant with elegant beauty, suitable as a gift or for decorating the living room.",
+      "shortDescription": "Ti plant with elegant beauty, suitable as a gift or for decorating the living room.",
+      "fullDescription": "<p><strong>Common Name:</strong> Ti Plant, Cordyline</p><p><strong>Scientific Name:</strong> Cordyline fruticosa</p><p><strong>Plant Family:</strong> Asparagaceae (Asparagus family)</p><p><strong>Height:</strong> 1-2m</p><p>The Ti plant originates from Southeast Asia and Pacific islands. The plant has long leaves, dark green or purple-red color, creating elegant and noble beauty. The plant is often grown as indoor or outdoor ornamental.</p><p>The plant prefers indirect light, needs moist soil but not waterlogged. The plant grows slowly, suitable for decorating living rooms, work rooms or as gifts on special occasions.</p>",
+      "category": "Premium Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Premium Plants",
+        "Gift"
+      ]
+    },
+    {
+      "id": 4,
+      "productId": 4,
+      "lang": "en",
+      "name": "Dwarf Palm",
+      "description": "Dwarf palm is compact, easy to grow, suitable for small spaces like work desks.",
+      "shortDescription": "Dwarf palm is compact, easy to grow, suitable for small spaces like work desks.",
+      "fullDescription": "<p><strong>Common Name:</strong> Dwarf Palm</p><p><strong>Scientific Name:</strong> Dwarf Palm</p><p><strong>Plant Family:</strong> Mini Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Dwarf palm is compact, easy to grow, suitable for small spaces like work desks.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Mini Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Mini Plants"
+      ]
+    },
+    {
+      "id": 5,
+      "productId": 5,
+      "lang": "en",
+      "name": "Mini Pineapple Plant",
+      "description": "Mini pineapple plant with unique shape, bringing fresh air to the room.",
+      "shortDescription": "Mini pineapple plant with unique shape, bringing fresh air to the room.",
+      "fullDescription": "<p><strong>Common Name:</strong> Mini Pineapple Plant</p><p><strong>Scientific Name:</strong> Mini Pineapple Plant</p><p><strong>Plant Family:</strong> Indoor Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Mini pineapple plant with unique shape, bringing fresh air to the room.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Indoor Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Indoor Plants"
+      ]
+    },
+    {
+      "id": 6,
+      "productId": 6,
+      "lang": "en",
+      "name": "Red Rubber Tree",
+      "description": "Red rubber tree with characteristic red leaves, creating an accent for the living space.",
+      "shortDescription": "Red rubber tree with characteristic red leaves, creating an accent for the living space.",
+      "fullDescription": "<p><strong>Common Name:</strong> Red Rubber Tree</p><p><strong>Scientific Name:</strong> Red Rubber Tree</p><p><strong>Plant Family:</strong> Indoor Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Red rubber tree with characteristic red leaves, creating an accent for the living space.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Indoor Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Indoor Plants"
+      ]
+    },
+    {
+      "id": 7,
+      "productId": 7,
+      "lang": "en",
+      "name": "Golden Pothos",
+      "description": "Golden pothos is easy to grow, has good air purification, suitable for beginners in plant care.",
+      "shortDescription": "Golden pothos is easy to grow, has good air purification, suitable for beginners in plant care.",
+      "fullDescription": "<p><strong>Common Name:</strong> Golden Pothos</p><p><strong>Scientific Name:</strong> Golden Pothos</p><p><strong>Plant Family:</strong> Indoor Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Golden pothos is easy to grow, has good air purification, suitable for beginners in plant care.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Indoor Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Indoor Plants"
+      ]
+    },
+    {
+      "id": 8,
+      "productId": 8,
+      "lang": "en",
+      "name": "Snake Plant",
+      "description": "Snake plant has good air filtering ability, suitable for placing in bedrooms.",
+      "shortDescription": "Snake plant has good air filtering ability, suitable for placing in bedrooms.",
+      "fullDescription": "<p><strong>Common Name:</strong> Snake Plant</p><p><strong>Scientific Name:</strong> Snake Plant</p><p><strong>Plant Family:</strong> Indoor Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Snake plant has good air filtering ability, suitable for placing in bedrooms.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Indoor Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Indoor Plants"
+      ]
+    },
+    {
+      "id": 9,
+      "productId": 9,
+      "lang": "en",
+      "name": "Money Tree",
+      "description": "Money tree carries good feng shui meaning, loved by many people.",
+      "shortDescription": "Money tree carries good feng shui meaning, loved by many people.",
+      "fullDescription": "<p><strong>Common Name:</strong> Money Tree</p><p><strong>Scientific Name:</strong> Money Tree</p><p><strong>Plant Family:</strong> Feng Shui Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Money tree carries good feng shui meaning, loved by many people.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Feng Shui Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Feng Shui Plants"
+      ]
+    },
+    {
+      "id": 10,
+      "productId": 10,
+      "lang": "en",
+      "name": "Lucky Bamboo",
+      "description": "Lucky bamboo with meaning of luck and prosperity, often placed in living rooms.",
+      "shortDescription": "Lucky bamboo with meaning of luck and prosperity, often placed in living rooms.",
+      "fullDescription": "<p><strong>Common Name:</strong> Lucky Bamboo</p><p><strong>Scientific Name:</strong> Lucky Bamboo</p><p><strong>Plant Family:</strong> Feng Shui Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Lucky bamboo with meaning of luck and prosperity, often placed in living rooms.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Feng Shui Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Feng Shui Plants"
+      ]
+    },
+    {
+      "id": 11,
+      "productId": 11,
+      "lang": "en",
+      "name": "Chinese Evergreen",
+      "description": "Chinese evergreen has lush green leaves, easy to care for, suitable for busy people.",
+      "shortDescription": "Chinese evergreen has lush green leaves, easy to care for, suitable for busy people.",
+      "fullDescription": "<p><strong>Common Name:</strong> Chinese Evergreen</p><p><strong>Scientific Name:</strong> Chinese Evergreen</p><p><strong>Plant Family:</strong> Indoor Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Chinese evergreen has lush green leaves, easy to care for, suitable for busy people.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Indoor Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Indoor Plants"
+      ]
+    },
+    {
+      "id": 12,
+      "productId": 12,
+      "lang": "en",
+      "name": "Peacock Plant",
+      "description": "Peacock plant with beautiful patterned leaves, creating an accent for the space.",
+      "shortDescription": "Peacock plant with beautiful patterned leaves, creating an accent for the space.",
+      "fullDescription": "<p><strong>Common Name:</strong> Peacock Plant</p><p><strong>Scientific Name:</strong> Peacock Plant</p><p><strong>Plant Family:</strong> Premium Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Peacock plant with beautiful patterned leaves, creating an accent for the space.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Premium Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Premium Plants"
+      ]
+    },
+    {
+      "id": 13,
+      "productId": 13,
+      "lang": "en",
+      "name": "Echeveria",
+      "description": "Echeveria is small and cute, easy to care for, suitable for work desks or windows.",
+      "shortDescription": "Echeveria is small and cute, easy to care for, suitable for work desks or windows.",
+      "fullDescription": "<p><strong>Common Name:</strong> Echeveria</p><p><strong>Scientific Name:</strong> Echeveria</p><p><strong>Plant Family:</strong> Mini Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Echeveria is small and cute, easy to care for, suitable for work desks or windows.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Mini Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Mini Plants"
+      ]
+    },
+    {
+      "id": 14,
+      "productId": 14,
+      "lang": "en",
+      "name": "Cactus",
+      "description": "Cactus is sturdy, doesn't need much watering, suitable for forgetful people.",
+      "shortDescription": "Cactus is sturdy, doesn't need much watering, suitable for forgetful people.",
+      "fullDescription": "<p><strong>Common Name:</strong> Cactus</p><p><strong>Scientific Name:</strong> Cactus</p><p><strong>Plant Family:</strong> Mini Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Cactus is sturdy, doesn't need much watering, suitable for forgetful people.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Mini Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Mini Plants"
+      ]
+    },
+    {
+      "id": 15,
+      "productId": 15,
+      "lang": "en",
+      "name": "Peace Lily",
+      "description": "Peace lily has beautiful white flowers, good air purification, suitable for placing indoors.",
+      "shortDescription": "Peace lily has beautiful white flowers, good air purification, suitable for placing indoors.",
+      "fullDescription": "<p><strong>Common Name:</strong> Peace Lily</p><p><strong>Scientific Name:</strong> Peace Lily</p><p><strong>Plant Family:</strong> Indoor Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>Peace lily has beautiful white flowers, good air purification, suitable for placing indoors.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+      "category": "Indoor Plants",
+      "tags": [
+        "Ornamental Plants",
+        "Decoration",
+        "Indoor Plants"
+      ]
     }
   ],
   "reviews": [

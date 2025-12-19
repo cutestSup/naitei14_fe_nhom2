@@ -1,5 +1,6 @@
 import { Message } from "../types/chat";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/hooks";
 
 interface MessageItemProps {
   message: Message;
@@ -7,9 +8,11 @@ interface MessageItemProps {
 }
 
 export const MessageItem = ({ message, isOwnMessage }: MessageItemProps) => {
+  const { currentLanguage } = useTranslation();
   const formatTime = (timestamp: string) => {
     const date = new Date(timestamp);
-    return date.toLocaleTimeString("vi-VN", {
+    const locale = currentLanguage === "en" ? "en-US" : "vi-VN";
+    return date.toLocaleTimeString(locale, {
       hour: "2-digit",
       minute: "2-digit",
     });

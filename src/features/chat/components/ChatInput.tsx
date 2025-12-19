@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { IoSend } from "react-icons/io5";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/hooks";
 
 interface ChatInputProps {
   isConnected: boolean;
@@ -15,6 +16,7 @@ export const ChatInput = ({
   onTyping,
   disabled = false,
 }: ChatInputProps) => {
+  const { t } = useTranslation();
   const [inputValue, setInputValue] = useState("");
   const typingTimeoutRef = useRef<NodeJS.Timeout>();
 
@@ -64,10 +66,10 @@ export const ChatInput = ({
           onChange={handleInputChange}
           placeholder={
             disabled
-              ? "Chọn một user để bắt đầu chat..."
+              ? t("chat.selectUserToChat")
               : isConnected
-              ? "Nhập tin nhắn..."
-              : "Đang kết nối..."
+              ? t("chat.typeMessage")
+              : t("chat.connecting")
           }
           disabled={!isConnected || disabled}
           className={cn(

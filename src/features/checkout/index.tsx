@@ -8,6 +8,7 @@ import { createOrder } from "@/services/orderAPI";
 import { ShippingInfo } from "@/types/order";
 import { RenderButton } from "@/components/ui/Button";
 import { useAuth } from "@/contexts";
+import { useTranslation } from "@/hooks";
 import { VAT_RATE } from "@/constants/common";
 
 export const CheckoutPage = () => {
@@ -15,6 +16,7 @@ export const CheckoutPage = () => {
   const { user, isLoggedIn } = useAuth();
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -48,11 +50,11 @@ export const CheckoutPage = () => {
 
       await createOrder(orderData);
       clearCart();
-      alert("Đặt hàng thành công!");
+      alert(t("checkout.orderSuccess"));
       navigate("/");
     } catch (error) {
       console.error("Checkout failed:", error);
-      alert("Đặt hàng thất bại. Vui lòng thử lại.");
+      alert(t("checkout.orderFailed"));
     } finally {
       setIsSubmitting(false);
     }
@@ -62,7 +64,7 @@ export const CheckoutPage = () => {
     <div className="bg-white py-10">
       <Container>
         <h1 className="text-2xl font-bold text-gray-800 mb-8 uppercase">
-          Thanh toán
+          {t("checkout.checkoutTitle")}
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -91,7 +93,7 @@ export const CheckoutPage = () => {
                 form="checkout-form"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Đang xử lý..." : "Đặt hàng"}
+                {isSubmitting ? t("checkout.processing") : t("checkout.placeOrder")}
               </RenderButton>
             </div>
           </div>

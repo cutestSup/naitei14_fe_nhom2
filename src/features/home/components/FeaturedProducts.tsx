@@ -3,6 +3,7 @@ import { Container } from '@/components/ui/Container'
 import { ProductCard } from '@/components/products/ProductCard'
 import { Product } from '@/types/product'
 import { getFeaturedProducts } from '@/apis/products'
+import { useTranslation } from '@/hooks'
 import {
   CLASS_SECTION_WHITE,
   CLASS_GRID_LARGE_CARD_FIRST,
@@ -10,6 +11,7 @@ import {
 } from '@/constants/common'
 
 export const FeaturedProducts = () => {
+  const { t, currentLanguage } = useTranslation();
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -29,22 +31,22 @@ export const FeaturedProducts = () => {
             timestamp: new Date().toISOString(),
           })
         }
-        setError('Không thể tải sản phẩm. Vui lòng thử lại sau.')
+        setError(t("messages.cannotLoadProducts"))
       } finally {
         setLoading(false)
       }
     }
 
     fetchProducts()
-  }, [])
+  }, [currentLanguage, t])
 
   if (loading) {
     return (
       <section className={CLASS_SECTION_WHITE}>
         <Container>
           <div className="text-center" role="status" aria-live="polite">
-            <span className="sr-only">Đang tải sản phẩm...</span>
-            Loading...
+            <span className="sr-only">{t("messages.loadingProducts")}</span>
+            {t("common.loading")}
           </div>
         </Container>
       </section>
@@ -68,7 +70,7 @@ export const FeaturedProducts = () => {
       <Container>
         <div className="mb-8">
           <div className="bg-green-primary text-white py-3 px-6 inline-block mb-4">
-            <h2 className="text-2xl font-bold">Sản phẩm nổi bật</h2>
+            <h2 className="text-2xl font-bold">{t("products.featured")}</h2>
           </div>
         </div>
         
