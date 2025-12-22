@@ -14,7 +14,9 @@ import {
   MagnifyingGlassIcon,
   ShoppingCartIcon,
   Bars3Icon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { ThemeToggle } from "../ui/ThemeToggle";
 
 const MAX_SEARCH_LENGTH = 100;
 
@@ -79,24 +81,34 @@ export const RenderMainHeader = () => {
     }
   };
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white dark:bg-dark-card shadow-sm relative">
       <Container>
         <div className="flex items-center justify-between py-4">
           <Link to="/" className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-green-primary">
+            <div className="text-xl md:text-2xl font-bold text-green-primary">
               Green Shop
             </div>
-            <div className="text-xs text-gray-light">
+            <div className="hidden sm:block text-xs text-gray-light">
               {t("header.tagline")}
             </div>
           </Link>
 
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <div className="hidden md:flex items-center gap-2 text-gray-700">
-              <span className="text-sm">(04) 6674 2332</span>
-              <span className="text-gray-300">-</span>
-              <span className="text-sm">(04) 3786 8504</span>
+              <span className="text-sm text-gray-800 dark:text-gray-200">
+                (04) 6674 2332
+              </span>
+              <span className="text-sm text-gray-800 dark:text-gray-200">
+                -
+              </span>
+              <span className="text-sm text-gray-800 dark:text-gray-200">
+                (04) 3786 8504
+              </span>
             </div>
 
             <form
@@ -119,10 +131,13 @@ export const RenderMainHeader = () => {
 
             <Link
               to="/cart"
-              className="relative flex items-center gap-2 bg-green-primary text-white px-4 py-2 rounded-md hover:bg-green-dark transition-colors"
+              className="relative flex items-center gap-2 bg-green-primary text-white px-3 py-2 md:px-4 md:py-2 rounded-md hover:bg-green-dark transition-colors"
             >
               <ShoppingCartIcon className={CLASS_SVG_ICON} />
-              <span className="text-sm">{totalItems} {t("common.products")}</span>
+              <span className="text-sm hidden sm:inline">
+                {totalItems} {t("common.products")}
+              </span>
+              <span className="text-sm sm:hidden">{totalItems}</span>
             </Link>
             <LanguageSwitcher />
           </div>
@@ -131,28 +146,67 @@ export const RenderMainHeader = () => {
 
       <nav className="bg-green-primary text-white">
         <Container>
-          <div className="flex items-center gap-6 py-3">
-            <button className="md:hidden text-white" aria-label="Menu">
-              <Bars3Icon className="w-6 h-6" />
-            </button>
-            <Link to="/" className={CLASS_NAV_HOVER}>
-              {t("header.home").toUpperCase()}
-            </Link>
-            <span className={CLASS_DISABLED} title={t(MESSAGE_DEVELOPING)}>
-              {t("header.about").toUpperCase()}
-            </span>
-            <Link to="/products" className={CLASS_NAV_HOVER}>
-              {t("header.products").toUpperCase()}
-            </Link>
-            <span className={CLASS_DISABLED} title={t(MESSAGE_DEVELOPING)}>
-              {t("products.new").toUpperCase()}
-            </span>
-            <span className={CLASS_DISABLED} title={t(MESSAGE_DEVELOPING)}>
-              {t("common.news").toUpperCase()}
-            </span>
-            <span className={CLASS_DISABLED} title={t(MESSAGE_DEVELOPING)}>
-              {t("header.contact").toUpperCase()}
-            </span>
+          <div className="flex flex-col md:flex-row md:items-center">
+            <div className="flex justify-between items-center md:hidden py-3">
+              <span className="font-bold uppercase">Danh mục</span>
+              <button
+                onClick={toggleMenu}
+                className="text-white focus:outline-none"
+                aria-label="Menu"
+              >
+                {isMobileMenuOpen ? (
+                  <XMarkIcon className="w-6 h-6" />
+                ) : (
+                  <Bars3Icon className="w-6 h-6" />
+                )}
+              </button>
+            </div>
+
+            <div
+              className={`
+              flex-col md:flex-row md:flex gap-4 md:gap-6 py-4 md:py-3 transition-all duration-300 ease-in-out
+              ${
+                isMobileMenuOpen
+                  ? "flex border-t border-green-600"
+                  : "hidden md:flex"
+              }
+            `}
+            >
+              <Link to="/" className={`${CLASS_NAV_HOVER} py-2 md:py-0 block`}>
+                {t("header.home").toUpperCase()}
+              </Link>
+              <span
+                className={`${CLASS_DISABLED} py-2 md:py-0 block`}
+                title={MESSAGE_DEVELOPING}
+              >
+                {t("header.about").toUpperCase()}
+              </span>
+              <Link
+                to="/products"
+                className={`${CLASS_NAV_HOVER} py-2 md:py-0 block`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {t("header.products").toUpperCase()}
+              </Link>
+              <span
+                className={`${CLASS_DISABLED} py-2 md:py-0 block`}
+                title={MESSAGE_DEVELOPING}
+              >
+                {t("products.new").toUpperCase()}
+              </span>
+              <span
+                className={`${CLASS_DISABLED} py-2 md:py-0 block`}
+                title={MESSAGE_DEVELOPING}
+              >
+                {t("common.news").toUpperCase()}
+              </span>
+              <span
+                className={`${CLASS_DISABLED} py-2 md:py-0 block`}
+                title={MESSAGE_DEVELOPING}
+              >
+                {t("header.contact").toUpperCase()}
+              </span>
+            </div>
           </div>
         </Container>
       </nav>

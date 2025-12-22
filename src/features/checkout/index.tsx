@@ -7,7 +7,7 @@ import { useCart } from "@/contexts/CartContext";
 import { createOrder } from "@/services/orderAPI";
 import { ShippingInfo } from "@/types/order";
 import { RenderButton } from "@/components/ui/Button";
-import { useAuth } from "@/contexts";
+import { useAuth } from "@/contexts/AuthContext";
 import { useTranslation } from "@/hooks";
 import { VAT_RATE } from "@/constants/common";
 
@@ -20,9 +20,9 @@ export const CheckoutPage = () => {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      navigate("/auth/login");
+      navigate('/auth/login');
     } else if (cart.length === 0) {
-      navigate("/cart");
+      navigate('/cart');
     }
   }, [isLoggedIn, cart.length, navigate]);
 
@@ -32,20 +32,20 @@ export const CheckoutPage = () => {
     setIsSubmitting(true);
     try {
       if (!user) return;
-
+      
       const orderData = {
         userId: user.id,
-        items: cart.map((item) => ({
+        items: cart.map(item => ({
           productId: item.id,
           productName: item.name,
-          productImage: item.image || "",
+          productImage: item.image || '',
           quantity: item.quantity,
-          price: item.price,
+          price: item.price
         })),
         totalAmount: Math.round(totalPrice * (1 + VAT_RATE)),
         shippingInfo,
-        paymentMethod: "cod" as const,
-        status: "pending" as const,
+        paymentMethod: 'cod' as const, 
+        status: 'pending' as const
       };
 
       await createOrder(orderData);
@@ -61,33 +61,29 @@ export const CheckoutPage = () => {
   };
 
   return (
-    <div className="bg-white py-10">
+    <div className="bg-white dark:bg-gray-900 py-10">
       <Container>
-        <h1 className="text-2xl font-bold text-gray-800 mb-8 uppercase">
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-8 uppercase">
           {t("checkout.checkoutTitle")}
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <CheckoutForm
+            <CheckoutForm 
               id="checkout-form"
-              onSubmit={handleCheckout}
-              initialValues={
-                user
-                  ? {
-                      fullName: user.fullName,
-                      email: user.email,
-                      phone: user.phone,
-                    }
-                  : undefined
-              }
+              onSubmit={handleCheckout} 
+              initialValues={user ? {
+                fullName: user.fullName,
+                email: user.email,
+                phone: user.phone,
+              } : undefined}
             />
           </div>
-
+          
           <div className="lg:col-span-1">
             <OrderSummary />
             <div className="mt-6">
-              <RenderButton
+              <RenderButton 
                 className="w-full py-3 uppercase font-bold bg-green-primary hover:bg-green-dark text-white rounded transition-colors"
                 type="submit"
                 form="checkout-form"

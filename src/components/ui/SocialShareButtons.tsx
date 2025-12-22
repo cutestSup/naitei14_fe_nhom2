@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { logError } from "@/lib/logger";
-import { useAuth } from "@/contexts";
+import { useAuth } from "@/contexts/AuthContext";
 import { useTranslation } from "@/hooks";
 import {
   FACEBOOK_SHARE_URL,
@@ -93,19 +93,18 @@ export const RenderSocialShareButtons = ({
   };
 
   const buttonClass =
-    "flex items-center justify-center gap-2 px-4 py-2 rounded-md text-sm font-medium text-white transition-all hover:opacity-90 hover:scale-105 active:scale-95";
+    "flex items-center justify-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-md text-sm font-medium text-white transition-all hover:opacity-90 hover:scale-105 active:scale-95";
   const disabledButtonClass =
-    "flex items-center justify-center gap-2 px-4 py-2 rounded-md text-sm font-medium text-white opacity-50 cursor-not-allowed";
-
+    "flex items-center justify-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-md text-sm font-medium text-white opacity-50 cursor-not-allowed";
   if (!isLoggedIn) {
     return (
       <div className={cn("flex flex-col gap-2", className)}>
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm">
-          <p className="text-blue-800 mb-2">
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm dark:bg-blue-900/20 dark:border-blue-800 transition-colors">
+          <p className="text-blue-800 mb-2 dark:text-blue-200">
             Vui lòng{" "}
             <Link
               to="/auth/login"
-              className="text-blue-600 hover:text-blue-800 underline font-medium"
+              className="text-blue-600 hover:text-blue-800 underline font-medium dark:text-blue-400 dark:hover:text-blue-300"
             >
               đăng nhập
             </Link>{" "}
@@ -163,7 +162,7 @@ export const RenderSocialShareButtons = ({
     <div className={cn("flex flex-wrap items-center gap-2", className)}>
       <button
         onClick={onFacebookShare}
-        className={cn(buttonClass, "bg-[#1877F2]")}
+        className={cn(buttonClass, "bg-[#1877F2] flex-1 md:flex-none")}
         aria-label="Chia sẻ lên Facebook"
         title="Chia sẻ lên Facebook"
       >
@@ -173,7 +172,7 @@ export const RenderSocialShareButtons = ({
 
       <button
         onClick={onTwitterShare}
-        className={cn(buttonClass, "bg-[#1DA1F2]")}
+        className={cn(buttonClass, "bg-[#1DA1F2] flex-1 md:flex-none")}
         aria-label="Chia sẻ lên Twitter"
         title="Chia sẻ lên Twitter"
       >
@@ -183,7 +182,7 @@ export const RenderSocialShareButtons = ({
 
       <button
         onClick={onWhatsAppShare}
-        className={cn(buttonClass, "bg-[#25D366]")}
+        className={cn(buttonClass, "bg-[#25D366] flex-1 md:flex-none")}
         aria-label="Chia sẻ qua WhatsApp"
         title="Chia sẻ qua WhatsApp"
       >

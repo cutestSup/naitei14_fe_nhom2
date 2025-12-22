@@ -238,7 +238,7 @@ export const RenderProducts = () => {
 
           <div className="lg:col-span-3">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-gray-600 dark:text-gray-400">
                 {t("products.foundProducts")} <span className="font-semibold">{displayedProducts.length}</span> {t("products.foundProductsCount")}
               </div>
 

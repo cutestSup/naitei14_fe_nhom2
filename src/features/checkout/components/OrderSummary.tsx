@@ -11,14 +11,14 @@ export const OrderSummary: React.FC = () => {
   const grandTotal = totalPrice + vat;
 
   return (
-    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+    <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
       <h3 className="text-lg font-semibold mb-4 text-green-primary uppercase">{t("checkout.orderSummary")}</h3>
       
       <div className="space-y-4 mb-4 max-h-60 overflow-y-auto">
         {cart.map((item) => (
           <div key={item.id} className="flex justify-between items-start text-sm">
             <div className="flex gap-3">
-              <div className="w-12 h-12 flex-shrink-0 border border-gray-200 rounded overflow-hidden">
+              <div className="w-12 h-12 flex-shrink-0 border border-gray-200 dark:border-gray-700 rounded overflow-hidden">
                 <img src={item.image || "/images/placeholder.png"} alt={item.name} className="w-full h-full object-cover" />
               </div>
               <div>
@@ -33,7 +33,7 @@ export const OrderSummary: React.FC = () => {
         ))}
       </div>
 
-      <div className="border-t border-gray-200 pt-4 space-y-2">
+      <div className="border-t border-gray-200 dark:border-gray-700 pt-4 space-y-2">
         <div className="flex justify-between text-sm">
           <span className="text-gray-600">{t("cart.subtotalShort")}</span>
           <span className="font-medium">
@@ -46,7 +46,7 @@ export const OrderSummary: React.FC = () => {
             {formatCurrency(vat)}
           </span>
         </div>
-        <div className="flex justify-between text-base font-bold text-green-primary pt-2 border-t border-gray-200">
+        <div className="flex justify-between text-base font-bold text-green-primary pt-2 border-t border-gray-200 dark:border-gray-700">
           <span>{t("cart.total")}</span>
           <span>
             {formatCurrency(grandTotal)}

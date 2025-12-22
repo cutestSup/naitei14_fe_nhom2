@@ -5,9 +5,11 @@ export const RenderNavigation = () => {
   const { t } = useTranslation();
   
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
       <div>
-        <div className="text-xl font-bold text-green-primary mb-4">Green Shop</div>
+        <div className="text-xl font-bold text-green-primary mb-4 flex justify-center md:justify-start">
+          Green Shop
+        </div>
         <p className={CLASS_TEXT_SM_GRAY}>{t("footer.aboutDescription")}</p>
         <p className={CLASS_TEXT_SM_GRAY}>{t("footer.address")}</p>
         <p className={CLASS_TEXT_SM_GRAY}>{t("footer.phone")}</p>
@@ -51,6 +53,5 @@ export const RenderNavigation = () => {
         </ul>
       </div>
     </div>
-  )
-}
-
+  );
+};

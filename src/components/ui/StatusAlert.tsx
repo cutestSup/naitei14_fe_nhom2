@@ -19,15 +19,15 @@ const StatusAlert: React.FC<StatusAlertProps> = ({
   return (
     <div
       className={cn(
-        "flex items-center gap-2 p-2.5 rounded-lg text-sm border",
+        "flex items-start gap-2 p-2.5 rounded-lg text-sm border",
         isSuccess
           ? "bg-green-50 text-green-700 border-green-200"
           : "bg-red-50 text-red-700 border-red-200",
         className
       )}
     >
-      <Icon className="text-lg flex-shrink-0" />
-      <span>{message}</span>
+      <Icon className="text-lg flex-shrink-0 mt-0.5" />
+      <span className="break-words">{message}</span>
     </div>
   );
 };

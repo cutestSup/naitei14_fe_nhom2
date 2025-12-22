@@ -10,7 +10,7 @@ import {
   CLASS_ERROR,
 } from "@/constants/common";
 import { cn } from "@/lib/utils";
-import { useAuth } from "@/contexts";
+import { useAuth } from "@/contexts/AuthContext";
 import { useTranslation } from "@/hooks";
 import {
   MdPerson,
@@ -137,7 +137,7 @@ const ProfileForm: React.FC = () => {
                   readOnly
                   className={cn(
                     CLASS_INPUT_BASE,
-                    "pl-4 pr-12 bg-gray-100 text-gray-700"
+                    "pl-4 pr-12 bg-gray-100 text-gray-700",
                   )}
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 gap-2">
@@ -171,7 +171,7 @@ const ProfileForm: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-6 pt-6 border-t border-gray-200">
+          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
             <label className="flex items-center cursor-pointer">
               <input
                 type="checkbox"

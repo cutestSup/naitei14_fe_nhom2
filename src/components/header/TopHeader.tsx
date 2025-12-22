@@ -20,7 +20,7 @@ import {
   MdPerson,
   MdLock,
 } from "react-icons/md";
-import { useAuth } from "@/contexts";
+import { useAuth } from "@/contexts/AuthContext";
 import { useTranslation } from "@/hooks";
 import { cn } from "@/lib/utils";
 
@@ -62,8 +62,16 @@ export const RenderTopHeader = () => {
   return (
     <div className="bg-gray-dark text-white py-2 text-sm">
       <Container>
-        <div className="flex justify-between items-center">
-          <div className={CLASS_FLEX_CENTER_GAP4}>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
+          <div
+            className={`${CLASS_FLEX_CENTER_GAP4}
+            flex-col
+            sm:flex-row
+            text-center
+            sm:text-left
+            w-full
+            md:w-auto`}
+          >
             <span>{t("header.openingHours")}</span>
             <div className="flex items-center gap-2">
               <a href="#" className={CLASS_HOVER} aria-label="Facebook">
@@ -80,7 +88,9 @@ export const RenderTopHeader = () => {
               </a>
             </div>
           </div>
-          <div className={CLASS_FLEX_CENTER_GAP4}>
+          <div
+            className={`${CLASS_FLEX_CENTER_GAP4} w-full md:w-auto justify-center md:justify-end mt-2 d:mt-0`}
+          >
             {isLoggedIn ? (
               <>
                 <div className="relative" ref={dropdownRef}>

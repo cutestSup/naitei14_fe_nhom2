@@ -12,9 +12,9 @@ export const RenderFooter = () => {
     <footer className="bg-gray-dark text-white">
       <div className="border-b border-gray-600 py-6">
         <Container>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-4">
-              <span className="text-sm">{t("footer.informationChannel")}</span>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+              <span className="text-sm font-semibold md:font-normal">{t("footer.informationChannel")}</span>
               <RenderSocialLinks />
             </div>
             <RenderNewsletter />
@@ -34,6 +34,5 @@ export const RenderFooter = () => {
         </Container>
       </div>
     </footer>
-  )
-}
-
+  );
+};

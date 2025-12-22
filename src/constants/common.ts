@@ -84,7 +84,7 @@ export const CLASS_SVG_ICON_SM = "w-4 h-4";
 export const CLASS_SVG_ICON_MD = "w-6 h-6";
 export const CLASS_SVG_VIEWBOX = "0 0 24 24";
 export const CLASS_SVG_FILL = "currentColor";
-export const CLASS_SECTION_WHITE = "py-12 bg-white";
+export const CLASS_SECTION_WHITE = "py-12 bg-white dark:bg-gray-800";
 export const CLASS_DOT_INDICATOR =
   "w-3 h-3 bg-white bg-opacity-50 rounded-full";
 export const CLASS_TEXT_SM_GRAY = "text-sm text-gray-400 mb-2";
@@ -95,7 +95,7 @@ export const CLASS_SELECT_INPUT =
   "px-3 py-1.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-primary focus:border-transparent";
 export const CLASS_VIEW_TOGGLE_BUTTON = "p-2 rounded transition-colors";
 export const CLASS_VIEW_TOGGLE_ACTIVE = "bg-green-primary text-white";
-export const CLASS_VIEW_TOGGLE_INACTIVE = "text-gray-600 hover:bg-gray-100";
+export const CLASS_VIEW_TOGGLE_INACTIVE = "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700";
 export const CLASS_TEXT_CENTER_PY12 = "text-center py-12";
 export const CLASS_QUANTITY_BUTTON =
   "p-2 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors";
@@ -104,8 +104,8 @@ export const CLASS_IMAGE_COVER = "w-full h-full object-cover";
 export const CLASS_FLEX_ITEMS_GAP3 = "flex items-center gap-3";
 export const CLASS_ICON_BUTTON_ROUND =
   "p-3 rounded-full border border-gray-300 hover:bg-green-primary hover:text-white hover:border-green-primary transition-colors bg-white";
-export const CLASS_TEXT_GRAY_RELAXED = "text-gray-700 leading-relaxed";
-export const CLASS_TEXT_GRAY_600 = "text-gray-600";
+export const CLASS_TEXT_GRAY_RELAXED = "text-gray-700 dark:text-gray-300 leading-relaxed";
+export const CLASS_TEXT_GRAY_600 = "text-gray-600 dark:text-gray-300";
 export const CLASS_NAV_BUTTON =
   "p-2 rounded-full border border-gray-300 hover:bg-green-primary hover:text-white hover:border-green-primary transition-colors";
 export const CLASS_ICON_SIZE_MD_5 = "w-5 h-5";

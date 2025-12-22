@@ -15,7 +15,7 @@ export const CartSummary = ({ totalPrice }: Props) => {
 
   return (
     <div className="w-full max-w-md ml-auto mt-8">
-      <div className="border border-gray-200">
+      <div className="border border-gray-200 dark:border-gray-700">
         {/* Subtotal */}
         <div className="flex justify-between items-center p-4 border-b border-gray-200">
           <span className="text-gray-600 font-medium uppercase text-sm">{t("cart.subtotal").toUpperCase()}</span>

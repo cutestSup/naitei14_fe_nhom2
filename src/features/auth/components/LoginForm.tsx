@@ -78,7 +78,7 @@ const LoginForm: React.FC = () => {
     error === "Vui lòng xác thực email trước khi đăng nhập";
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-800 flex">
       {/* Left Section - Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
         <div className="w-full max-w-md">
@@ -92,7 +92,7 @@ const LoginForm: React.FC = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-primary-text mb-2"
+                className="block text-sm font-medium text-primary-text dark:text-dark-text mb-2"
               >
                 Email của bạn
               </label>
@@ -117,7 +117,7 @@ const LoginForm: React.FC = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-primary-text mb-2"
+                className="block text-sm font-medium text-primary-text dark:text-dark-text mb-2"
               >
                 Mật khẩu
               </label>
@@ -135,7 +135,7 @@ const LoginForm: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-primary-text"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-primary-text dark:text-gray-400 dark:hover:text-dark-text"
                   aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
                 >
                   {showPassword ? <LuEyeOff size={20} /> : <LuEye size={20} />}
@@ -159,7 +159,7 @@ const LoginForm: React.FC = () => {
                 />
                 <label
                   htmlFor="rememberMe"
-                  className="ml-2 text-sm text-primary-text"
+                  className="ml-2 text-sm text-primary-text dark:text-dark-text"
                 >
                   Ghi nhớ tài khoản
                 </label>
@@ -226,7 +226,7 @@ const LoginForm: React.FC = () => {
           <h2 className="text-2xl font-bold text-green-600 mb-4">
             BẠN CHƯA CÓ TÀI KHOẢN?
           </h2>
-          <p className="text-primary-text mb-6 leading-relaxed text-justify">
+          <p className="text-primary-text dark:text-dark-text mb-6 leading-relaxed text-justify">
             Đăng ký tài khoản ngay để có thể mua hàng nhanh chóng và dễ dàng
             hơn! Ngoài ra còn có rất nhiều chính sách và ưu đãi cho các thành
             viên của GreenShop.
