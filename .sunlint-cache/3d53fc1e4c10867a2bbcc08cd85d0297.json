@@ -1,0 +1,22 @@
+{
+  "key": "3d53fc1e4c10867a2bbcc08cd85d0297",
+  "value": [
+    {
+      "rule": "C019",
+      "line": 53,
+      "column": 0,
+      "severity": "warning",
+      "message": "console.error used for a recoverable issue (resend activation email failure); should use warn or info unless truly critical.",
+      "suggestion": "Replace console.error with console.warn or console.info for non-critical resend activation failures.",
+      "codeSnippet": "rememberMe: data.rememberMe,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\components\\LoginForm.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343684656,
+  "version": "1.0.0",
+  "fileHash": ""
+}

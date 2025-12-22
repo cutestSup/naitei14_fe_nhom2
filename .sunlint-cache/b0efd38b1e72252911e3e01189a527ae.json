@@ -1,0 +1,36 @@
+{
+  "key": "b0efd38b1e72252911e3e01189a527ae",
+  "value": [
+    {
+      "rule": "C006",
+      "line": 10,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'load' is vague and does not use a verb or verb-noun combination.",
+      "suggestion": "Rename 'load' to 'fetchOrders' or 'loadOrders' to clearly indicate its action.",
+      "codeSnippet": "const [viewOrder, setViewOrder] = useState<Order | null>(null);",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\orders\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 11,
+      "column": 0,
+      "severity": "warning",
+      "message": "ordersApi.getAll() fetches all orders without verifying resource ownership; possible IDOR risk if backend does not enforce user-specific filtering.",
+      "suggestion": "Ensure ordersApi.getAll() only returns orders belonging to the current authenticated user at the backend. Add authorization checks server-side.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\orders\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343495565,
+  "version": "1.0.0",
+  "fileHash": ""
+}

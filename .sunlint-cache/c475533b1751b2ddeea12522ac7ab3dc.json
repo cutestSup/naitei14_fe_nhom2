@@ -1,0 +1,22 @@
+{
+  "key": "c475533b1751b2ddeea12522ac7ab3dc",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 1,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'sanitized' is somewhat vague and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'sanitized' to 'cleanHtml' or 'filteredHtml' for clarity.",
+      "codeSnippet": "let sanitized = html.replace(/<script\\b[^<]*(?:(?!<\\/script>)<[^<]*)*<\\/script>/gi, '')",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\lib\\sanitize.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343162394,
+  "version": "1.0.0",
+  "fileHash": ""
+}

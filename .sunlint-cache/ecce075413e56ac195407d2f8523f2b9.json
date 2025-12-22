@@ -1,0 +1,22 @@
+{
+  "key": "ecce075413e56ac195407d2f8523f2b9",
+  "value": [
+    {
+      "rule": "S002",
+      "line": 26,
+      "column": 0,
+      "severity": "warning",
+      "message": "Permissions for update and remove operations are controlled using item.id from client-side without backend ownership verification, risking IDOR vulnerability.",
+      "suggestion": "Ensure backend verifies resource ownership for update and remove operations; do not rely solely on item.id from client. Use UUIDs or encrypted IDs and validate user access server-side.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\cart\\components\\CartItemRow.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343213384,
+  "version": "1.0.0",
+  "fileHash": ""
+}

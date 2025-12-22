@@ -1,0 +1,36 @@
+{
+  "key": "11e322983c61255772641e008e55cf6e",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 40,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'i' used as loop counter is acceptable, but '_' as array map parameter is an arbitrary abbreviation.",
+      "suggestion": "Rename '_' to a more descriptive name such as 'unused' or 'index' if not used.",
+      "codeSnippet": "<img",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-list\\components\\ProductCardList.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 17,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'RenderProductCardList' is a noun phrase, not a verb or verb-noun combination.",
+      "suggestion": "Rename function to 'renderProductCardList' or 'displayProductCardList' to follow verb-noun convention.",
+      "codeSnippet": "}",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-list\\components\\ProductCardList.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343293328,
+  "version": "1.0.0",
+  "fileHash": ""
+}

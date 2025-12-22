@@ -1,0 +1,36 @@
+{
+  "key": "51f8f6e05ae672962725df999004e1d7",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 9,
+      "column": 0,
+      "severity": "info",
+      "message": "Variable name 'itemsPerPage' is clear and descriptive, but 'currentIndex' could be improved to 'currentPageIndex' for clarity.",
+      "suggestion": "Rename 'currentIndex' to 'currentPageIndex' to better express its purpose.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-detail\\components\\RelatedProducts.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 14,
+      "column": 0,
+      "severity": "info",
+      "message": "Function names 'handlePrevious' and 'handleNext' are verb-noun combinations and follow the rule.",
+      "suggestion": "No change needed for function names.",
+      "codeSnippet": "const totalPages = Math.ceil(products.length / itemsPerPage)",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-detail\\components\\RelatedProducts.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343240512,
+  "version": "1.0.0",
+  "fileHash": ""
+}

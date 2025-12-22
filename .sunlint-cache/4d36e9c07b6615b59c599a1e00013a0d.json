@@ -1,0 +1,50 @@
+{
+  "key": "4d36e9c07b6615b59c599a1e00013a0d",
+  "value": [
+    {
+      "rule": "C029",
+      "line": 37,
+      "column": 0,
+      "severity": "warning",
+      "message": "Error is logged without stack trace or additional context in catch block.",
+      "suggestion": "Log both error message and stack trace, and include relevant context such as user ID and order data.",
+      "codeSnippet": "productName: item.name,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\checkout\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 28,
+      "column": 0,
+      "severity": "warning",
+      "message": "Order creation uses userId and productId from client-side context without explicit backend ownership verification, risking IDOR if backend does not validate ownership.",
+      "suggestion": "Ensure backend API (createOrder) verifies that userId and productId belong to the authenticated user and do not rely solely on IDs from client input.",
+      "codeSnippet": "const handleCheckout = async (shippingInfo: ShippingInfo) => {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\checkout\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S003",
+      "line": 20,
+      "column": 0,
+      "severity": "warning",
+      "message": "Redirects using navigate() with static paths are safe, but if paths become dynamic or user-controlled, must validate against an allow list.",
+      "suggestion": "If redirect URLs are ever derived from user input, validate them against a predefined allow list before calling navigate().",
+      "codeSnippet": "navigate('/auth/login');",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\checkout\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343304867,
+  "version": "1.0.0",
+  "fileHash": ""
+}

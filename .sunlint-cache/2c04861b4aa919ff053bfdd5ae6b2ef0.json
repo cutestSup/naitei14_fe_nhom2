@@ -1,0 +1,22 @@
+{
+  "key": "2c04861b4aa919ff053bfdd5ae6b2ef0",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 7,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'cn' is an uncommon abbreviation and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'cn' to a more descriptive name such as 'classNames' or 'combineClassNames'.",
+      "codeSnippet": "} from \"react-icons/md\";",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\ui\\AlertWithAction.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343348840,
+  "version": "1.0.0",
+  "fileHash": ""
+}

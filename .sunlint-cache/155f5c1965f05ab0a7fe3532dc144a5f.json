@@ -1,0 +1,22 @@
+{
+  "key": "155f5c1965f05ab0a7fe3532dc144a5f",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 7,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'cn' uses an uncommon abbreviation that does not clearly indicate its purpose.",
+      "suggestion": "Rename 'cn' to a more descriptive name such as 'classNames' to improve clarity.",
+      "codeSnippet": "import { cn } from \"@/lib/utils\";",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\components\\ForgotPasswordForm.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343658961,
+  "version": "1.0.0",
+  "fileHash": ""
+}

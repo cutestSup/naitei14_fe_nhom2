@@ -1,0 +1,50 @@
+{
+  "key": "208fd5dc87f18b935e2df55386e7d63d",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'cart' is not fully descriptive; consider using 'cartItems' for clarity.",
+      "suggestion": "Rename 'cart' to 'cartItems' to better express its purpose.",
+      "codeSnippet": "const navigate = useNavigate();",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\cart\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'item' in cart.map is generic; use a more descriptive name like 'cartItem'.",
+      "suggestion": "Rename 'item' to 'cartItem' in the map callback.",
+      "codeSnippet": "const navigate = useNavigate();",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\cart\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S003",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "URL redirect to '/auth/login' is static, but if replaced with user input in future, could violate allow-list rule.",
+      "suggestion": "Ensure all redirects use a validated allow-list if dynamic URLs are introduced.",
+      "codeSnippet": "const navigate = useNavigate();",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\cart\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.7
+    }
+  ],
+  "timestamp": 1765343176587,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,50 @@
+{
+  "key": "6481e19b0867ddfb613da05edf70cc27",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 37,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'sum' in reduce callback is a generic name; use a more descriptive name like 'accumulatedTotal'.",
+      "suggestion": "Rename 'sum' to 'accumulatedTotal' for clarity.",
+      "codeSnippet": ");",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\orders\\components\\OrderForm.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 60,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'item' in fields.map is a generic name; use a more descriptive name like 'orderItem'.",
+      "suggestion": "Rename 'item' to 'orderItem' for clarity.",
+      "codeSnippet": "userId: data.userId,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\orders\\components\\OrderForm.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 40,
+      "column": 0,
+      "severity": "warning",
+      "message": "Order update uses order.id from props without verifying resource ownership; possible IDOR vulnerability if backend does not check user ownership.",
+      "suggestion": "Ensure backend API verifies that the current user owns the order before allowing update. Do not rely solely on client-supplied IDs for authorization.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\orders\\components\\OrderForm.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343599228,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,92 @@
+{
+  "key": "acb6a481136014ed5bf7cf799c47262b",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'form' is not fully descriptive; consider a more explicit name like 'productForm' or 'productData'.",
+      "suggestion": "Rename 'form' to 'productForm' for clarity.",
+      "codeSnippet": "stock: 0,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\CreateProduct.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 13,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'setForm' could be more descriptive; consider 'setProductForm'.",
+      "suggestion": "Rename 'setForm' to 'setProductForm' for clarity.",
+      "codeSnippet": "categoryId: 0,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\CreateProduct.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 16,
+      "column": 0,
+      "severity": "warning",
+      "message": "Parameter 'e' in 'handleChange' is an arbitrary abbreviation; use 'event' instead.",
+      "suggestion": "Rename 'e' to 'event' in 'handleChange'.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\CreateProduct.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 15,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'handleChange' is vague; consider a more specific verb-noun combination like 'updateProductFormField'.",
+      "suggestion": "Rename 'handleChange' to 'updateProductFormField'.",
+      "codeSnippet": "});",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\CreateProduct.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 24,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'handleSubmit' is vague; consider a more specific verb-noun combination like 'submitProductForm'.",
+      "suggestion": "Rename 'handleSubmit' to 'submitProductForm'.",
+      "codeSnippet": ": value,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\CreateProduct.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 27,
+      "column": 0,
+      "severity": "warning",
+      "message": "Product creation uses categoryId directly from client input without backend ownership verification, risking IDOR if backend does not validate ownership.",
+      "suggestion": "Ensure backend verifies that the categoryId belongs to the current user before creating the product. Do not rely solely on client-provided IDs for authorization.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\CreateProduct.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343547198,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,36 @@
+{
+  "key": "753eae4fc5049b72ec51e1f178e0055c",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'RATING_4' uses an arbitrary abbreviation and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'RATING_4' to 'RATING_FOUR' or 'FOUR_STAR_RATING' for clarity.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\constants\\common.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 13,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'RATING_5' uses an arbitrary abbreviation and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'RATING_5' to 'RATING_FIVE' or 'FIVE_STAR_RATING' for clarity.",
+      "codeSnippet": "// Price constants (in VND)",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\constants\\common.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343317659,
+  "version": "1.0.0",
+  "fileHash": ""
+}

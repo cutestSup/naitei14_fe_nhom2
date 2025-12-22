@@ -1,0 +1,64 @@
+{
+  "key": "fbce433e638c32d91868f9a821796e70",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 20,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'u' is an arbitrary single-character abbreviation in mockUsers.find((u) => u.id === id);",
+      "suggestion": "Rename 'u' to 'user' for clarity.",
+      "codeSnippet": "},",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\usersIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 31,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'u' is an arbitrary single-character abbreviation in mockUsers.findIndex((u) => u.id === id);",
+      "suggestion": "Rename 'u' to 'user' for clarity.",
+      "codeSnippet": "toggleActive: async (id: number): Promise<User | null> => {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\usersIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 18,
+      "column": 0,
+      "severity": "warning",
+      "message": "Permissions for user details are controlled solely by the id from the client, without backend ownership verification.",
+      "suggestion": "Add backend-side authorization logic to verify that the requested user id belongs to the current authenticated user before returning details.",
+      "codeSnippet": "setTimeout(() => resolve(mockUsers), 100);",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\usersIndex.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 25,
+      "column": 0,
+      "severity": "warning",
+      "message": "User activation toggling is controlled only by id from the client, lacking resource ownership checks.",
+      "suggestion": "Implement backend authorization to ensure only permitted users can toggle activation for a given user id.",
+      "codeSnippet": "const user = mockUsers.find((u) => u.id === id);",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\usersIndex.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343690173,
+  "version": "1.0.0",
+  "fileHash": ""
+}

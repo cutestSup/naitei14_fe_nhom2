@@ -1,0 +1,22 @@
+{
+  "key": "739ac57dae2d289b1f5720a2a2415ff8",
+  "value": [
+    {
+      "rule": "C006",
+      "line": 1,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'RenderButton' does not follow verb or verb-noun combination convention.",
+      "suggestion": "Rename 'RenderButton' to a verb or verb-noun combination such as 'renderButtonComponent' or 'createButton'.",
+      "codeSnippet": "import { RenderButton } from './Button';",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\ui\\ConfirmationModal.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343336425,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,50 @@
+{
+  "key": "52641ffdc117c56fa4dcb681f21a0e2e",
+  "value": [
+    {
+      "rule": "S002",
+      "line": 45,
+      "column": 0,
+      "severity": "warning",
+      "message": "Route '/products/:id' may allow access to product details based solely on client-supplied id, risking IDOR if backend does not verify ownership.",
+      "suggestion": "Ensure backend checks that the product id belongs to the current user and does not rely solely on client-supplied id for authorization.",
+      "codeSnippet": "element: <LoginPage />,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\routes\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 49,
+      "column": 0,
+      "severity": "warning",
+      "message": "Route '/profile/:userId' may expose user profiles based on client-supplied userId, risking IDOR if backend does not verify ownership.",
+      "suggestion": "Verify on backend that the requested userId matches the authenticated user and restrict access if not.",
+      "codeSnippet": "element: <ForgotPasswordPage />,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\routes\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 57,
+      "column": 0,
+      "severity": "warning",
+      "message": "Route 'orders/:id' may allow access to order details based solely on client-supplied id, risking IDOR if backend does not verify ownership.",
+      "suggestion": "Ensure backend checks that the order id belongs to the current user and does not rely solely on client-supplied id for authorization.",
+      "codeSnippet": "element: <ChangePasswordPage />,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\routes\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343309571,
+  "version": "1.0.0",
+  "fileHash": ""
+}

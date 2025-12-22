@@ -1,0 +1,50 @@
+{
+  "key": "b05ed89ec58d6243c7c4a8be0c96015d",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'mockSales' uses an abbreviation ('mock').",
+      "suggestion": "Rename 'mockSales' to 'sampleSalesRecords' or 'salesRecordsSample' for clarity.",
+      "codeSnippet": "totalSales: number;",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\dashboardIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 20,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'mockTopProducts' uses an abbreviation ('mock').",
+      "suggestion": "Rename 'mockTopProducts' to 'sampleTopProducts' or 'topProductsSample' for clarity.",
+      "codeSnippet": "{ date: \"Wed\", total: 150 },",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\dashboardIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 26,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'mockOverview' uses an abbreviation ('mock').",
+      "suggestion": "Rename 'mockOverview' to 'sampleDashboardOverview' or 'dashboardOverviewSample' for clarity.",
+      "codeSnippet": "{ id: 1, name: \"Cây Chân Chim\", sales: 120 },",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\dashboardIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343723185,
+  "version": "1.0.0",
+  "fileHash": ""
+}

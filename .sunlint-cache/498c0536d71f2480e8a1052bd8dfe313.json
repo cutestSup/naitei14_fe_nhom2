@@ -1,0 +1,36 @@
+{
+  "key": "498c0536d71f2480e8a1052bd8dfe313",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 0,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'usersApi' is not descriptive enough; could be more specific about its purpose or context.",
+      "suggestion": "Rename 'usersApi' to something more descriptive, such as 'adminUsersApi' or 'userManagementApi'.",
+      "codeSnippet": "import { usersApi as mockUsersApi } from \"../../../apis/admin/usersIndex\";",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\users\\api.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 0,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'mockUsersApi' uses 'mock' as a prefix, which may be unclear outside of testing context.",
+      "suggestion": "Rename 'mockUsersApi' to clarify its role, e.g., 'adminUsersApiMock' or 'userManagementApiMock'.",
+      "codeSnippet": "import { usersApi as mockUsersApi } from \"../../../apis/admin/usersIndex\";",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\users\\api.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343483605,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,92 @@
+{
+  "key": "d63ef84b544e6b889a313c99e800a668",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 12,
+      "column": 0,
+      "severity": "info",
+      "message": "Variable 'ms' uses an abbreviation that is not widely recognized outside timing contexts.",
+      "suggestion": "Rename 'ms' to 'milliseconds' for clarity.",
+      "codeSnippet": "VALIDATION_TOTAL_AMOUNT_INVALID,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\orders\\index.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 11,
+      "column": 0,
+      "severity": "info",
+      "message": "Variable 'API_DELAY_MS' uses an abbreviation; prefer 'API_DELAY_MILLISECONDS' for clarity.",
+      "suggestion": "Rename 'API_DELAY_MS' to 'API_DELAY_MILLISECONDS'.",
+      "codeSnippet": "VALIDATION_ORDER_ITEMS_REQUIRED,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\orders\\index.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 66,
+      "column": 0,
+      "severity": "info",
+      "message": "Function name 'getOrderById' is a noun phrase; prefer verb-noun combination.",
+      "suggestion": "Rename to 'fetchOrderById' or 'retrieveOrderById'.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\orders\\index.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 96,
+      "column": 0,
+      "severity": "info",
+      "message": "Function name 'getOrdersByUserId' is a noun phrase; prefer verb-noun combination.",
+      "suggestion": "Rename to 'fetchOrdersByUserId' or 'retrieveOrdersByUserId'.",
+      "codeSnippet": "const currentOrder = await getOrderById(id);",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\orders\\index.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 43,
+      "column": 0,
+      "severity": "error",
+      "message": "getOrderById fetches order by id without verifying resource ownership; possible IDOR vulnerability.",
+      "suggestion": "Add backend-side authorization logic to verify that the order id belongs to the current user before returning the order.",
+      "codeSnippet": "method: 'POST',",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\orders\\index.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 57,
+      "column": 0,
+      "severity": "error",
+      "message": "cancelOrder allows cancellation by id without verifying that the order belongs to the current user; possible IDOR vulnerability.",
+      "suggestion": "Ensure backend checks that the order id belongs to the requesting user before allowing cancellation.",
+      "codeSnippet": "export const getOrders = async (userId: string | number): Promise<Order[]> => {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\orders\\index.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343729723,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,22 @@
+{
+  "key": "64357618389d701eab6fe8dc06aa5cbe",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 2,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'cn' uses an uncommon abbreviation; not immediately clear what it represents.",
+      "suggestion": "Rename 'cn' to a more descriptive name such as 'classNames' or 'combineClassNames'.",
+      "codeSnippet": "import { ProductFilters } from '@/apis/products'",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-list\\components\\ProductFilter.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343281216,
+  "version": "1.0.0",
+  "fileHash": ""
+}

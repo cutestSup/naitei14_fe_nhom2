@@ -1,0 +1,64 @@
+{
+  "key": "d0aaf24b0855416c512e377f667a38fe",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 21,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'err' uses an uncommon abbreviation; variable names should be clear and descriptive.",
+      "suggestion": "Rename 'err' to 'error' for clarity.",
+      "codeSnippet": "const { password, ...userForStorage } = user;",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\hooks\\useLogin.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 30,
+      "column": 0,
+      "severity": "info",
+      "message": "Function name 'clearError' is a verb-noun combination, but could be improved for clarity.",
+      "suggestion": "Consider renaming to 'resetErrorState' for more explicit action.",
+      "codeSnippet": "console.error(\"Login error occurred\", {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\hooks\\useLogin.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C029",
+      "line": 26,
+      "column": 0,
+      "severity": "warning",
+      "message": "Catch block logs error but does not include stack trace or additional context information.",
+      "suggestion": "Log both error message and stack trace, and include relevant context such as user email.",
+      "codeSnippet": "} catch (err) {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\hooks\\useLogin.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S003",
+      "line": 18,
+      "column": 0,
+      "severity": "warning",
+      "message": "URL redirect to '/' is hardcoded, but if this becomes dynamic in the future, ensure redirects are validated against an allow list.",
+      "suggestion": "If redirect URLs are ever taken from user input, validate them against a predefined allow list before navigating.",
+      "codeSnippet": "try {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\hooks\\useLogin.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343672837,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,22 @@
+{
+  "key": "1dbd780523a0f18008093dfa4ce47b36",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 21,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'i' used as loop counter is acceptable, but '_' as a parameter is an arbitrary abbreviation and not descriptive.",
+      "suggestion": "Replace '_' with a descriptive name such as 'unused' or 'index' if needed for clarity.",
+      "codeSnippet": "sm: 'w-3 h-3',",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\ui\\StarRating.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343322945,
+  "version": "1.0.0",
+  "fileHash": ""
+}

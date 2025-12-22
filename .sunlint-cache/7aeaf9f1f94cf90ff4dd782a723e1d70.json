@@ -1,0 +1,22 @@
+{
+  "key": "7aeaf9f1f94cf90ff4dd782a723e1d70",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 17,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'item' is generic and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'item' to 'breadcrumbItem' for clarity.",
+      "codeSnippet": "<ol className={CLASS_FLEX_ITEMS_GAP2}>",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\ui\\Breadcrumbs.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343343276,
+  "version": "1.0.0",
+  "fileHash": ""
+}

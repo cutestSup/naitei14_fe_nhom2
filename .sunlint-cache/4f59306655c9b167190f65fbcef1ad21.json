@@ -1,0 +1,36 @@
+{
+  "key": "4f59306655c9b167190f65fbcef1ad21",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'e' in 'handleChange' is a single-character name not used as a counter.",
+      "suggestion": "Rename 'e' to 'event' for clarity.",
+      "codeSnippet": "setForm(product);",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\UpdateProduct.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 13,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'prev' in setForm callback is an uncommon abbreviation.",
+      "suggestion": "Rename 'prev' to 'previousForm' for clarity.",
+      "codeSnippet": "}, [product]);",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\UpdateProduct.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343512575,
+  "version": "1.0.0",
+  "fileHash": ""
+}

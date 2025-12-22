@@ -1,0 +1,64 @@
+{
+  "key": "33176b979bc6847d8fd876df1a4a7f9c",
+  "value": [
+    {
+      "rule": "C029",
+      "line": 37,
+      "column": 0,
+      "severity": "warning",
+      "message": "Catch block does not log the root cause of the error with sufficient context information.",
+      "suggestion": "Include more context in the log, such as the email being checked and use error.stack if available.",
+      "codeSnippet": "}",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\utils\\authValidation.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C029",
+      "line": 86,
+      "column": 0,
+      "severity": "warning",
+      "message": "Catch block does not log the root cause of the error with sufficient context information.",
+      "suggestion": "Include more context in the log, such as the email being checked and use error.stack if available.",
+      "codeSnippet": "export const validateLoginForm = async (",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\utils\\authValidation.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S001",
+      "line": 37,
+      "column": 0,
+      "severity": "warning",
+      "message": "Access control error (email uniqueness check) falls back to allowing registration if checkEmailExists throws an error.",
+      "suggestion": "On error in email uniqueness check, deny registration by setting errors.email to a generic error message instead of allowing registration.",
+      "codeSnippet": "}",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\utils\\authValidation.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S001",
+      "line": 88,
+      "column": 0,
+      "severity": "warning",
+      "message": "Access control error (email existence check) falls back to allowing password reset if checkEmailExists throws an error.",
+      "suggestion": "On error in email existence check, deny password reset by setting errors.email to a generic error message instead of allowing reset.",
+      "codeSnippet": "): Promise<ValidationErrors> => {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\utils\\authValidation.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343522405,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,36 @@
+{
+  "key": "b6e3129f90e80fd818a90d5f236b22f8",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 0,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'cn' is an uncommon abbreviation and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'cn' to a more descriptive name such as 'combineClassNames' or 'classNames'.",
+      "codeSnippet": "import { cn } from \"@/lib/utils\";",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\ui\\Button.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 14,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'RenderButton' is a noun phrase; function names should be verbs or verb-noun combinations.",
+      "suggestion": "Rename 'RenderButton' to 'renderButton' or 'createButtonComponent' to follow verb-noun naming convention.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\ui\\Button.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343340585,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,50 @@
+{
+  "key": "f91d7d415314bedbae01bce9f5fd75e7",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 53,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'f' in map callback is an arbitrary single-character name and not a counter.",
+      "suggestion": "Rename 'f' to a more descriptive name such as 'requestItem' or 'req'.",
+      "codeSnippet": "className=\"text-sm text-blue-600 hover:underline\"",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\request\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 7,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function 'load' name is vague and not a verb or verb-noun combination.",
+      "suggestion": "Rename 'load' to 'fetchRequests' or 'loadRequests' for clarity.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\request\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 31,
+      "column": 0,
+      "severity": "error",
+      "message": "CRUD operations (updateStatus, reset) use client-supplied sequential id without visible backend ownership verification, risking IDOR vulnerability.",
+      "suggestion": "Ensure backend verifies resource ownership for each id before allowing update or reset. Prefer UUIDs over sequential ids.",
+      "codeSnippet": "}",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\request\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343448493,
+  "version": "1.0.0",
+  "fileHash": ""
+}

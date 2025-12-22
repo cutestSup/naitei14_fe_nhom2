@@ -1,0 +1,22 @@
+{
+  "key": "487adc807b35902d9bfa82cf4304ae91",
+  "value": [
+    {
+      "rule": "C029",
+      "line": 9,
+      "column": 0,
+      "severity": "warning",
+      "message": "The catch block does not log the root cause of the error with message and stack trace; only logs the errorContext object.",
+      "suggestion": "Log both error message and stack trace explicitly, e.g., console.error(errorContext.message, errorContext.error?.stack, errorContext);",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\lib\\logger.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343151143,
+  "version": "1.0.0",
+  "fileHash": ""
+}

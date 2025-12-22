@@ -1,0 +1,50 @@
+{
+  "key": "57287ffd73e70ace28b71c4055872b64",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 50,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'ĐT' in label is an uncommon abbreviation; should use 'Điện thoại' or 'Phone'.",
+      "suggestion": "Change label text to use a clear term like 'Số điện thoại' or 'Phone number'.",
+      "codeSnippet": "});",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\components\\ProfileForm.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C029",
+      "line": 31,
+      "column": 0,
+      "severity": "warning",
+      "message": "Catch block logs error but does not include stack trace or additional context (e.g., user ID, input data).",
+      "suggestion": "Log error stack and relevant context such as user ID and input parameters for better debugging.",
+      "codeSnippet": "setValue,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\components\\ProfileForm.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S001",
+      "line": 40,
+      "column": 0,
+      "severity": "warning",
+      "message": "Access control error handling does not explicitly deny access if updateUserProfile fails; error is logged but no denial or fallback is enforced.",
+      "suggestion": "Ensure that on access control errors, the system denies access or prevents profile updates. Add logic to prevent any state change or permission grant if updateUserProfile throws.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\components\\ProfileForm.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343462443,
+  "version": "1.0.0",
+  "fileHash": ""
+}

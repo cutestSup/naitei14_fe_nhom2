@@ -1,0 +1,64 @@
+{
+  "key": "3c23469061d657431b48449d81c3822f",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 14,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'e' used as parameter name is a single-character abbreviation and not a loop counter.",
+      "suggestion": "Rename 'e' to 'event' for clarity in function parameters.",
+      "codeSnippet": "} from \"@heroicons/react/24/outline\";",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\header\\MainHeader.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 18,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'e' used as parameter name is a single-character abbreviation and not a loop counter.",
+      "suggestion": "Rename 'e' to 'event' for clarity in function parameters.",
+      "codeSnippet": "const handleSanitizeInput = (input: string): string => {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\header\\MainHeader.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S003",
+      "line": 37,
+      "column": 0,
+      "severity": "warning",
+      "message": "URL redirects are constructed using user-controlled input (searchQuery) without validation against an allow list.",
+      "suggestion": "Validate the destination URL against a predefined allow list before calling navigate, or restrict navigation to known safe routes.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\header\\MainHeader.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S003",
+      "line": 55,
+      "column": 0,
+      "severity": "warning",
+      "message": "URL redirects are constructed using user-controlled input (searchQuery) without validation against an allow list.",
+      "suggestion": "Validate the destination URL against a predefined allow list before calling navigate, or restrict navigation to known safe routes.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\header\\MainHeader.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343378286,
+  "version": "1.0.0",
+  "fileHash": ""
+}

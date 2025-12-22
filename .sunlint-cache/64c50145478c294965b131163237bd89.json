@@ -1,0 +1,50 @@
+{
+  "key": "64c50145478c294965b131163237bd89",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 48,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'i' used outside of a loop context in map callback; single-letter variable names should be reserved for counters in loops.",
+      "suggestion": "Rename 'i' to 'index' for clarity.",
+      "codeSnippet": "if (user) {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-detail\\components\\ReviewForm.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 55,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'handleRatingClick' is a verb-noun combination, which is acceptable, but 'onSubmit' is vague and does not clearly describe the action.",
+      "suggestion": "Rename 'onSubmit' to 'submitReview' for clarity.",
+      "codeSnippet": "action: 'checkHasReviewed',",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-detail\\components\\ReviewForm.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S001",
+      "line": 26,
+      "column": 0,
+      "severity": "warning",
+      "message": "Access control check error falls back to allow review attempt if hasUserReviewedProduct fails.",
+      "suggestion": "Change setHasReviewed(false) in the catch block to deny review submission or display an error, instead of allowing by default.",
+      "codeSnippet": "const [hoveredRating, setHoveredRating] = useState<number | null>(null)",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-detail\\components\\ReviewForm.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343270024,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,64 @@
+{
+  "key": "7941bc6de9bc52d43c7291bcba61f868",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 37,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'p' in mockProducts.find((p) => ...) uses a single-character name outside of a loop context.",
+      "suggestion": "Rename 'p' to 'product' for clarity.",
+      "codeSnippet": "];",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\productsIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 53,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'p' in mockProducts.findIndex((p) => ...) uses a single-character name outside of a loop context.",
+      "suggestion": "Rename 'p' to 'product' for clarity.",
+      "codeSnippet": "setTimeout(() => {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\productsIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 69,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'p' in mockProducts.filter((p) => ...) uses a single-character name outside of a loop context.",
+      "suggestion": "Rename 'p' to 'product' for clarity.",
+      "codeSnippet": "description: data.description || \"\",",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\productsIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 27,
+      "column": 0,
+      "severity": "warning",
+      "message": "CRUD operations (getDetail, update, delete) rely solely on client-supplied id without verifying resource ownership, risking IDOR vulnerabilities.",
+      "suggestion": "Add backend-side authorization checks to ensure the current user owns the resource before allowing access or modification.",
+      "codeSnippet": "{",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\productsIndex.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343701831,
+  "version": "1.0.0",
+  "fileHash": ""
+}

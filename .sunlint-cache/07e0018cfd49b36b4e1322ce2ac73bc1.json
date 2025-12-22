@@ -1,0 +1,22 @@
+{
+  "key": "07e0018cfd49b36b4e1322ce2ac73bc1",
+  "value": [
+    {
+      "rule": "C006",
+      "line": 17,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'handleBuyNow' is a verb-noun combination, which is acceptable, but 'handleQuickView' and 'handleToggleFavorite' use 'handle' which is generic and lacks specific action context.",
+      "suggestion": "Rename 'handleQuickView' to 'openQuickViewModal' and 'handleToggleFavorite' to 'toggleFavoriteStatus' for clearer action context.",
+      "codeSnippet": "const [quantity, setQuantity] = useState(1)",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-detail\\components\\ProductInfo.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343250017,
+  "version": "1.0.0",
+  "fileHash": ""
+}

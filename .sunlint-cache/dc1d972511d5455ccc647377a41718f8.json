@@ -1,0 +1,78 @@
+{
+  "key": "dc1d972511d5455ccc647377a41718f8",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 35,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'o' in map callback is an arbitrary abbreviation; use a more descriptive name.",
+      "suggestion": "Rename 'o' to 'order' for clarity.",
+      "codeSnippet": ");",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\orders\\components\\OrderTable.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 45,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'it' in items.map callback is an arbitrary abbreviation; use a more descriptive name.",
+      "suggestion": "Rename 'it' to 'item' for clarity.",
+      "codeSnippet": "<th className=\"border p-2\">Created At</th>",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\orders\\components\\OrderTable.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'remove' is vague and not a verb or verb-noun combination.",
+      "suggestion": "Rename 'remove' to 'deleteOrder' or 'removeOrder' for clarity.",
+      "codeSnippet": "orders = [],",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\orders\\components\\OrderTable.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C029",
+      "line": 18,
+      "column": 0,
+      "severity": "warning",
+      "message": "Catch block logs error but does not include stack trace or context information.",
+      "suggestion": "Log error.stack and include context such as order ID in the catch block.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\orders\\components\\OrderTable.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 15,
+      "column": 0,
+      "severity": "warning",
+      "message": "CRUD operation 'remove' uses client-supplied id directly for deletion without verifying resource ownership or using secure ID types.",
+      "suggestion": "Ensure backend verifies that the order id belongs to the current user and consider using UUIDs or encrypted IDs instead of sequential numbers.",
+      "codeSnippet": "onView,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\orders\\components\\OrderTable.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343589199,
+  "version": "1.0.0",
+  "fileHash": ""
+}

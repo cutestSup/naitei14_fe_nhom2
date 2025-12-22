@@ -1,0 +1,22 @@
+{
+  "key": "3a9bfda79d7d021ea9d3f9f393a8618e",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 7,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'cn' is an uncommon abbreviation and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'cn' to a more descriptive name such as 'classNames' or 'combineClassNames'.",
+      "codeSnippet": "}",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-detail\\components\\ProductImageGallery.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343257906,
+  "version": "1.0.0",
+  "fileHash": ""
+}

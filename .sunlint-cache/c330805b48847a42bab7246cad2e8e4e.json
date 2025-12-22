@@ -1,0 +1,64 @@
+{
+  "key": "c330805b48847a42bab7246cad2e8e4e",
+  "value": [
+    {
+      "rule": "C006",
+      "line": 9,
+      "column": 0,
+      "severity": "info",
+      "message": "Function name 'addToCart' is a verb-noun combination, which is acceptable. No violation.",
+      "suggestion": "No fix needed.",
+      "codeSnippet": "removeFromCart: (productId: number) => void;",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\types\\cart.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 10,
+      "column": 0,
+      "severity": "info",
+      "message": "Function name 'removeFromCart' is a verb-noun combination, which is acceptable. No violation.",
+      "suggestion": "No fix needed.",
+      "codeSnippet": "updateQuantity: (productId: number, quantity: number) => void;",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\types\\cart.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 11,
+      "column": 0,
+      "severity": "info",
+      "message": "Function name 'updateQuantity' is a verb-noun combination, which is acceptable. No violation.",
+      "suggestion": "No fix needed.",
+      "codeSnippet": "clearCart: () => void;",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\types\\cart.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 12,
+      "column": 0,
+      "severity": "info",
+      "message": "Function name 'clearCart' is a verb-noun combination, which is acceptable. No violation.",
+      "suggestion": "No fix needed.",
+      "codeSnippet": "totalPrice: number;",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\types\\cart.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343180481,
+  "version": "1.0.0",
+  "fileHash": ""
+}

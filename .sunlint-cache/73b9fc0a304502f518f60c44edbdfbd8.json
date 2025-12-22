@@ -1,0 +1,22 @@
+{
+  "key": "73b9fc0a304502f518f60c44edbdfbd8",
+  "value": [
+    {
+      "rule": "S002",
+      "line": 22,
+      "column": 0,
+      "severity": "warning",
+      "message": "Update operation uses category.id from props without verifying ownership or authorization, risking IDOR vulnerability.",
+      "suggestion": "Ensure backend API verifies resource ownership and authorization for category.id before allowing update. Do not rely solely on client-provided IDs.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\categories\\components\\CategoryForm.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343628021,
+  "version": "1.0.0",
+  "fileHash": ""
+}

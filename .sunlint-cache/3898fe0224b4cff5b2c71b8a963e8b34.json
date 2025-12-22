@@ -1,0 +1,78 @@
+{
+  "key": "3898fe0224b4cff5b2c71b8a963e8b34",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 9,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'selected' is vague; does not clearly indicate it refers to a selected product.",
+      "suggestion": "Rename 'selected' to 'selectedProduct' for clarity.",
+      "codeSnippet": "const [products, setProducts] = useState<Product[]>([]);",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 23,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'p' in map callback is a single character and not a loop counter.",
+      "suggestion": "Rename 'p' to 'existingProduct' or similar for clarity.",
+      "codeSnippet": "if (window.confirm(\"Are you sure?\")) {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 30,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'p' in filter callback is a single character and not a loop counter.",
+      "suggestion": "Rename 'p' to 'productItem' or similar for clarity.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 18,
+      "column": 0,
+      "severity": "warning",
+      "message": "Product update operation uses product.id from client without verifying ownership or authorization.",
+      "suggestion": "Ensure backend verifies resource ownership and authorization before updating product. Do not rely solely on client-provided id.",
+      "codeSnippet": "setProducts((prev) => prev.map((p) => (p.id === product.id ? product : p)));",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 24,
+      "column": 0,
+      "severity": "warning",
+      "message": "Product delete operation uses id from client without verifying ownership or authorization.",
+      "suggestion": "Ensure backend verifies resource ownership and authorization before deleting product. Do not rely solely on client-provided id.",
+      "codeSnippet": "await productsApi.delete(id);",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343536233,
+  "version": "1.0.0",
+  "fileHash": ""
+}

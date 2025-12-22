@@ -1,0 +1,36 @@
+{
+  "key": "59c3179cb9174cd501706f47eb8d6ac3",
+  "value": [
+    {
+      "rule": "C019",
+      "line": 15,
+      "column": 0,
+      "severity": "warning",
+      "message": "Using console.error for a recoverable API failure; error log level should be reserved for critical failures.",
+      "suggestion": "Use console.warn or console.info for logging recoverable API failures instead of console.error.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\services\\profileAPI.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 6,
+      "column": 0,
+      "severity": "error",
+      "message": "Permissions for updating user profile are controlled solely by userId from client input, risking IDOR vulnerability.",
+      "suggestion": "Verify resource ownership on the backend by checking that the authenticated user is allowed to update the specified userId. Do not rely solely on userId from client input.",
+      "codeSnippet": "data: UpdateProfileRequest",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\services\\profileAPI.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.9
+    }
+  ],
+  "timestamp": 1765343452805,
+  "version": "1.0.0",
+  "fileHash": ""
+}

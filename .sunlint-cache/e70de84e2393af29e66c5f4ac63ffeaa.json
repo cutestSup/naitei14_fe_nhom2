@@ -1,0 +1,22 @@
+{
+  "key": "e70de84e2393af29e66c5f4ac63ffeaa",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 9,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'load' is vague and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'load' to 'fetchCategories' to clearly express its function.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\categories\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343607364,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,92 @@
+{
+  "key": "2574bfd28e9d46b6d2fb3b118fb432fd",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 96,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'sorted' is vague and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'sorted' to 'sortedProducts' for clarity.",
+      "codeSnippet": "})",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-list\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 108,
+      "column": 0,
+      "severity": "info",
+      "message": "Variable name 'startIndex' and 'endIndex' are acceptable, but 'paginatedProducts' could be clearer as 'currentPageProducts'.",
+      "suggestion": "Rename 'paginatedProducts' to 'currentPageProducts' for clarity.",
+      "codeSnippet": "setFilters({})",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-list\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 114,
+      "column": 0,
+      "severity": "info",
+      "message": "Function name 'handleFilterChange' is a verb-noun combination, but 'handleClearAllFilters' could be improved to 'clearAllFilters'.",
+      "suggestion": "Rename 'handleClearAllFilters' to 'clearAllFilters' for better verb-noun clarity.",
+      "codeSnippet": "setLoading(true)",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-list\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C029",
+      "line": 73,
+      "column": 0,
+      "severity": "warning",
+      "message": "Catch block logs error but does not include stack trace or input parameters.",
+      "suggestion": "Log both error.message and error.stack, and include relevant input parameters if available.",
+      "codeSnippet": "if (!product.name.toLowerCase().includes(searchLower) &&",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-list\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C029",
+      "line": 93,
+      "column": 0,
+      "severity": "warning",
+      "message": "Catch block logs error but does not include stack trace or input parameters.",
+      "suggestion": "Log both error.message and error.stack, and include relevant input parameters if available.",
+      "codeSnippet": "if (product.category) {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-list\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S001",
+      "line": 40,
+      "column": 0,
+      "severity": "warning",
+      "message": "Access control error handling does not explicitly deny access if product fetching fails; fallback may expose product list as empty without denying access.",
+      "suggestion": "Explicitly deny access or show a secure error message when product fetching fails due to access control errors, rather than displaying an empty product list.",
+      "codeSnippet": "const [itemsPerPage, setItemsPerPage] = useState(15)",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\product-list\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343229713,
+  "version": "1.0.0",
+  "fileHash": ""
+}

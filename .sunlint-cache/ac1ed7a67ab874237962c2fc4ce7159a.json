@@ -1,0 +1,64 @@
+{
+  "key": "ac1ed7a67ab874237962c2fc4ce7159a",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 7,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'errors' is generic and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'errors' to 'validationErrors' for clarity.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\utils\\profileValidation.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 10,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'fullNameError' could be more descriptive.",
+      "suggestion": "Rename 'fullNameError' to 'fullNameValidationError'.",
+      "codeSnippet": "if (fullNameError) errors.fullName = fullNameError;",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\utils\\profileValidation.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 14,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'phoneError' could be more descriptive.",
+      "suggestion": "Rename 'phoneError' to 'phoneValidationError'.",
+      "codeSnippet": "if (phoneError) errors.phone = phoneError;",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\utils\\profileValidation.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 18,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'websiteError' could be more descriptive.",
+      "suggestion": "Rename 'websiteError' to 'websiteValidationError'.",
+      "codeSnippet": "if (websiteError) errors.website = websiteError;",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\utils\\profileValidation.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343233638,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,36 @@
+{
+  "key": "149f0b37e48874775f2f8266042f66dc",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 26,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'u' is an arbitrary abbreviation; use a more descriptive name like 'user'.",
+      "suggestion": "Rename 'u' to 'user' in the map callback and related references.",
+      "codeSnippet": "<th className=\"p-3 border-b\">Name</th>",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\users\\components\\UserTable.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Permission control for user activation relies on client-supplied id, which may lead to IDOR vulnerability if not verified on backend.",
+      "suggestion": "Ensure backend verifies resource ownership and authorization before allowing activation/deactivation based on id.",
+      "codeSnippet": "if (safeUsers.length === 0) {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\users\\components\\UserTable.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343623083,
+  "version": "1.0.0",
+  "fileHash": ""
+}

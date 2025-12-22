@@ -1,0 +1,22 @@
+{
+  "key": "54914ad558d9182308bd35bac004df1c",
+  "value": [
+    {
+      "rule": "S002",
+      "line": 18,
+      "column": 0,
+      "severity": "error",
+      "message": "Access control is performed solely by comparing userId from URL with user.id on the client side. This does not verify resource ownership at the backend and is vulnerable to IDOR attacks.",
+      "suggestion": "Move resource ownership and authorization checks to the backend API. Ensure the backend verifies that the requested userId belongs to the authenticated user before returning or modifying profile data.",
+      "codeSnippet": "</p>",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343296671,
+  "version": "1.0.0",
+  "fileHash": ""
+}

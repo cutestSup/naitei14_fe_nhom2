@@ -1,0 +1,36 @@
+{
+  "key": "e299e440fcb5ec2dedad5588c1800953",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'cn' uses an uncommon abbreviation and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'cn' to a more descriptive name such as 'classNames' to clarify its intent.",
+      "codeSnippet": "CLASS_FORM_INPUT,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\components\\ResetPasswordForm.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 55,
+      "column": 0,
+      "severity": "warning",
+      "message": "Permissions for password reset are controlled using userId and token from client-side searchParams without backend ownership verification in this code.",
+      "suggestion": "Ensure backend API verifies that the userId and token belong to the authenticated user and are valid before allowing password reset. Do not rely solely on client-provided IDs.",
+      "codeSnippet": "const userId = searchParams.get(\"userId\");",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\components\\ResetPasswordForm.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343681186,
+  "version": "1.0.0",
+  "fileHash": ""
+}

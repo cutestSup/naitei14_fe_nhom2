@@ -1,0 +1,36 @@
+{
+  "key": "3e8e2dcd2a97b9de186655ba70872db8",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 16,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'e' is an arbitrary abbreviation for the event object; use a more descriptive name.",
+      "suggestion": "Rename 'e' to 'event' in the handleSubmit function parameter.",
+      "codeSnippet": "export const RenderNewsletter = () => {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\footer\\Newsletter.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 53,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'e' is an arbitrary abbreviation for the event object in the onChange handler; use a more descriptive name.",
+      "suggestion": "Rename 'e' to 'event' in the onChange handler parameter.",
+      "codeSnippet": "errorMessage.includes(ERROR_KEYWORD_ALREADY_EXISTS)",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\footer\\Newsletter.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343391835,
+  "version": "1.0.0",
+  "fileHash": ""
+}

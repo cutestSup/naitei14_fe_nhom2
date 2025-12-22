@@ -1,0 +1,22 @@
+{
+  "key": "70a6ca19e8b911cb457edeb19212e6cb",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'res' is an arbitrary abbreviation; not descriptive of its purpose.",
+      "suggestion": "Rename 'res' to 'salesRecords' or 'salesData' for clarity.",
+      "codeSnippet": "CartesianGrid,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\dashboard\\components\\ChartSales.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343634141,
+  "version": "1.0.0",
+  "fileHash": ""
+}

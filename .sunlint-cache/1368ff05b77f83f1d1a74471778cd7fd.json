@@ -1,0 +1,36 @@
+{
+  "key": "1368ff05b77f83f1d1a74471778cd7fd",
+  "value": [
+    {
+      "rule": "C019",
+      "line": 26,
+      "column": 0,
+      "severity": "warning",
+      "message": "Use of console.error for a recoverable error (password reset failure) instead of warn or info.",
+      "suggestion": "Use console.warn or console.info for recoverable errors; reserve console.error for critical failures.",
+      "codeSnippet": "\"Mật khẩu đã được đặt lại thành công! Đang chuyển hướng về trang đăng nhập...\"",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\hooks\\useResetPassword.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S001",
+      "line": 21,
+      "column": 0,
+      "severity": "warning",
+      "message": "Access control errors (e.g., API errors) do not explicitly deny access or prevent password reset on error; failure mode is unclear.",
+      "suggestion": "Ensure that on any error during access control (e.g., invalid token, userId), the password reset is denied and no success state is set. Consider explicitly handling access control errors and returning a denied state.",
+      "codeSnippet": "setSuccess(null);",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\hooks\\useResetPassword.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343651664,
+  "version": "1.0.0",
+  "fileHash": ""
+}

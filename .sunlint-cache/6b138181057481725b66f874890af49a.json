@@ -1,0 +1,22 @@
+{
+  "key": "6b138181057481725b66f874890af49a",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 0,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'mockProductsApi' uses an abbreviation and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'mockProductsApi' to a more descriptive name such as 'mockedProductsApi' or 'adminProductsApi'.",
+      "codeSnippet": "import { productsApi as mockProductsApi } from \"../../../apis/admin/productsIndex\";",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\products\\api.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343550142,
+  "version": "1.0.0",
+  "fileHash": ""
+}

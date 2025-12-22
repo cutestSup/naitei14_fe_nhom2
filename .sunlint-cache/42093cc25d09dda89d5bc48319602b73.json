@@ -1,0 +1,36 @@
+{
+  "key": "42093cc25d09dda89d5bc48319602b73",
+  "value": [
+    {
+      "rule": "C029",
+      "line": 22,
+      "column": 0,
+      "severity": "warning",
+      "message": "Error caught in catch block is not logged; root cause is not recorded.",
+      "suggestion": "Log the error message and stack trace inside the catch block, including context such as userId and token.",
+      "codeSnippet": "setStatus(\"error\");",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\pages\\ActivatePage.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S003",
+      "line": 21,
+      "column": 0,
+      "severity": "warning",
+      "message": "Redirect URLs are not validated against an allow list before navigation, which may allow open redirects if user input is used.",
+      "suggestion": "Validate all redirect destinations against a predefined allow list before calling navigate().",
+      "codeSnippet": "if (!userId || !token) {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\pages\\ActivatePage.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343572710,
+  "version": "1.0.0",
+  "fileHash": ""
+}

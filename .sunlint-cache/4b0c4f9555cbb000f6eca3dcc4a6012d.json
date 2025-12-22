@@ -1,0 +1,22 @@
+{
+  "key": "4b0c4f9555cbb000f6eca3dcc4a6012d",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 3,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable names 'local' and 'domain' are not fully descriptive; consider using 'localPart' and 'domainPart' for clarity.",
+      "suggestion": "Rename 'local' to 'localPart' and 'domain' to 'domainPart' to improve clarity.",
+      "codeSnippet": "const [local, domain] = email.split(\"@\");",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\utils\\maskEmail.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343236647,
+  "version": "1.0.0",
+  "fileHash": ""
+}

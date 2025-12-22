@@ -1,0 +1,50 @@
+{
+  "key": "5ad41e863c7f8b73f618a36787df4dda",
+  "value": [
+    {
+      "rule": "C019",
+      "line": 14,
+      "column": 0,
+      "severity": "warning",
+      "message": "Use of 'error' log level for a non-critical issue when user is not found.",
+      "suggestion": "Change console.error to console.warn for non-critical user not found case.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\hooks\\useUpdateProfile.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.9
+    },
+    {
+      "rule": "C019",
+      "line": 31,
+      "column": 0,
+      "severity": "warning",
+      "message": "Use of 'error' log level for a recoverable profile update failure.",
+      "suggestion": "Change console.error to console.warn for recoverable profile update failures.",
+      "codeSnippet": "};",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\hooks\\useUpdateProfile.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 22,
+      "column": 0,
+      "severity": "warning",
+      "message": "updateProfile is called with user.id from client context without explicit backend ownership verification, risking IDOR if backend does not check ownership.",
+      "suggestion": "Ensure backend updateProfile API verifies that the user.id belongs to the authenticated user and does not rely solely on the id provided by the client.",
+      "codeSnippet": "});",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\profile\\hooks\\useUpdateProfile.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343439651,
+  "version": "1.0.0",
+  "fileHash": ""
+}

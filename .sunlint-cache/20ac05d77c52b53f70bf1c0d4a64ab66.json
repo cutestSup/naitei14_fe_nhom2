@@ -1,0 +1,22 @@
+{
+  "key": "20ac05d77c52b53f70bf1c0d4a64ab66",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 2,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable name 'cn' is an uncommon abbreviation and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'cn' to a more descriptive name such as 'combineClassNames' or 'classNamesUtil'.",
+      "codeSnippet": "import { CLASS_QUANTITY_BUTTON, CLASS_ICON_SIZE_SM } from '@/constants/common'",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\components\\ui\\QuantitySelector.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343330396,
+  "version": "1.0.0",
+  "fileHash": ""
+}

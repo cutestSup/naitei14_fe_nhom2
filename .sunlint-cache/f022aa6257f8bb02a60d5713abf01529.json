@@ -1,0 +1,64 @@
+{
+  "key": "f022aa6257f8bb02a60d5713abf01529",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 31,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'c' in map callback is a single-character name and not a counter; lacks descriptive context.",
+      "suggestion": "Rename 'c' to 'category' for clarity.",
+      "codeSnippet": "No categories found.",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\categories\\components\\CategoryTable.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function 'remove' name is vague and not a verb or verb-noun combination.",
+      "suggestion": "Rename 'remove' to 'deleteCategory' for specificity.",
+      "codeSnippet": "onRefresh,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\categories\\components\\CategoryTable.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C029",
+      "line": 18,
+      "column": 0,
+      "severity": "warning",
+      "message": "Catch block logs error but does not include stack trace or context information.",
+      "suggestion": "Log error.stack and include relevant context such as category ID.",
+      "codeSnippet": "if (!window.confirm(\"Are you sure you want to delete?\")) return;",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\categories\\components\\CategoryTable.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 15,
+      "column": 0,
+      "severity": "error",
+      "message": "Delete operation uses client-supplied id without verifying resource ownership on backend, risking IDOR vulnerability.",
+      "suggestion": "Ensure backend verifies that the category id belongs to the current user before allowing deletion. Use UUIDs or encrypted IDs if possible.",
+      "codeSnippet": "const safeCategories = Array.isArray(categories) ? categories : [];",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\categories\\components\\CategoryTable.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343639757,
+  "version": "1.0.0",
+  "fileHash": ""
+}

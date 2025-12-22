@@ -1,0 +1,64 @@
+{
+  "key": "f699b38e9e98bfd7fd22570bc829751e",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 37,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'f' in findIndex callback is an arbitrary abbreviation and not descriptive.",
+      "suggestion": "Rename 'f' to 'request' for clarity.",
+      "codeSnippet": "message: \"Shop có thể giảm giá cho khách hàng thân thiết không?\",",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\requestIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 53,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'f' in findIndex callback is an arbitrary abbreviation and not descriptive.",
+      "suggestion": "Rename 'f' to 'request' for clarity.",
+      "codeSnippet": "getAll: async (): Promise<Request[]> => {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\requestIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 37,
+      "column": 0,
+      "severity": "warning",
+      "message": "updateStatus controls access to resource by client-supplied id without verifying ownership or authorization.",
+      "suggestion": "Add backend-side authorization logic to verify that the current user owns the resource before updating status.",
+      "codeSnippet": "message: \"Shop có thể giảm giá cho khách hàng thân thiết không?\",",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\requestIndex.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 52,
+      "column": 0,
+      "severity": "warning",
+      "message": "reset controls access to resource by client-supplied id without verifying ownership or authorization.",
+      "suggestion": "Add backend-side authorization logic to verify that the current user owns the resource before resetting.",
+      "codeSnippet": "export const requestApi = {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\requestIndex.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343696453,
+  "version": "1.0.0",
+  "fileHash": ""
+}

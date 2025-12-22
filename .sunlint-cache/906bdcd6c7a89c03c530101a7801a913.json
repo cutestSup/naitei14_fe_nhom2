@@ -1,0 +1,22 @@
+{
+  "key": "906bdcd6c7a89c03c530101a7801a913",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 14,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'p' in map callback is a single-character name not used as a counter.",
+      "suggestion": "Rename 'p' to 'product' for clarity and descriptive naming.",
+      "codeSnippet": "{safeProducts.map((p, index) => (",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\dashboard\\components\\ProductTopList.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343631142,
+  "version": "1.0.0",
+  "fileHash": ""
+}

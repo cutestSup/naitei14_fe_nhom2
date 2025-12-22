@@ -1,0 +1,22 @@
+{
+  "key": "dd035368e2040b6992dae0d0b03d0958",
+  "value": [
+    {
+      "rule": "C019",
+      "line": 22,
+      "column": 0,
+      "severity": "warning",
+      "message": "Use of console.error for a recoverable registration failure; error log level should be reserved for critical failures.",
+      "suggestion": "Use console.warn or console.info for recoverable registration errors instead of console.error.",
+      "codeSnippet": "setError(errorMessage);",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\hooks\\useRegister.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343654128,
+  "version": "1.0.0",
+  "fileHash": ""
+}

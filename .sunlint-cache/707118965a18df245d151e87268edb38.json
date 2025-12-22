@@ -1,0 +1,92 @@
+{
+  "key": "707118965a18df245d151e87268edb38",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 26,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'f' is an arbitrary single-character abbreviation in 'findIndex' callback.",
+      "suggestion": "Rename 'f' to 'feedback' for clarity.",
+      "codeSnippet": "},",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\feedbackIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.9
+    },
+    {
+      "rule": "C003",
+      "line": 37,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'f' is an arbitrary single-character abbreviation in 'filter' callback.",
+      "suggestion": "Rename 'f' to 'feedback' for clarity.",
+      "codeSnippet": "return new Promise((resolve) => {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\feedbackIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.9
+    },
+    {
+      "rule": "C006",
+      "line": 20,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'reply' is a vague verb; lacks context and specificity.",
+      "suggestion": "Rename to 'replyToFeedback' for clearer intent.",
+      "codeSnippet": "id: 3,",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\feedbackIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 35,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'delete' is a vague verb; lacks context and specificity.",
+      "suggestion": "Rename to 'deleteFeedback' for clearer intent.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\feedbackIndex.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 26,
+      "column": 0,
+      "severity": "warning",
+      "message": "Permission for replying to feedback is controlled only by id from client, without verifying resource ownership or authorization.",
+      "suggestion": "Add backend authorization logic to verify that the current user is allowed to reply to the feedback with the given id.",
+      "codeSnippet": "},",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\feedbackIndex.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 38,
+      "column": 0,
+      "severity": "warning",
+      "message": "Permission for deleting feedback is controlled only by id from client, without verifying resource ownership or authorization.",
+      "suggestion": "Add backend authorization logic to verify that the current user is allowed to delete the feedback with the given id.",
+      "codeSnippet": "setTimeout(() => {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\admin\\feedbackIndex.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343719484,
+  "version": "1.0.0",
+  "fileHash": ""
+}

@@ -1,0 +1,78 @@
+{
+  "key": "465c98eea407673220d3ebb5556c56d3",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 12,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'u' is an arbitrary abbreviation; use a more descriptive name like 'user'.",
+      "suggestion": "Rename 'u' to 'user' in the find callback.",
+      "codeSnippet": "setUsers(data);",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\users\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 26,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'u' is an arbitrary abbreviation; use a more descriptive name like 'user'.",
+      "suggestion": "Rename 'u' to 'user' in the map callback.",
+      "codeSnippet": "prev.map((u) => (u.id === id ? { ...u, active: !u.active } : u))",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\users\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 31,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'prev' is a vague abbreviation; use a more descriptive name like 'previousUser'.",
+      "suggestion": "Rename 'prev' to 'previousUser' in the setSelected callback.",
+      "codeSnippet": "}",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\users\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C029",
+      "line": 35,
+      "column": 0,
+      "severity": "warning",
+      "message": "Catch block does not log stack trace or context information for error.",
+      "suggestion": "Log the error's stack trace and include relevant context such as user ID.",
+      "codeSnippet": "} catch (err) {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\users\\index.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 26,
+      "column": 0,
+      "severity": "error",
+      "message": "Permissions for toggling user active status are controlled solely by client-supplied id without backend ownership verification, risking IDOR vulnerability.",
+      "suggestion": "Ensure backend API (usersApi.toggleActive) verifies that the current user is authorized to modify the target user resource. Do not rely only on id from client.",
+      "codeSnippet": "prev.map((u) => (u.id === id ? { ...u, active: !u.active } : u))",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\admin\\users\\index.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343479054,
+  "version": "1.0.0",
+  "fileHash": ""
+}

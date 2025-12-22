@@ -1,0 +1,36 @@
+{
+  "key": "0f9e65996a4b51e387918215141bb517",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 17,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'cn' uses an uncommon abbreviation and does not clearly indicate its purpose.",
+      "suggestion": "Rename 'cn' to a more descriptive name such as 'classNames' to improve clarity.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\components\\ChangePasswordForm.tsx",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S001",
+      "line": 55,
+      "column": 0,
+      "severity": "warning",
+      "message": "Access control error (missing user id) fails silently without explicit deny. Should explicitly deny access if user id is missing.",
+      "suggestion": "Return an error or show an access denied message if user?.id is missing, instead of returning silently.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\features\\auth\\components\\ChangePasswordForm.tsx",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343666791,
+  "version": "1.0.0",
+  "fileHash": ""
+}

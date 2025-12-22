@@ -1,0 +1,92 @@
+{
+  "key": "db9c74728d1ad52e0de3f00b0cea75b3",
+  "value": [
+    {
+      "rule": "C003",
+      "line": 60,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'params' uses a common abbreviation; prefer a more descriptive name like 'queryParams'.",
+      "suggestion": "Rename 'params' to 'queryParams' for clarity.",
+      "codeSnippet": "if (filters.color) {",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\products\\index.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 80,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'url' is generic; prefer a more descriptive name like 'productsApiUrl'.",
+      "suggestion": "Rename 'url' to 'productsApiUrl' for clarity.",
+      "codeSnippet": "products = products.filter(",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\products\\index.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 83,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'response' is generic; prefer a more descriptive name like 'productsResponse'.",
+      "suggestion": "Rename 'response' to 'productsResponse' for clarity.",
+      "codeSnippet": "product.description?.toLowerCase().includes(searchLower)",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\products\\index.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C003",
+      "line": 86,
+      "column": 0,
+      "severity": "warning",
+      "message": "Variable 'products' is descriptive, but consider using 'filteredProducts' after filtering for clarity.",
+      "suggestion": "Rename 'products' to 'filteredProducts' after filtering.",
+      "codeSnippet": "",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\products\\index.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "C006",
+      "line": 97,
+      "column": 0,
+      "severity": "warning",
+      "message": "Function name 'getProductById' is acceptable, but consider using a verb-noun combination like 'fetchProductById' for clarity.",
+      "suggestion": "Rename function to 'fetchProductById'.",
+      "codeSnippet": "throw new ProductError(ERROR_GET_PRODUCT)",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\products\\index.ts",
+      "category": "code_quality",
+      "categoryName": "Code Quality",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    },
+    {
+      "rule": "S002",
+      "line": 66,
+      "column": 0,
+      "severity": "warning",
+      "message": "Resource access in getProductById is controlled solely by client-supplied id without verifying ownership or authorization.",
+      "suggestion": "Add backend-side authorization logic to verify that the requested product id belongs to the current user before returning product data.",
+      "codeSnippet": "? `${API_BASE_URL}/products?${queryString}`",
+      "filePath": "d:\\intern sun\\PR1\\naitei14_fe_nhom2\\src\\apis\\products\\index.ts",
+      "category": "security",
+      "categoryName": "Security",
+      "analysisMode": "medium",
+      "confidence": 0.85
+    }
+  ],
+  "timestamp": 1765343430055,
+  "version": "1.0.0",
+  "fileHash": ""
+}
