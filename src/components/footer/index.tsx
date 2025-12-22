@@ -3,15 +3,18 @@ import { RenderNewsletter } from './Newsletter'
 import { RenderNavigation } from './Navigation'
 import { RenderCopyright } from './Copyright'
 import { RenderSocialLinks } from './SocialLinks'
+import { useTranslation } from '@/hooks'
 
 export const RenderFooter = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer className="bg-gray-dark text-white">
       <div className="border-b border-gray-600 py-6">
         <Container>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-4">
-              <span className="text-sm">KÊNH THÔNG TIN TỪ CHÚNG TÔI</span>
+              <span className="text-sm">{t("footer.informationChannel")}</span>
               <RenderSocialLinks />
             </div>
             <RenderNewsletter />

@@ -6,6 +6,7 @@ import { ChangePasswordFormData } from "../types/auth.types";
 import { useChangePassword } from "../hooks/useChangePassword";
 import { validateChangePasswordForm } from "../utils/authValidation";
 import { useAuth } from "@/contexts";
+import { useTranslation } from "@/hooks";
 import { RenderButton, Alert, StatusAlert } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import {
@@ -31,6 +32,7 @@ const customChangePasswordResolver = async (values: ChangePasswordFormData) => {
 const ChangePasswordForm: React.FC = () => {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
+  const { t } = useTranslation();
   const {
     changePassword: changeUserPassword,
     loading,
@@ -80,12 +82,12 @@ const ChangePasswordForm: React.FC = () => {
     <>
       {/* Heading */}
       <div className="text-center mb-8">
-        <h2 className={CLASS_FORM_HEADING}>ĐỔI MẬT KHẨU</h2>
+        <h2 className={CLASS_FORM_HEADING}>{t("auth.changePassword.title")}</h2>
         <p className="text-gray-600">
-          Vui lòng nhập mật khẩu hiện tại và mật khẩu mới của bạn.
+          {t("auth.changePassword.description")}
         </p>
         <p className="text-sm text-gray-500 mt-2">
-          Mật khẩu nên có ít nhất 8 ký tự và bao gồm chữ cái và số.
+          {t("auth.changePassword.passwordHint")}
         </p>
       </div>
 
@@ -93,7 +95,7 @@ const ChangePasswordForm: React.FC = () => {
         {/* Current Password Input */}
         <div className="space-y-1">
           <label htmlFor="currentPassword" className={CLASS_FORM_LABEL}>
-            Mật khẩu hiện tại
+            {t("auth.changePassword.currentPassword")}
           </label>
           <div className="relative">
             <input
@@ -107,7 +109,7 @@ const ChangePasswordForm: React.FC = () => {
                   ? "border-red-500"
                   : "border-gray-300 hover:border-gray-400"
               )}
-              placeholder="Mật khẩu hiện tại"
+              placeholder={t("auth.changePassword.currentPassword")}
               tabIndex={1}
             />
             <button
@@ -130,7 +132,7 @@ const ChangePasswordForm: React.FC = () => {
         {/* New Password Input */}
         <div className="space-y-1">
           <label htmlFor="newPassword" className={CLASS_FORM_LABEL}>
-            Mật khẩu mới
+            {t("auth.changePassword.newPassword")}
           </label>
           <div className="relative">
             <input
@@ -144,7 +146,7 @@ const ChangePasswordForm: React.FC = () => {
                   ? "border-red-500"
                   : "border-gray-300 hover:border-gray-400"
               )}
-              placeholder="Mật khẩu mới"
+              placeholder={t("auth.changePassword.newPassword")}
               tabIndex={2}
             />
             <button
@@ -163,7 +165,7 @@ const ChangePasswordForm: React.FC = () => {
         {/* Confirm Password Input */}
         <div className="space-y-1">
           <label htmlFor="confirmPassword" className={CLASS_FORM_LABEL}>
-            Xác nhận mật khẩu
+            {t("auth.changePassword.confirmPassword")}
           </label>
           <div className="relative">
             <input
@@ -177,7 +179,7 @@ const ChangePasswordForm: React.FC = () => {
                   ? "border-red-500"
                   : "border-gray-300 hover:border-gray-400"
               )}
-              placeholder="Xác nhận mật khẩu"
+              placeholder={t("auth.changePassword.confirmPassword")}
               tabIndex={3}
             />
             <button
@@ -209,10 +211,10 @@ const ChangePasswordForm: React.FC = () => {
             type="submit"
             variant="primary-rounded"
             isLoading={loading}
-            loadingText="ĐANG ĐỔI MẬT KHẨU..."
+            loadingText={t("auth.changePassword.changing")}
             className="w-full"
           >
-            ĐỔI MẬT KHẨU
+            {t("auth.changePassword.changeButton")}
           </RenderButton>
         </div>
       </form>

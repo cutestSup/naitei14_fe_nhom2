@@ -7,7 +7,9 @@ import { RenderSocialShareButtons } from '@/components/ui/SocialShareButtons'
 import { RenderButton } from '@/components/ui/Button'
 import { MagnifyingGlassIcon, HeartIcon } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid'
-import { LOCALE, CLASS_ICON_SIZE_MD, MESSAGE_ADD_FAVORITE, MESSAGE_REMOVE_FAVORITE, CLASS_FLEX_ITEMS_GAP3, CLASS_ICON_BUTTON_ROUND } from '@/constants/common'
+import { CLASS_ICON_SIZE_MD, MESSAGE_ADD_FAVORITE, MESSAGE_REMOVE_FAVORITE, CLASS_FLEX_ITEMS_GAP3, CLASS_ICON_BUTTON_ROUND } from '@/constants/common'
+import { useTranslation } from '@/hooks'
+import { formatCurrency } from '@/i18n'
 import { cn } from '@/lib/utils'
 
 interface ProductInfoProps {
@@ -15,6 +17,7 @@ interface ProductInfoProps {
 }
 
 export const ProductInfo = ({ product }: ProductInfoProps) => {
+  const { t } = useTranslation();
   const [quantity, setQuantity] = useState(1)
   const [isFavorite, setIsFavorite] = useState(false)
   const { addToCart } = useCart()
@@ -43,11 +46,11 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
 
       <div className={CLASS_FLEX_ITEMS_GAP3}>
         <span className="text-3xl font-bold text-green-primary">
-          {product.price.toLocaleString(LOCALE)} ₫
+          {formatCurrency(product.price)}
         </span>
         {product.oldPrice && product.oldPrice !== product.price && (
           <span className="text-xl text-gray-400 line-through">
-            {product.oldPrice.toLocaleString(LOCALE)} ₫
+            {formatCurrency(product.oldPrice)}
           </span>
         )}
       </div>
@@ -71,19 +74,19 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
           onClick={handleBuyNow}
           className="flex-1"
         >
-          MUA NGAY
+          {t("products.buyNow").toUpperCase()}
         </RenderButton>
         <button
           onClick={handleQuickView}
           className={CLASS_ICON_BUTTON_ROUND}
-          aria-label="Xem nhanh sản phẩm"
+          aria-label={t("products.viewDetails")}
         >
           <MagnifyingGlassIcon className={CLASS_ICON_SIZE_MD} />
         </button>
         <button
           onClick={handleToggleFavorite}
           className={CLASS_ICON_BUTTON_ROUND}
-          aria-label={isFavorite ? MESSAGE_REMOVE_FAVORITE : MESSAGE_ADD_FAVORITE}
+          aria-label={isFavorite ? t(MESSAGE_REMOVE_FAVORITE) : t(MESSAGE_ADD_FAVORITE)}
         >
           {isFavorite ? (
             <HeartIconSolid className={cn(CLASS_ICON_SIZE_MD, 'text-red-500')} />
@@ -94,10 +97,10 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
       </div>
 
       <div>
-        <p className="text-sm text-gray-600 mb-2">Chia sẻ:</p>
+        <p className="text-sm text-gray-600 mb-2">{t("social.share")}:</p>
         <RenderSocialShareButtons
           title={product.name}
-          description={`${product.shortDescription || product.description || ''} - Giá: ${product.price.toLocaleString(LOCALE)} ₫`}
+          description={`${product.shortDescription || product.description || ''} - ${t("common.price")}: ${formatCurrency(product.price)}`}
           image={product.image}
           url={typeof window !== 'undefined' ? window.location.href : ''}
         />

@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "productId": 1,
+    "lang": "en",
+    "name": "Decorative Plant",
+    "description": "Beautiful decorative plant perfect for home decoration and office spaces. This plant adds a touch of nature to any environment.",
+    "shortDescription": "Beautiful decorative plant for home decoration",
+    "fullDescription": "<p><strong>Common Name:</strong> Decorative Plant</p><p><strong>Scientific Name:</strong> Decorative Plant</p><p><strong>Plant Family:</strong> Decorative Plants</p><p><strong>Height:</strong> 0.8-1.2m</p><p>High quality product, suitable for your living space.</p><p>The plant originates from many places around the world, has been introduced and widely distributed in Vietnam. The plant grows well in indoor environments, suitable for indirect light and moderate humidity.</p>",
+    "category": "Plants",
+    "tags": ["Decorative", "Popular", "Indoor Plants"]
+  },
+  {
+    "id": 2,
+    "productId": 1,
+    "lang": "vi",
+    "name": "Cây cảnh trang trí",
+    "description": "Cây cảnh đẹp mắt, hoàn hảo để trang trí nhà cửa và không gian văn phòng. Cây này mang lại vẻ đẹp thiên nhiên cho mọi môi trường.",
+    "shortDescription": "Cây cảnh đẹp để trang trí nhà cửa",
+    "fullDescription": "<p><strong>Tên phổ thông:</strong> Cây cảnh trang trí</p><p><strong>Tên khoa học:</strong> Cây cảnh trang trí</p><p><strong>Họ thực vật:</strong> Cây cảnh</p><p><strong>Chiều cao:</strong> 0,8-1,2m</p><p>Sản phẩm chất lượng cao, phù hợp cho không gian sống của bạn.</p><p>Cây có nguồn gốc từ nhiều nơi trên thế giới, được du nhập và phân bố rộng khắp ở Việt Nam. Cây phát triển tốt trong môi trường trong nhà, thích hợp với ánh sáng gián tiếp và độ ẩm vừa phải.</p>",
+    "category": "Cây cảnh",
+    "tags": ["Trang trí", "Phổ biến", "Cây trong nhà"]
+  }
+]
+

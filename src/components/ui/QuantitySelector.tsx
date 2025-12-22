@@ -1,6 +1,7 @@
 import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils'
 import { CLASS_QUANTITY_BUTTON, CLASS_ICON_SIZE_SM } from '@/constants/common'
+import { useTranslation } from '@/hooks'
 
 interface QuantitySelectorProps {
   value: number
@@ -17,6 +18,7 @@ export const QuantitySelector = ({
   max = 999,
   className,
 }: QuantitySelectorProps) => {
+  const { t } = useTranslation()
   const handleDecrease = () => {
     if (value > min) {
       onChange(value - 1)
@@ -45,7 +47,7 @@ export const QuantitySelector = ({
   return (
     <div className={cn('flex items-center gap-2', className)}>
       <label htmlFor="quantity" className="text-sm font-medium text-gray-700">
-        Số lượng:
+        {t("cart.quantity")}:
       </label>
       <div className="flex items-center border border-gray-300 rounded-md">
         <button
@@ -53,7 +55,7 @@ export const QuantitySelector = ({
           onClick={handleDecrease}
           disabled={value <= min}
           className={CLASS_QUANTITY_BUTTON}
-          aria-label="Giảm số lượng"
+          aria-label={t("cart.decreaseQuantity")}
         >
           <MinusIcon className={CLASS_ICON_SIZE_SM} />
         </button>
@@ -71,7 +73,7 @@ export const QuantitySelector = ({
           onClick={handleIncrease}
           disabled={value >= max}
           className={CLASS_QUANTITY_BUTTON}
-          aria-label="Tăng số lượng"
+          aria-label={t("cart.increaseQuantity")}
         >
           <PlusIcon className={CLASS_ICON_SIZE_SM} />
         </button>

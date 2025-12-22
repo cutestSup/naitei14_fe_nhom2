@@ -1,6 +1,11 @@
 // Locale constants
+// Note: Use i18n for locale strings, this is kept for backward compatibility
 export const LOCALE = "vi-VN" as const;
 export const VAT_RATE = 0.1;
+
+// Exchange rate: 1 USD = 24,500 VND (approximate, can be updated)
+// This rate should be updated periodically or fetched from an API
+export const USD_TO_VND_RATE = 24500;
 
 // Rating constants
 export const MAX_RATING = 5;
@@ -31,40 +36,36 @@ export const PRICE_1000000 = 1000000;
 // Token expiration times
 export const TOKEN_EXPIRY_HOURS = 24;
 
-// Common messages
-export const MESSAGE_DEVELOPING = "Chức năng đang phát triển" as const;
-export const MESSAGE_REGISTER_FAILED = "Đăng ký thất bại" as const;
-export const MESSAGE_LOGIN_FAILED =
-  "Đăng nhập thất bại. Vui lòng thử lại." as const;
-export const ACTIVATION_INVALID_LINK = "Link kích hoạt không hợp lệ" as const;
-export const ACTIVATION_SUCCESS =
-  "Tài khoản đã được kích hoạt thành công!" as const;
-export const ACTIVATION_FAILED_DEFAULT = "Kích hoạt thất bại" as const;
+// Common messages - Translation keys
+// Use these keys with useTranslation hook: t("messages.developing")
+export const MESSAGE_DEVELOPING = "messages.developing" as const;
+export const MESSAGE_REGISTER_FAILED = "messages.registerFailed" as const;
+export const MESSAGE_LOGIN_FAILED = "messages.loginFailed" as const;
+export const ACTIVATION_INVALID_LINK = "messages.activationInvalidLink" as const;
+export const ACTIVATION_SUCCESS = "messages.activationSuccess" as const;
+export const ACTIVATION_FAILED_DEFAULT = "messages.activationFailedDefault" as const;
 
-// Validation messages
-export const VALIDATION_FULL_NAME_REQUIRED = "Họ và tên là bắt buộc.";
-export const VALIDATION_PHONE_REQUIRED = "Số điện thoại là bắt buộc.";
-export const VALIDATION_PHONE_INVALID = "Số điện thoại không hợp lệ.";
-export const VALIDATION_EMAIL_REQUIRED = "Email là bắt buộc.";
-export const VALIDATION_EMAIL_INVALID = "Email không hợp lệ.";
-export const VALIDATION_EMAIL_EXISTS = "Email đã tồn tại.";
-export const VALIDATION_WEBSITE_INVALID = "Website không hợp lệ.";
-export const VALIDATION_PASSWORD_REQUIRED = "Mật khẩu là bắt buộc.";
-export const VALIDATION_PASSWORD_MIN_LENGTH =
-  "Mật khẩu phải có ít nhất 8 ký tự.";
-export const VALIDATION_PASSWORD_STRENGTH =
-  "Mật khẩu phải chứa ít nhất một chữ cái và một số.";
-export const VALIDATION_CONFIRM_PASSWORD_REQUIRED =
-  "Xác nhận mật khẩu là bắt buộc.";
-export const VALIDATION_PASSWORD_MISMATCH = "Mật khẩu không khớp!";
+// Validation messages - Translation keys
+// Use these keys with useTranslation hook: t("validation.fullNameRequired")
+export const VALIDATION_FULL_NAME_REQUIRED = "validation.fullNameRequired";
+export const VALIDATION_PHONE_REQUIRED = "validation.phoneRequired";
+export const VALIDATION_PHONE_INVALID = "validation.phoneInvalid";
+export const VALIDATION_EMAIL_REQUIRED = "validation.emailRequired";
+export const VALIDATION_EMAIL_INVALID = "validation.emailInvalid";
+export const VALIDATION_EMAIL_EXISTS = "validation.emailExists";
+export const VALIDATION_WEBSITE_INVALID = "validation.websiteInvalid";
+export const VALIDATION_PASSWORD_REQUIRED = "validation.passwordRequired";
+export const VALIDATION_PASSWORD_MIN_LENGTH = "validation.passwordMinLength";
+export const VALIDATION_PASSWORD_STRENGTH = "validation.passwordStrength";
+export const VALIDATION_CONFIRM_PASSWORD_REQUIRED = "validation.confirmPasswordRequired";
+export const VALIDATION_PASSWORD_MISMATCH = "validation.passwordMismatch";
 
-// Newsletter error messages
-export const ERROR_EMAIL_ALREADY_EXISTS =
-  "Email này đã được đăng ký. Vui lòng sử dụng email khác." as const;
-export const ERROR_NETWORK_CONNECTION =
-  "Lỗi kết nối mạng. Vui lòng kiểm tra kết nối và thử lại." as const;
-export const ERROR_SERVER = "Lỗi máy chủ. Vui lòng thử lại sau." as const;
-export const ERROR_GENERIC = "Đã có lỗi xảy ra. Vui lòng thử lại sau." as const;
+// Newsletter error messages - Translation keys
+// Use these keys with useTranslation hook: t("messages.emailAlreadyExists")
+export const ERROR_EMAIL_ALREADY_EXISTS = "messages.emailAlreadyExists" as const;
+export const ERROR_NETWORK_CONNECTION = "messages.networkConnection" as const;
+export const ERROR_SERVER = "messages.serverError" as const;
+export const ERROR_GENERIC = "messages.genericError" as const;
 
 // Error keywords for error detection
 export const ERROR_KEYWORD_DUPLICATE = "duplicate" as const;
@@ -113,9 +114,10 @@ export const CLASS_ICON_SIZE_MD_5 = "w-5 h-5";
 export const CLASS_ICON_SIZE_MD = "w-5 h-5";
 export const CLASS_ICON_SIZE_MD_GRAY = "w-5 h-5 text-gray-700";
 
-// Favorite messages
-export const MESSAGE_REMOVE_FAVORITE = "Bỏ yêu thích" as const;
-export const MESSAGE_ADD_FAVORITE = "Thêm vào yêu thích" as const;
+// Favorite messages - Translation keys
+// Use these keys with useTranslation hook: t("messages.removeFavorite")
+export const MESSAGE_REMOVE_FAVORITE = "messages.removeFavorite" as const;
+export const MESSAGE_ADD_FAVORITE = "messages.addFavorite" as const;
 
 // Navigation hover class
 export const CLASS_NAV_HOVER =
@@ -178,16 +180,16 @@ export const QUERY_PARAM_PRICE_GTE = "price_gte";
 export const QUERY_PARAM_PRICE_LTE = "price_lte";
 export const DEFAULT_CATEGORY = "Cây cảnh";
 
-// API error messages
-export const ERROR_GET_FEATURED_PRODUCTS =
-  "Không thể lấy danh sách sản phẩm nổi bật";
-export const ERROR_GET_ALL_PRODUCTS = "Không thể lấy danh sách sản phẩm";
-export const ERROR_SEARCH_PRODUCTS = "Không thể tìm kiếm sản phẩm";
-export const ERROR_GET_PRODUCT = "Không thể lấy thông tin sản phẩm";
-export const ERROR_CREATE_ORDER = "Không thể tạo đơn hàng";
-export const ERROR_GET_ORDERS = "Không thể lấy danh sách đơn hàng";
-export const ERROR_GET_REVIEWS = "Không thể lấy danh sách đánh giá";
-export const ERROR_CREATE_REVIEW = "Không thể tạo đánh giá";
+// API error messages - Translation keys
+// Use these keys with useTranslation hook: t("messages.getFeaturedProducts")
+export const ERROR_GET_FEATURED_PRODUCTS = "messages.getFeaturedProducts";
+export const ERROR_GET_ALL_PRODUCTS = "messages.getAllProducts";
+export const ERROR_SEARCH_PRODUCTS = "messages.searchProducts";
+export const ERROR_GET_PRODUCT = "messages.getProduct";
+export const ERROR_CREATE_ORDER = "messages.createOrder";
+export const ERROR_GET_ORDERS = "messages.getOrders";
+export const ERROR_GET_REVIEWS = "messages.getReviews";
+export const ERROR_CREATE_REVIEW = "messages.createReview";
 
 // Component class names
 export const CLASS_MT_8 = "mt-8";

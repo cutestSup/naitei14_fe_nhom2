@@ -6,12 +6,14 @@ import { CartItemRow } from "./components/CartItemRow";
 import { CartSummary } from "./components/CartSummary";
 import { Link, useNavigate } from "react-router-dom";
 import { RenderButton } from "@/components/ui/Button";
+import { useTranslation } from "@/hooks";
 
 export const CartPage = () => {
   const { cart, updateQuantity, removeFromCart, totalPrice, clearCart } =
     useCart();
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -25,13 +27,13 @@ export const CartPage = () => {
     return (
       <Container className="py-20 text-center">
         <div className="flex flex-col items-center justify-center">
-          <img src="/images/empty_cart.jpg" alt="Empty Cart" className="mb-6" />
+          <img src="/images/empty_cart.jpg" alt={t("cart.empty")} className="mb-6" />
           <Link to="/products">
             <RenderButton
               variant="outline"
               className="px-6 py-2 rounded transition uppercase text-green-primary border-green-primary hover:bg-green-primary hover:text-white"
             >
-              Tiếp tục mua sắm
+              {t("cart.continueShopping")}
             </RenderButton>
           </Link>
         </div>
@@ -44,7 +46,7 @@ export const CartPage = () => {
       <Container>
         <div className="mb-8">
           <h1 className="text-xl font-medium text-green-primary uppercase">
-            GIỎ HÀNG
+            {t("cart.cartTitle")}
           </h1>
         </div>
 
@@ -54,22 +56,22 @@ export const CartPage = () => {
             <thead>
               <tr className="bg-green-primary text-white text-sm uppercase">
                 <th className="py-3 px-4 font-medium w-[15%] border-r border-white text-center">
-                  HÌNH ẢNH
+                  {t("cart.image")}
                 </th>
                 <th className="py-3 px-4 font-medium w-[30%] border-r border-white text-center">
-                  TÊN SẢN PHẨM
+                  {t("cart.productName")}
                 </th>
                 <th className="py-3 px-4 font-medium w-[15%] border-r border-white text-center">
-                  ĐƠN GIÁ
+                  {t("cart.unitPrice")}
                 </th>
                 <th className="py-3 px-4 font-medium w-[20%] border-r border-white text-center">
-                  SỐ LƯỢNG
+                  {t("cart.quantity")}
                 </th>
                 <th className="py-3 px-4 font-medium w-[15%] border-r border-white text-center">
-                  THÀNH TIỀN
+                  {t("cart.itemTotal")}
                 </th>
                 <th className="py-3 px-4 font-medium w-[5%] text-center">
-                  XÓA
+                  {t("cart.delete")}
                 </th>
               </tr>
             </thead>
@@ -92,16 +94,16 @@ export const CartPage = () => {
             variant="outline"
             className="uppercase text-green-primary border-green-primary rounded-full px-6"
             onClick={() => {
-              if (window.confirm("Bạn có chắc chắn muốn hủy đơn hàng?")) {
+              if (window.confirm(t("cart.confirmCancelOrder"))) {
                 clearCart();
               }
             }}
           >
-            HỦY ĐƠN HÀNG
+            {t("cart.cancelOrder")}
           </RenderButton>
           <Link to="/products">
             <RenderButton className="uppercase bg-green-primary hover:bg-green-dark text-white rounded-full px-6">
-              TIẾP TỤC MUA
+              {t("cart.continueShoppingButton")}
             </RenderButton>
           </Link>
         </div>

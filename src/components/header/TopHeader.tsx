@@ -21,9 +21,11 @@ import {
   MdLock,
 } from "react-icons/md";
 import { useAuth } from "@/contexts";
+import { useTranslation } from "@/hooks";
 import { cn } from "@/lib/utils";
 
 export const RenderTopHeader = () => {
+  const { t } = useTranslation();
   const { isLoggedIn, user, logout } = useAuth();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -62,7 +64,7 @@ export const RenderTopHeader = () => {
       <Container>
         <div className="flex justify-between items-center">
           <div className={CLASS_FLEX_CENTER_GAP4}>
-            <span>Giờ mở cửa: 8:00 - 22:00 Thứ Hai - Chủ Nhật</span>
+            <span>{t("header.openingHours")}</span>
             <div className="flex items-center gap-2">
               <a href="#" className={CLASS_HOVER} aria-label="Facebook">
                 <FaFacebook className={CLASS_SVG_ICON_SM} />
@@ -86,7 +88,7 @@ export const RenderTopHeader = () => {
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     className="flex items-center gap-1 hover:text-gray-300 focus:outline-none"
                   >
-                    <span>Welcome, {user?.fullName}!</span>
+                    <span>{t("header.welcome")}, {user?.fullName}!</span>
                     <MdKeyboardArrowDown
                       className={`transition-transform ${
                         isDropdownOpen ? "rotate-180" : ""
@@ -112,7 +114,7 @@ export const RenderTopHeader = () => {
                           <div className="flex items-center justify-center w-8 h-8 bg-green-primary bg-opacity-10 rounded-lg mr-4">
                             <MdPerson className="w-5 h-5 text-green-primary" />
                           </div>
-                          <span>Profile</span>
+                          <span>{t("common.profile")}</span>
                         </button>
                         <div className="border-t border-gray-200 my-1 mx-3"></div>
                         <button
@@ -125,7 +127,7 @@ export const RenderTopHeader = () => {
                           <div className="flex items-center justify-center w-8 h-8 bg-green-primary bg-opacity-10 rounded-lg mr-4">
                             <MdLock className="w-5 h-5 text-green-primary" />
                           </div>
-                          <span>Đổi mật khẩu</span>
+                          <span>{t("header.changePassword")}</span>
                         </button>
                       </div>
                     </div>
@@ -136,7 +138,7 @@ export const RenderTopHeader = () => {
                   className="flex items-center gap-1 hover:text-gray-300"
                 >
                   <MdLogout size={16} />
-                  Đăng xuất
+                  {t("header.logout")}
                 </button>
               </>
             ) : (
@@ -146,14 +148,14 @@ export const RenderTopHeader = () => {
                   className="flex items-center gap-1 hover:text-gray-300"
                 >
                   <MdLogin size={16} />
-                  Đăng nhập
+                  {t("header.login")}
                 </Link>
                 <Link
                   to="auth/register"
                   className="flex items-center gap-1 hover:text-gray-300"
                 >
                   <MdPersonAdd size={16} />
-                  Đăng ký
+                  {t("header.register")}
                 </Link>
               </>
             )}

@@ -8,6 +8,7 @@ import { ProductFilter } from './components/ProductFilter'
 import { RenderPagination } from '@/components/products/Pagination'
 import { Product } from '@/types/product'
 import { getAllProducts, searchProducts, ProductFilters } from '@/apis/products'
+import { useTranslation } from '@/hooks'
 import {
   CLASS_SECTION_WHITE,
   CLASS_FLEX_ITEMS_GAP2,
@@ -29,6 +30,7 @@ type ViewMode = 'grid' | 'list'
 type SortOption = 'name' | 'price-asc' | 'price-desc'
 
 export const RenderProducts = () => {
+  const { t, currentLanguage } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams()
   const [allProducts, setAllProducts] = useState<Product[]>([])
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
@@ -131,7 +133,7 @@ export const RenderProducts = () => {
     }
 
     fetchProducts()
-  }, [])
+  }, [currentLanguage])
 
   useEffect(() => {
     const fetchFilteredProducts = async () => {
@@ -218,8 +220,8 @@ export const RenderProducts = () => {
       <Container>
         <Breadcrumbs
           items={[
-            { label: 'Home', path: '/' },
-            { label: 'Danh sách sản phẩm' },
+            { label: t("common.home"), path: '/' },
+            { label: t("products.productList") },
           ]}
           className="mb-6"
         />
@@ -237,26 +239,26 @@ export const RenderProducts = () => {
           <div className="lg:col-span-3">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
               <div className="text-sm text-gray-600">
-                Tìm thấy <span className="font-semibold">{displayedProducts.length}</span> sản phẩm
+                {t("products.foundProducts")} <span className="font-semibold">{displayedProducts.length}</span> {t("products.foundProductsCount")}
               </div>
 
               <div className="flex flex-wrap items-center gap-4">
                 <div className={CLASS_FLEX_ITEMS_GAP2}>
-                  <label htmlFor="sort-select" className={CLASS_TEXT_SM_GRAY}>Sắp xếp theo:</label>
+                  <label htmlFor="sort-select" className={CLASS_TEXT_SM_GRAY}>{t("products.sortBy")}</label>
                   <select
                     id="sort-select"
                     value={sortOption}
                     onChange={(e) => setSortOption(e.target.value as SortOption)}
                     className={CLASS_SELECT_INPUT}
                   >
-                    <option value="name">Tên sản phẩm</option>
-                    <option value="price-asc">Giá: Thấp đến cao</option>
-                    <option value="price-desc">Giá: Cao đến thấp</option>
+                    <option value="name">{t("products.productName")}</option>
+                    <option value="price-asc">{t("products.priceLowToHigh")}</option>
+                    <option value="price-desc">{t("products.priceHighToLow")}</option>
                   </select>
                 </div>
 
                 <div className={CLASS_FLEX_ITEMS_GAP2}>
-                  <label htmlFor="items-per-page-select" className={CLASS_TEXT_SM_GRAY}>Show:</label>
+                  <label htmlFor="items-per-page-select" className={CLASS_TEXT_SM_GRAY}>{t("products.show")}</label>
                   <select
                     id="items-per-page-select"
                     value={itemsPerPage}
@@ -280,7 +282,7 @@ export const RenderProducts = () => {
                       CLASS_VIEW_TOGGLE_BUTTON,
                       viewMode === 'grid' ? CLASS_VIEW_TOGGLE_ACTIVE : CLASS_VIEW_TOGGLE_INACTIVE
                     )}
-                    aria-label="Grid view"
+                    aria-label={t("products.viewGrid")}
                     aria-pressed={viewMode === 'grid'}
                   >
                     <svg className={CLASS_SVG_ICON} fill="none" stroke={CLASS_SVG_FILL} viewBox={CLASS_SVG_VIEWBOX}>
@@ -298,7 +300,7 @@ export const RenderProducts = () => {
                       CLASS_VIEW_TOGGLE_BUTTON,
                       viewMode === 'list' ? CLASS_VIEW_TOGGLE_ACTIVE : CLASS_VIEW_TOGGLE_INACTIVE
                     )}
-                    aria-label="List view"
+                    aria-label={t("products.viewList")}
                     aria-pressed={viewMode === 'list'}
                   >
                     <svg className={CLASS_SVG_ICON} fill="none" stroke={CLASS_SVG_FILL} viewBox={CLASS_SVG_VIEWBOX}>
@@ -316,15 +318,15 @@ export const RenderProducts = () => {
 
             {loading ? (
               <div className={CLASS_TEXT_CENTER_PY12}>
-                <div className="text-gray-500">Đang tải...</div>
+                <div className="text-gray-500">{t("common.loading")}</div>
               </div>
             ) : displayedProducts.length === 0 ? (
               <div className={CLASS_TEXT_CENTER_PY12}>
-                <div className="text-gray-500 mb-2">Không tìm thấy sản phẩm nào</div>
+                <div className="text-gray-500 mb-2">{t("products.noProductsDescription")}</div>
                 <div className="text-sm text-gray-400">
                   {filters.search || filters.category || filters.minPrice !== undefined || filters.maxPrice !== undefined || filters.color
-                    ? 'Thử thay đổi từ khóa tìm kiếm hoặc bộ lọc'
-                    : 'Danh sách sản phẩm trống'}
+                    ? t("products.tryChangeFilters")
+                    : t("products.emptyProductList")}
                 </div>
               </div>
             ) : (

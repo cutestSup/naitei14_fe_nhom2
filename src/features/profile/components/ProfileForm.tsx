@@ -11,6 +11,7 @@ import {
 } from "@/constants/common";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/contexts";
+import { useTranslation } from "@/hooks";
 import {
   MdPerson,
   MdPhone,
@@ -22,6 +23,7 @@ import { maskEmail } from "../utils/maskEmail";
 const ProfileForm: React.FC = () => {
   const { user } = useAuth();
   const { updateUserProfile, loading, error } = useUpdateProfile();
+  const { t } = useTranslation();
 
   const {
     register,
@@ -54,7 +56,7 @@ const ProfileForm: React.FC = () => {
 
     try {
       await updateUserProfile(data);
-      setSuccessMessage("Cập nhật hồ sơ thành công!");
+      setSuccessMessage(t("profile.updateSuccess"));
     } catch (err) {
       console.error("Profile update failed", {
         error: err,
@@ -80,7 +82,7 @@ const ProfileForm: React.FC = () => {
           <div className="flex items-center mb-6">
             <MdPerson className="w-6 h-6 text-green-primary mr-3" />
             <h2 className="text-2xl font-bold text-gray-800">
-              THÔNG TIN CÁ NHÂN
+              {t("profile.personalInformation")}
             </h2>
           </div>
 
@@ -88,7 +90,7 @@ const ProfileForm: React.FC = () => {
             <div className="relative">
               <label className="flex text-sm font-medium text-gray-700 mb-2 items-center">
                 <MdPerson className="w-4 h-4 mr-2 text-gray-500" />
-                Họ và tên <span className="text-red-500">*</span>
+                {t("profile.fullName")} <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -107,7 +109,7 @@ const ProfileForm: React.FC = () => {
             <div className="relative">
               <label className="flex text-sm font-medium text-gray-700 mb-2 items-center">
                 <MdPhone className="w-4 h-4 mr-2 text-gray-500" />
-                Số ĐT <span className="text-red-500">*</span>
+                {t("profile.phoneNumber")} <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -126,7 +128,7 @@ const ProfileForm: React.FC = () => {
             <div className="relative">
               <label className="text-sm font-medium text-gray-700 mb-2 flex items-center">
                 <MdEmail className="w-4 h-4 mr-2 text-gray-500" />
-                Địa chỉ email
+                {t("profile.emailAddress")}
               </label>
               <div className="relative">
                 <input
@@ -152,7 +154,7 @@ const ProfileForm: React.FC = () => {
             <div className="relative">
               <label className="text-sm font-medium text-gray-700 mb-2 flex items-center">
                 <MdLanguage className="w-4 h-4 mr-2 text-gray-500" />
-                Website của bạn
+                {t("profile.yourWebsite")}
               </label>
               <input
                 type="text"
@@ -177,7 +179,7 @@ const ProfileForm: React.FC = () => {
                 className="w-5 h-5 text-green-primary border-gray-300 rounded focus:ring-green-dark"
               />
               <span className="ml-3 text-sm text-gray-700 font-medium">
-                Đăng ký nhận thông tin qua email
+                {t("profile.subscribeEmail")}
               </span>
             </label>
           </div>
@@ -206,16 +208,16 @@ const ProfileForm: React.FC = () => {
             onClick={handleReset}
             className="rounded-full px-8 py-3"
           >
-            HỦY
+            {t("profile.cancel")}
           </RenderButton>
           <RenderButton
             type="submit"
             variant="primary-rounded"
             size="md"
             isLoading={loading}
-            loadingText="ĐANG CẬP NHẬT..."
+            loadingText={t("profile.updating")}
           >
-            CẬP NHẬT
+            {t("profile.update")}
           </RenderButton>
         </div>
       </form>

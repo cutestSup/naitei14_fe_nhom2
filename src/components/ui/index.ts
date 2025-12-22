@@ -5,3 +5,4 @@ export { Badge } from "./Badge";
 export { Breadcrumbs } from "./Breadcrumbs";
 export { RenderButton } from "./Button";
 export { Container } from "./Container";
+export { LanguageSwitcher } from "./LanguageSwitcher";

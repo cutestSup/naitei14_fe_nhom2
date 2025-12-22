@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
 import { ProductFilters } from '@/apis/products'
-import { LOCALE } from '@/constants/common'
+import { useTranslation } from '@/hooks'
+import { formatCurrency } from '@/i18n'
 
 interface CategoryWithCount {
   name: string
@@ -28,15 +29,16 @@ const PRICE_RANGES = [
 ]
 
 const COLORS = [
-  { name: 'Xanh cây', value: 'green', hex: '#46A358' },
-  { name: 'Đỏ cam', value: 'orange', hex: '#FF6B35' },
-  { name: 'Tím', value: 'purple', hex: '#8B5CF6' },
-  { name: 'Xanh trời', value: 'blue', hex: '#3B82F6' },
-  { name: 'Vàng', value: 'yellow', hex: '#FBBF24' },
-  { name: 'Hồng', value: 'pink', hex: '#EC4899' },
+  { key: 'green', value: 'green', hex: '#46A358' },
+  { key: 'orange', value: 'orange', hex: '#FF6B35' },
+  { key: 'purple', value: 'purple', hex: '#8B5CF6' },
+  { key: 'blue', value: 'blue', hex: '#3B82F6' },
+  { key: 'yellow', value: 'yellow', hex: '#FBBF24' },
+  { key: 'pink', value: 'pink', hex: '#EC4899' },
 ]
 
 export const ProductFilter = ({ categories, onFilterChange, searchValue, onClearAll, className }: ProductFilterProps) => {
+  const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState<string>('')
   const [selectedPriceRange, setSelectedPriceRange] = useState<{ min: number; max: number } | null>(null)
   const [selectedColor, setSelectedColor] = useState<string>('')
@@ -96,13 +98,13 @@ export const ProductFilter = ({ categories, onFilterChange, searchValue, onClear
   return (
     <div className={cn('bg-white p-4 rounded-lg shadow-sm border border-gray-200', className)}>
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-gray-800">Bộ lọc</h3>
+        <h3 className="text-lg font-semibold text-gray-800">{t("products.filters")}</h3>
         {hasActiveFilters && (
           <button
             onClick={handleReset}
             className="text-sm text-green-primary hover:text-green-dark transition-colors"
           >
-            Xóa tất cả bộ lọc
+            {t("products.clearAllFilters")}
           </button>
         )}
       </div>
@@ -110,14 +112,14 @@ export const ProductFilter = ({ categories, onFilterChange, searchValue, onClear
       {searchValue && (
         <div className="mb-4 p-3 bg-gray-50 rounded-md">
           <div className="text-sm text-gray-600">
-            <span className="font-medium">Tìm kiếm:</span> <span className="text-gray-800">"{searchValue}"</span>
+            <span className="font-medium">{t("products.searchLabel")}</span> <span className="text-gray-800">"{searchValue}"</span>
           </div>
         </div>
       )}
 
       <div className="space-y-6">
         <div>
-          <h4 className={CLASS_FILTER_TITLE}>Danh mục sản phẩm</h4>
+          <h4 className={CLASS_FILTER_TITLE}>{t("products.productCategories")}</h4>
           <div className={CLASS_SPACE_Y2}>
             {categories.map((category) => (
               <label
@@ -139,7 +141,7 @@ export const ProductFilter = ({ categories, onFilterChange, searchValue, onClear
         </div>
 
         <div>
-          <h4 className={CLASS_FILTER_TITLE}>Tìm theo giá</h4>
+          <h4 className={CLASS_FILTER_TITLE}>{t("products.filterByPrice")}</h4>
           <div className={CLASS_SPACE_Y2}>
             {PRICE_RANGES.map((range) => {
               const isSelected =
@@ -155,7 +157,7 @@ export const ProductFilter = ({ categories, onFilterChange, searchValue, onClear
                       : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
                   )}
                 >
-                  {range.min.toLocaleString(LOCALE)} ₫ - {range.max.toLocaleString(LOCALE)} ₫
+                  {formatCurrency(range.min)} - {formatCurrency(range.max)}
                 </button>
               )
             })}
@@ -163,7 +165,7 @@ export const ProductFilter = ({ categories, onFilterChange, searchValue, onClear
         </div>
 
         <div>
-          <h4 className={CLASS_FILTER_TITLE}>Tìm theo màu</h4>
+          <h4 className={CLASS_FILTER_TITLE}>{t("products.filterByColor")}</h4>
           <div className="grid grid-cols-3 gap-3">
             {COLORS.map((color) => {
               const isSelected = selectedColor === color.value
@@ -175,13 +177,13 @@ export const ProductFilter = ({ categories, onFilterChange, searchValue, onClear
                     'flex flex-col items-center gap-2 p-2 rounded-md transition-all',
                     isSelected ? 'ring-2 ring-green-primary ring-offset-2' : 'hover:bg-gray-50'
                   )}
-                  title={color.name}
+                  title={t(`products.colors.${color.key}`)}
                 >
                   <div
                     className="w-8 h-8 rounded-full border-2 border-gray-300"
                     style={{ backgroundColor: color.hex }}
                   />
-                  <span className="text-xs text-gray-600">{color.name}</span>
+                  <span className="text-xs text-gray-600">{t(`products.colors.${color.key}`)}</span>
                 </button>
               )
             })}

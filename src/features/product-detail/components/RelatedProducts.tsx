@@ -3,12 +3,14 @@ import { Product } from '@/types/product'
 import { ProductCard } from '@/components/products/ProductCard'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import { CLASS_NAV_BUTTON, CLASS_ICON_SIZE_MD_5 } from '@/constants/common'
+import { useTranslation } from '@/hooks'
 
 interface RelatedProductsProps {
   products: Product[]
 }
 
 export const RelatedProducts = ({ products }: RelatedProductsProps) => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0)
   const itemsPerPage = 4
 
@@ -32,14 +34,14 @@ export const RelatedProducts = ({ products }: RelatedProductsProps) => {
   return (
     <div className="mt-12">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-gray-900">Sản phẩm cùng loại</h2>
+        <h2 className="text-2xl font-bold text-gray-900">{t("products.relatedProducts")}</h2>
         {totalPages > 1 && (
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={handlePrevious}
               className={CLASS_NAV_BUTTON}
-              aria-label="Sản phẩm trước"
+              aria-label={t("products.previousProducts")}
             >
               <ChevronLeftIcon className={CLASS_ICON_SIZE_MD_5} />
             </button>
@@ -47,7 +49,7 @@ export const RelatedProducts = ({ products }: RelatedProductsProps) => {
               type="button"
               onClick={handleNext}
               className={CLASS_NAV_BUTTON}
-              aria-label="Sản phẩm sau"
+              aria-label={t("products.nextProducts")}
             >
               <ChevronRightIcon className={CLASS_ICON_SIZE_MD_5} />
             </button>

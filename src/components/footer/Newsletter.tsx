@@ -11,10 +11,12 @@ import {
   ERROR_KEYWORD_SERVER,
   ERROR_KEYWORD_500,
 } from '@/constants/common'
+import { useTranslation } from '@/hooks'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export const RenderNewsletter = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -24,12 +26,12 @@ export const RenderNewsletter = () => {
     setError('')
 
     if (!email.trim()) {
-      setError('Vui lòng nhập email')
+      setError(t("validation.emailEmpty"))
       return
     }
 
     if (!EMAIL_REGEX.test(email)) {
-      setError('Email không hợp lệ')
+      setError(t("validation.emailInvalidFormat"))
       return
     }
 
@@ -53,19 +55,19 @@ export const RenderNewsletter = () => {
           errorMessage.includes(ERROR_KEYWORD_DUPLICATE) ||
           errorMessage.includes(ERROR_KEYWORD_ALREADY_EXISTS)
         ) {
-          setError(ERROR_EMAIL_ALREADY_EXISTS)
+          setError(t(ERROR_EMAIL_ALREADY_EXISTS))
         } else if (
           errorMessage.includes(ERROR_KEYWORD_NETWORK) ||
           errorMessage.includes(ERROR_KEYWORD_FETCH)
         ) {
-          setError(ERROR_NETWORK_CONNECTION)
+          setError(t(ERROR_NETWORK_CONNECTION))
         } else if (
           errorMessage.includes(ERROR_KEYWORD_SERVER) ||
           errorMessage.includes(ERROR_KEYWORD_500)
         ) {
-          setError(ERROR_SERVER)
+          setError(t(ERROR_SERVER))
         } else {
-          setError(ERROR_GENERIC)
+          setError(t(ERROR_GENERIC))
         }
       } else {
         setError(ERROR_GENERIC)
@@ -77,7 +79,7 @@ export const RenderNewsletter = () => {
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-sm">ĐĂNG KÝ NHẬN EMAIL TỪ CHÚNG TÔI</span>
+      <span className="text-sm">{t("footer.subscribeEmail")}</span>
       <form onSubmit={handleSubmit} className="flex flex-col">
         <div className="flex">
           <input
@@ -87,9 +89,9 @@ export const RenderNewsletter = () => {
               setEmail(e.target.value)
               setError('')
             }}
-            placeholder="Nhập email của bạn"
+            placeholder={t("footer.emailPlaceholder")}
             className="px-4 py-2 text-gray-800 rounded-l-md focus:outline-none"
-            aria-label="Email đăng ký nhận tin"
+            aria-label={t("footer.emailPlaceholder")}
             aria-invalid={error ? 'true' : 'false'}
             aria-describedby={error ? 'email-error' : undefined}
           />
@@ -97,9 +99,9 @@ export const RenderNewsletter = () => {
             type="submit"
             disabled={isSubmitting}
             className="bg-green-primary px-4 py-2 rounded-r-md hover:bg-green-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            aria-label="Gửi đăng ký email"
+            aria-label={t("footer.send")}
           >
-            {isSubmitting ? 'Đang gửi...' : 'Gửi'}
+            {isSubmitting ? t("footer.sending") : t("footer.send")}
           </button>
         </div>
         {error && (

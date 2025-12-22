@@ -1,15 +1,18 @@
 import React from 'react';
 import { useCart } from '@/contexts/CartContext';
 import { VAT_RATE } from '@/constants/common';
+import { formatCurrency } from '@/i18n';
+import { useTranslation } from '@/hooks';
 
 export const OrderSummary: React.FC = () => {
+  const { t } = useTranslation();
   const { cart, totalPrice } = useCart();
   const vat = totalPrice * VAT_RATE;
   const grandTotal = totalPrice + vat;
 
   return (
     <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-      <h3 className="text-lg font-semibold mb-4 text-green-primary uppercase">Đơn hàng của bạn</h3>
+      <h3 className="text-lg font-semibold mb-4 text-green-primary uppercase">{t("checkout.orderSummary")}</h3>
       
       <div className="space-y-4 mb-4 max-h-60 overflow-y-auto">
         {cart.map((item) => (
@@ -24,7 +27,7 @@ export const OrderSummary: React.FC = () => {
               </div>
             </div>
             <span className="font-medium text-gray-700">
-              {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(item.price * item.quantity)}
+              {formatCurrency(item.price * item.quantity)}
             </span>
           </div>
         ))}
@@ -32,21 +35,21 @@ export const OrderSummary: React.FC = () => {
 
       <div className="border-t border-gray-200 pt-4 space-y-2">
         <div className="flex justify-between text-sm">
-          <span className="text-gray-600">Tạm tính</span>
+          <span className="text-gray-600">{t("cart.subtotalShort")}</span>
           <span className="font-medium">
-            {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalPrice)}
+            {formatCurrency(totalPrice)}
           </span>
         </div>
         <div className="flex justify-between text-sm">
-          <span className="text-gray-600">VAT (10%)</span>
+          <span className="text-gray-600">{t("cart.vat")}</span>
           <span className="font-medium">
-            {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(vat)}
+            {formatCurrency(vat)}
           </span>
         </div>
         <div className="flex justify-between text-base font-bold text-green-primary pt-2 border-t border-gray-200">
-          <span>Tổng cộng</span>
+          <span>{t("cart.total")}</span>
           <span>
-            {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(grandTotal)}
+            {formatCurrency(grandTotal)}
           </span>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { ChatUser } from "../types/chat";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/hooks";
 
 interface UserSidebarProps {
   users: ChatUser[];
@@ -14,12 +15,13 @@ export const UserSidebar = ({
   onSelectUser,
   unreadCounts,
 }: UserSidebarProps) => {
+  const { t } = useTranslation();
   return (
     <div className="w-64 border-r bg-gray-50 flex flex-col">
       <div className="p-4 border-b bg-white">
-        <h3 className="font-semibold text-gray-dark">Người dùng</h3>
+        <h3 className="font-semibold text-gray-dark">{t("chat.users")}</h3>
         <p className="text-xs text-gray-light mt-1">
-          {users.length} user{users.length !== 1 ? "s" : ""} đang chat
+          {users.length} {t("chat.usersChatting")}
         </p>
       </div>
 
@@ -27,7 +29,7 @@ export const UserSidebar = ({
         {users.length === 0 ? (
           <div className="flex items-center justify-center h-full">
             <p className="text-sm text-gray-light text-center px-4">
-              Chưa có user nào chat
+              {t("chat.noUsersChatting")}
             </p>
           </div>
         ) : (

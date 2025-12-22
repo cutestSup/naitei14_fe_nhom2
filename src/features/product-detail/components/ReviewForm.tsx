@@ -10,6 +10,7 @@ import {
 } from "@/constants/common";
 import { createReview, hasUserReviewedProduct } from "@/apis/reviews";
 import { useAuth } from "@/contexts";
+import { useTranslation } from "@/hooks";
 import { logError } from "@/lib/logger";
 
 interface ReviewFormProps {
@@ -27,6 +28,7 @@ export const ReviewForm = ({
   onReviewSubmitted,
 }: ReviewFormProps) => {
   const { user } = useAuth();
+  const { t } = useTranslation();
   const [hoveredRating, setHoveredRating] = useState<number | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -122,7 +124,7 @@ export const ReviewForm = ({
     return (
       <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
         <p className="text-green-700 font-medium">
-          Bạn đã đánh giá sản phẩm này rồi. Cảm ơn bạn đã đóng góp!
+          {t("products.alreadyReviewed")}
         </p>
       </div>
     );

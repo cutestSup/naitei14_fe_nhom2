@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { Badge } from '@/components/ui/Badge'
 import { Product } from '@/types/product'
 import {
-  LOCALE,
   MAX_RATING,
   DEFAULT_RATING,
   CLASS_ICON_SIZE_MD,
@@ -11,6 +10,8 @@ import {
   MESSAGE_REMOVE_FAVORITE,
   MESSAGE_ADD_FAVORITE,
 } from '@/constants/common'
+import { useTranslation } from '@/hooks'
+import { formatCurrency } from '@/i18n'
 import {
   MagnifyingGlassIcon,
   StarIcon,
@@ -29,6 +30,7 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product, isLarge = false, variant = 'default' }: ProductCardProps) => {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const [isHovered, setIsHovered] = useState(false)
   const [isFavorite, setIsFavorite] = useState(false)
   const isHomeVariant = variant === 'home'
@@ -94,21 +96,21 @@ export const ProductCard = ({ product, isLarge = false, variant = 'default' }: P
             <button
               onClick={handleBuyNow}
               className="bg-white text-green-primary px-4 py-2 rounded-md hover:bg-green-primary hover:text-white transition-colors font-semibold text-sm"
-              aria-label="Mua ngay sản phẩm"
+              aria-label={t("products.buyNow")}
             >
-              MUA NGAY
+              {t("products.buyNow").toUpperCase()}
             </button>
             <button
               onClick={handleQuickView}
               className={CLASS_ICON_BUTTON_HOVER}
-              aria-label="Xem nhanh sản phẩm"
+              aria-label={t("products.viewDetails")}
             >
               <MagnifyingGlassIcon className={CLASS_ICON_SIZE_MD} />
             </button>
             <button
               onClick={handleToggleFavorite}
               className={CLASS_ICON_BUTTON_HOVER}
-              aria-label={isFavorite ? MESSAGE_REMOVE_FAVORITE : MESSAGE_ADD_FAVORITE}
+              aria-label={isFavorite ? t(MESSAGE_REMOVE_FAVORITE) : t(MESSAGE_ADD_FAVORITE)}
             >
               {isFavorite ? (
                 <HeartIconSolid className={CLASS_ICON_SIZE_MD} />
@@ -146,11 +148,11 @@ export const ProductCard = ({ product, isLarge = false, variant = 'default' }: P
 
         <div className="flex items-center justify-center gap-2 flex-wrap">
           <span className="text-lg font-bold text-green-primary">
-            {product.price.toLocaleString(LOCALE)} ₫
+            {formatCurrency(product.price)}
           </span>
           {product.oldPrice && product.oldPrice !== product.price && (
             <span className="text-sm text-gray-400 line-through">
-              {product.oldPrice.toLocaleString(LOCALE)} ₫
+              {formatCurrency(product.oldPrice)}
             </span>
           )}
         </div>
@@ -160,21 +162,21 @@ export const ProductCard = ({ product, isLarge = false, variant = 'default' }: P
             <button
               onClick={handleBuyNow}
               className="bg-green-primary text-white px-4 py-2 rounded-md hover:bg-green-dark transition-colors font-semibold text-sm flex-1"
-              aria-label="Mua ngay sản phẩm"
+              aria-label={t("products.buyNow")}
             >
-              MUA NGAY
+              {t("products.buyNow").toUpperCase()}
             </button>
             <button
               onClick={handleQuickView}
               className={CLASS_ICON_BUTTON}
-              aria-label="Xem nhanh sản phẩm"
+              aria-label={t("products.viewDetails")}
             >
               <MagnifyingGlassIcon className={CLASS_ICON_SIZE_MD_GRAY} />
             </button>
             <button
               onClick={handleToggleFavorite}
               className={CLASS_ICON_BUTTON}
-              aria-label={isFavorite ? MESSAGE_REMOVE_FAVORITE : MESSAGE_ADD_FAVORITE}
+              aria-label={isFavorite ? t(MESSAGE_REMOVE_FAVORITE) : t(MESSAGE_ADD_FAVORITE)}
             >
               {isFavorite ? (
                 <HeartIconSolid className="w-5 h-5 text-red-500" />

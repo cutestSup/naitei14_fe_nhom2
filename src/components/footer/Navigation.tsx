@@ -1,50 +1,53 @@
 import { CLASS_HOVER, CLASS_TEXT_SM_GRAY, CLASS_FONT_SEMIBOLD_MB4, CLASS_SPACE_Y2_TEXT_SM } from '@/constants/common'
+import { useTranslation } from '@/hooks'
 
 export const RenderNavigation = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
         <div className="text-xl font-bold text-green-primary mb-4">Green Shop</div>
-        <p className={CLASS_TEXT_SM_GRAY}>Món quà từ thiên nhiên</p>
-        <p className={CLASS_TEXT_SM_GRAY}>Địa chỉ: 123 Đường ABC, Quận XYZ, TP.HCM</p>
-        <p className={CLASS_TEXT_SM_GRAY}>Điện thoại: (04) 6674 2332</p>
-        <p className="text-sm text-gray-400">Email: contact@greenshop.com</p>
+        <p className={CLASS_TEXT_SM_GRAY}>{t("footer.aboutDescription")}</p>
+        <p className={CLASS_TEXT_SM_GRAY}>{t("footer.address")}</p>
+        <p className={CLASS_TEXT_SM_GRAY}>{t("footer.phone")}</p>
+        <p className="text-sm text-gray-400">{t("footer.email")}</p>
       </div>
 
       <div>
-        <div className={CLASS_FONT_SEMIBOLD_MB4}>THÔNG TIN KHÁCH HÀNG</div>
+        <div className={CLASS_FONT_SEMIBOLD_MB4}>{t("footer.customerInfo")}</div>
         <ul className={CLASS_SPACE_Y2_TEXT_SM}>
-          <li><a href="#" className={CLASS_HOVER}>Hệ thống cửa hàng</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Tài khoản của tôi</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Sản phẩm yêu thích</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Chính sách đổi trả</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Giao hàng</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.storeSystem")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.myAccount")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.favoriteProducts")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.returnPolicy")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.delivery")}</a></li>
         </ul>
       </div>
 
       <div>
-        <div className={CLASS_FONT_SEMIBOLD_MB4}>HỖ TRỢ DỊCH VỤ</div>
+        <div className={CLASS_FONT_SEMIBOLD_MB4}>{t("footer.serviceSupport")}</div>
         <ul className={CLASS_SPACE_Y2_TEXT_SM}>
-          <li><a href="#" className={CLASS_HOVER}>Chính sách giao hàng</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Hướng dẫn mua hàng</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Tích điểm đổi quà</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Câu hỏi thường gặp</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.deliveryPolicy")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.shoppingGuide")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.pointsRewards")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.faq")}</a></li>
         </ul>
       </div>
 
       <div>
-        <div className={CLASS_FONT_SEMIBOLD_MB4}>CHÍNH SÁCH ƯU ĐÃI</div>
+        <div className={CLASS_FONT_SEMIBOLD_MB4}>{t("footer.promotionPolicy")}</div>
         <ul className={`${CLASS_SPACE_Y2_TEXT_SM} mb-6`}>
-          <li><a href="#" className={CLASS_HOVER}>Chính sách đổi trả</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Chính sách bảo hành</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Chính sách hoàn tiền</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.returnPolicy")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.warrantyPolicy")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.refundPolicy")}</a></li>
         </ul>
-        <div className={CLASS_FONT_SEMIBOLD_MB4}>TIN TỨC</div>
+        <div className={CLASS_FONT_SEMIBOLD_MB4}>{t("common.news").toUpperCase()}</div>
         <ul className={CLASS_SPACE_Y2_TEXT_SM}>
-          <li><a href="#" className={CLASS_HOVER}>Tin tức</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Khuyến mãi</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Tuyển dụng</a></li>
-          <li><a href="#" className={CLASS_HOVER}>Liên hệ</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("common.news")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.promotions")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.recruitment")}</a></li>
+          <li><a href="#" className={CLASS_HOVER}>{t("footer.contact")}</a></li>
         </ul>
       </div>
     </div>
