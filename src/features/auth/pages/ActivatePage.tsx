@@ -38,12 +38,12 @@ const ActivatePage = () => {
   }, [searchParams, navigate]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-md w-full p-8 bg-white rounded-lg shadow-lg text-center">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-800 px-4">
+      <div className="max-w-md w-full p-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg text-center">
         {status === "loading" && (
           <>
             <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-green-600 mx-auto mb-6"></div>
-            <h2 className="text-xl font-semibold text-primary-text">
+            <h2 className="text-xl font-semibold text-primary-text dark:text-dark-text">
               Đang kích hoạt tài khoản...
             </h2>
             <p className="text-gray-500 mt-2">Vui lòng đợi trong giây lát</p>
@@ -70,7 +70,7 @@ const ActivatePage = () => {
             <h2 className="text-2xl font-bold text-green-600 mb-3">
               {ACTIVATION_SUCCESS}
             </h2>
-            <p className="text-gray-600 mb-4">{message}</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">{message}</p>
             <p className="text-sm text-gray-500">
               Đang chuyển đến trang đăng nhập...
             </p>
@@ -105,7 +105,7 @@ const ActivatePage = () => {
             <h2 className="text-2xl font-bold text-red-600 mb-3">
               {ACTIVATION_FAILED_DEFAULT}
             </h2>
-            <p className="text-gray-600 mb-6">{message}</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">{message}</p>
             <div className="space-y-3">
               <button
                 onClick={() => navigate("/auth/register")}
@@ -115,7 +115,7 @@ const ActivatePage = () => {
               </button>
               <button
                 onClick={() => navigate("/")}
-                className="w-full px-6 py-3 border-2 border-gray-300 text-primary-text rounded-full hover:bg-gray-50 transition-colors font-medium"
+                className="w-full px-6 py-3 border-2 border-gray-300 dark:border-gray-700 text-primary-text dark:text-dark-text rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors font-medium"
               >
                 Về trang chủ
               </button>

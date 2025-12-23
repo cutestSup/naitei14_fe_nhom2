@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useCart } from "@/contexts/CartContext";
-import { useAuth } from "@/contexts";
+import { useAuth } from "@/contexts/AuthContext";
 import { Container } from "@/components/ui/Container";
 import { CartItemRow } from "./components/CartItemRow";
 import { CartSummary } from "./components/CartSummary";
@@ -52,7 +52,7 @@ export const CartPage = () => {
 
         {/* Bảng sản phẩm */}
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse border border-gray-200">
+          <table className="w-full border-collapse border border-gray-200 dark:border-gray-700">
             <thead>
               <tr className="bg-green-primary text-white text-sm uppercase">
                 <th className="py-3 px-4 font-medium w-[15%] border-r border-white text-center">

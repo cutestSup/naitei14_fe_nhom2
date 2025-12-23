@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+// Import api và type cục bộ
 import { usersApi } from "./api";
 import { User } from "./types";
 import UserTable from "./components/UserTable";
@@ -22,26 +23,39 @@ export default function UsersPage() {
     refresh();
   }, []);
 
-  const handleToggleActive = async (id: number) => {
+  const handleToggleActive = async (user: User) => {
+    const newStatus = !(user.active !== false);
+
     setUsers((prev) =>
-      prev.map((u) => (u.id === id ? { ...u, active: !u.active } : u))
+      prev.map((u) => (u.id === user.id ? { ...u, active: newStatus } : u))
     );
 
-    if (selected?.id === id) {
-      setSelected((prev) => (prev ? { ...prev, active: !prev.active } : null));
+    if (selected?.id === user.id) {
+      setSelected((prev) => (prev ? { ...prev, active: newStatus } : null));
     }
 
     try {
-      await usersApi.toggleActive(id);
+      await usersApi.updateActive(user.id, newStatus);
     } catch (err) {
       console.error("Failed to toggle user status", err);
+      alert("Update failed, reverting changes...");
       await refresh();
     }
   };
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6 text-gray-800">User Management</h1>
+    <div className="p-4 bg-white rounded shadow-sm border m-4 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+      <div className="flex justify-between items-center mb-6 border-b pb-4 dark:border-gray-700">
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
+          User Management
+        </h1>
+        <button
+          onClick={refresh}
+          className="px-4 py-2 bg-gray-100 text-gray-600 rounded hover:bg-gray-200 transition text-sm font-medium dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+        >
+          Refresh List
+        </button>
+      </div>
 
       <UserTable
         users={users}

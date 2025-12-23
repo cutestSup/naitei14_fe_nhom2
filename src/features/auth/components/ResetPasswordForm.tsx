@@ -91,7 +91,7 @@ const ResetPasswordForm: React.FC = () => {
           <h2 className="text-2xl font-bold text-red-600 mb-2">
             Liên kết không hợp lệ
           </h2>
-          <p className="text-gray-600">{tokenError}</p>
+          <p className="text-gray-600 dark:text-gray-400">{tokenError}</p>
         </div>
 
         <a href="/auth/forgot-password" className="inline-block">
@@ -108,7 +108,7 @@ const ResetPasswordForm: React.FC = () => {
       {/* Heading */}
       <div className="text-center mb-8">
         <h2 className={CLASS_FORM_HEADING}>ĐẶT LẠI MẬT KHẨU</h2>
-        <p className="text-gray-600">Vui lòng nhập mật khẩu mới của bạn.</p>
+        <p className="text-gray-600 dark:text-gray-400">Vui lòng nhập mật khẩu mới của bạn.</p>
         <p className="text-sm text-gray-500 mt-2">
           Mật khẩu nên có ít nhất 8 ký tự và bao gồm chữ cái và số.
         </p>

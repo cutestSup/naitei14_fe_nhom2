@@ -4,11 +4,11 @@ import { CLASS_QUANTITY_BUTTON, CLASS_ICON_SIZE_SM } from '@/constants/common'
 import { useTranslation } from '@/hooks'
 
 interface QuantitySelectorProps {
-  value: number
-  onChange: (value: number) => void
-  min?: number
-  max?: number
-  className?: string
+  value: number;
+  onChange: (value: number) => void;
+  min?: number;
+  max?: number;
+  className?: string;
 }
 
 export const QuantitySelector = ({
@@ -21,28 +21,28 @@ export const QuantitySelector = ({
   const { t } = useTranslation()
   const handleDecrease = () => {
     if (value > min) {
-      onChange(value - 1)
+      onChange(value - 1);
     }
-  }
+  };
 
   const handleIncrease = () => {
     if (value < max) {
-      onChange(value + 1)
+      onChange(value + 1);
     }
-  }
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = parseInt(e.target.value, 10)
+    const newValue = parseInt(e.target.value, 10);
     if (!isNaN(newValue)) {
       if (newValue < min) {
-        onChange(min)
+        onChange(min);
       } else if (newValue > max) {
-        onChange(max)
+        onChange(max);
       } else {
-        onChange(newValue)
+        onChange(newValue);
       }
     }
-  }
+  };
 
   return (
     <div className={cn('flex items-center gap-2', className)}>
@@ -54,10 +54,10 @@ export const QuantitySelector = ({
           type="button"
           onClick={handleDecrease}
           disabled={value <= min}
-          className={CLASS_QUANTITY_BUTTON}
+          className={`${CLASS_QUANTITY_BUTTON} w-9 h-full flex items-center justify-center dark:hover:bg-gray-700`}
           aria-label={t("cart.decreaseQuantity")}
         >
-          <MinusIcon className={CLASS_ICON_SIZE_SM} />
+          <MinusIcon className="w-4 h-4" />
         </button>
         <input
           id="quantity"
@@ -66,19 +66,18 @@ export const QuantitySelector = ({
           onChange={handleInputChange}
           min={min}
           max={max}
-          className="w-16 text-center border-0 focus:outline-none focus:ring-0 py-2"
+          className="w-12 md:w-16 text-center border-0 focus:outline-none focus:ring-0 py-2 text-sm md:text-base font-medium dark:bg-gray-800"
         />
         <button
           type="button"
           onClick={handleIncrease}
           disabled={value >= max}
-          className={CLASS_QUANTITY_BUTTON}
+          className={`${CLASS_QUANTITY_BUTTON} w-9 h-full flex items-center justify-center dark:hover:bg-gray-700`}
           aria-label={t("cart.increaseQuantity")}
         >
-          <PlusIcon className={CLASS_ICON_SIZE_SM} />
+          <PlusIcon className="w-4 h-4" />
         </button>
       </div>
     </div>
-  )
-}
-
+  );
+};

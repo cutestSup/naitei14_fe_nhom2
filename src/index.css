@@ -4,8 +4,23 @@
 
 @layer base {
   body {
-    @apply font-sans antialiased;
+    @apply font-sans antialiased bg-white text-primary-text dark:bg-dark-bg dark:text-dark-text transition-colors duration-300;
   }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+  
+    ::-webkit-scrollbar-track {
+      @apply bg-transparent;
+    }
+  
+    ::-webkit-scrollbar-thumb {
+      @apply bg-gray-300 rounded-full dark:bg-gray-600;
+    }
+  
+    ::-webkit-scrollbar-thumb:hover {
+      @apply bg-gray-400 dark:bg-gray-500;
+    }
 }
 
 

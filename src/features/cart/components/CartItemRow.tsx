@@ -19,7 +19,7 @@ export const CartItemRow = ({ item, onUpdateQuantity, onRemove }: Props) => {
   const translatedProduct = useTranslatedProduct(item);
   
   return (
-    <tr className="border-b border-gray-200">
+    <tr className="border-b border-gray-200 dark:border-gray-700">
       {/* Ảnh */}
       <td className="py-4 px-4 border-r border-gray-200">
         <img 
@@ -40,12 +40,12 @@ export const CartItemRow = ({ item, onUpdateQuantity, onRemove }: Props) => {
       </td>
 
       {/* Số lượng */}
-      <td className="py-4 px-4 border-r border-gray-200">
+      <td className="py-4 px-4 border-r border-gray-200 dark:border-gray-700">
         <div className="flex justify-center">
-          <QuantitySelector 
-            value={item.quantity} 
-            onChange={(val) => onUpdateQuantity(item.id, val)} 
-            className="h-8" 
+          <QuantitySelector
+            value={item.quantity}
+            onChange={(val) => onUpdateQuantity(item.id, val)}
+            className="h-8"
           />
         </div>
       </td>

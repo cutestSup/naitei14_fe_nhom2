@@ -51,7 +51,7 @@ const ForgotPasswordForm: React.FC = () => {
       {/* Heading */}
       <div className="text-center mb-8">
         <h2 className={CLASS_FORM_HEADING}>QUÊN MẬT KHẨU</h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-400">
           Vui lòng nhập email của bạn để nhận liên kết đặt lại mật khẩu.
         </p>
       </div>

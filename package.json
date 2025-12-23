@@ -8,8 +8,6 @@
     "build": "tsc && vite build",
     "lint": "sunlint --all --input=src",
     "server": "json-server --watch server/db.json --port 3001 --routes server/routes.json",
-    "chat-server": "node server/chat-server.js",
-    "server:full": "concurrently \"npm run server\" \"npm run chat-server\"",
     "lint:changed": "sunlint --all --changed-files",
     "lint:security": "sunlint --security --input=src",
     "preview": "vite preview"
@@ -32,9 +30,7 @@
     "react-i18next": "^16.5.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^6.26.0",
-    "recharts": "^3.5.1",
-    "socket.io": "^4.8.1",
-    "socket.io-client": "^4.8.1",
+    "recharts": "^3.5.0",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
@@ -46,7 +42,6 @@
     "@typescript-eslint/parser": "^8.46.3",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
-    "concurrently": "^9.2.1",
     "eslint": "^8.57.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",

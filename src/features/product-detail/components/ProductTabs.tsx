@@ -13,7 +13,7 @@ import {
 } from "@/constants/common";
 import { getReviewsByProductId } from "@/apis/reviews";
 import { hasUserPurchasedProduct } from "@/apis/orders";
-import { useAuth } from "@/contexts";
+import { useAuth } from "@/contexts/AuthContext";
 import { useTranslation } from "@/hooks";
 import { ReviewForm } from "./ReviewForm";
 import { Link } from "react-router-dom";
@@ -127,7 +127,7 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
               "px-6 py-3 font-semibold text-sm transition-colors",
               activeTab === tab.id
                 ? "text-green-primary border-b-2 border-green-primary"
-                : "text-gray-600 hover:text-green-primary"
+                : "text-gray-600 dark:text-gray-300 hover:text-green-primary"
             )}
           >
             {tab.label}
@@ -160,8 +160,8 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
           <div className={CLASS_SPACE_Y_6}>
             {/* Form bình luận */}
             {checkingPurchase ? (
-              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 text-center">
-                <p className="text-gray-600">{t("products.checking")}</p>
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 text-center">
+                <p className="text-gray-600 dark:text-gray-400">{t("products.checking")}</p>
               </div>
             ) : canReview ? (
               <ReviewForm
@@ -175,12 +175,12 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
                 </p>
               </div>
             ) : (
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <p className="text-blue-800 mb-2">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 dark:bg-blue-900/20 dark:border-blue-800 transition-colors">
+                <p className="text-blue-800 mb-2 dark:text-blue-200">
                   {t("products.pleaseLoginToReview")}{" "}
                   <Link
                     to="/auth/login"
-                    className="text-blue-600 hover:text-blue-800 underline font-medium"
+                    className="text-blue-600 hover:text-blue-800 underline font-medium dark:text-blue-400 dark:hover:text-blue-300"
                   >
                     {t("products.loginToReview")}
                   </Link>{" "}
@@ -191,9 +191,10 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
 
             {/* Danh sách đánh giá */}
             <div className="mt-8">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
                 {t("products.customerReviewsCount")} ({reviews.length})
               </h4>
+
               {loadingReviews ? (
                 <div className="text-center py-8">
                   <p className="text-gray-500">{t("products.loadingReviews")}</p>
@@ -203,7 +204,7 @@ export const ProductTabs = ({ product }: ProductTabsProps) => {
                   {reviews.map((review) => (
                     <div
                       key={review.id}
-                      className="border-b border-gray-200 pb-4 last:border-0"
+                      className="border-b border-gray-200 dark:border-gray-700 pb-4 last:border-0"
                     >
                       <div className="flex items-start justify-between mb-2">
                         <div>

@@ -2,14 +2,16 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
-import { AppProviders } from "./contexts";
+import { AppProviders } from "./contexts/AppProviders";
 import "./i18n/config";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AppProviders>
       <RouterProvider router={router} />
     </AppProviders>
-  </StrictMode>
-);
+  </StrictMode>,
+)
+
+

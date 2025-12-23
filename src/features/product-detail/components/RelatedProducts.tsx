@@ -6,7 +6,7 @@ import { CLASS_NAV_BUTTON, CLASS_ICON_SIZE_MD_5 } from '@/constants/common'
 import { useTranslation } from '@/hooks'
 
 interface RelatedProductsProps {
-  products: Product[]
+  products: Product[];
 }
 
 export const RelatedProducts = ({ products }: RelatedProductsProps) => {
@@ -14,27 +14,27 @@ export const RelatedProducts = ({ products }: RelatedProductsProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const itemsPerPage = 4
 
-  const totalPages = Math.ceil(products.length / itemsPerPage)
-  const startIndex = currentIndex * itemsPerPage
-  const endIndex = startIndex + itemsPerPage
-  const displayedProducts = products.slice(startIndex, endIndex)
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+  const startIndex = currentIndex * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const displayedProducts = products.slice(startIndex, endIndex);
 
   const handlePrevious = () => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : totalPages - 1))
-  }
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : totalPages - 1));
+  };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev < totalPages - 1 ? prev + 1 : 0))
-  }
+    setCurrentIndex((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
+  };
 
   if (products.length === 0) {
-    return null
+    return null;
   }
 
   return (
     <div className="mt-12">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-gray-900">{t("products.relatedProducts")}</h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{t("products.relatedProducts")}</h2>
         {totalPages > 1 && (
           <div className="flex items-center gap-2">
             <button
@@ -63,6 +63,5 @@ export const RelatedProducts = ({ products }: RelatedProductsProps) => {
         ))}
       </div>
     </div>
-  )
-}
-
+  );
+};

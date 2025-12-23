@@ -38,7 +38,7 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">{product.name}</h1>
 
       <div className="flex items-center gap-2">
         <StarRating rating={product.rating} size="lg" />
@@ -56,7 +56,7 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
       </div>
 
       {product.shortDescription && (
-        <div className="text-gray-600 leading-relaxed">
+        <div className="text-gray-600 dark:text-gray-400 leading-relaxed">
           <p>{product.shortDescription}</p>
         </div>
       )}
@@ -97,7 +97,7 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
       </div>
 
       <div>
-        <p className="text-sm text-gray-600 mb-2">{t("social.share")}:</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{t("social.share")}:</p>
         <RenderSocialShareButtons
           title={product.name}
           description={`${product.shortDescription || product.description || ''} - ${t("common.price")}: ${formatCurrency(product.price)}`}

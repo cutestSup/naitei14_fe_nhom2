@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { Badge } from '@/components/ui/Badge'
-import { Product } from '@/types/product'
+import { useState } from "react";
+import { Badge } from "@/components/ui/Badge";
+import { Product } from "@/types/product";
 import {
   MAX_RATING,
   DEFAULT_RATING,
@@ -15,20 +15,21 @@ import { MagnifyingGlassIcon, HeartIcon, StarIcon } from '@heroicons/react/24/ou
 import { StarIcon as StarIconSolid, HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid'
 
 interface ProductCardListProps {
-  product: Product
+  product: Product;
 }
 
-const CLASS_ICON_BUTTON = 'bg-white border border-gray-300 p-2 rounded-md hover:bg-gray-50 transition-colors'
+const CLASS_ICON_BUTTON =
+  "bg-white border border-gray-300 p-2 rounded-md hover:bg-gray-50 transition-colors";
 
 export const RenderProductCardList = ({ product }: ProductCardListProps) => {
   const { t } = useTranslation();
   const [isFavorite, setIsFavorite] = useState(false)
 
   const handleToggleFavorite = () => {
-    setIsFavorite(!isFavorite)
+    setIsFavorite(!isFavorite);
     // TODO: Add to favorites
     // Implementation pending
-  }
+  };
 
   return (
     <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 p-4 border border-gray-200">
@@ -48,22 +49,26 @@ export const RenderProductCardList = ({ product }: ProductCardListProps) => {
         </div>
 
         <div className="flex-1 flex flex-col">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">{product.name}</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">
+            {product.name}
+          </h3>
 
           <div className="flex items-center gap-1 mb-2">
             {[...Array(MAX_RATING)].map((_, i) => {
-              const rating = product.rating ?? DEFAULT_RATING
-              const isFilled = i < Math.floor(rating)
+              const rating = product.rating ?? DEFAULT_RATING;
+              const isFilled = i < Math.floor(rating);
               return isFilled ? (
                 <StarIconSolid key={i} className="w-4 h-4 text-yellow-400" />
               ) : (
                 <StarIcon key={i} className="w-4 h-4 text-gray-300" />
-              )
+              );
             })}
           </div>
 
           {product.description && (
-            <p className="text-sm text-gray-600 mb-4 line-clamp-2">{product.description}</p>
+            <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+              {product.description}
+            </p>
           )}
 
           <div className="mt-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -110,6 +115,5 @@ export const RenderProductCardList = ({ product }: ProductCardListProps) => {
         </div>
       </div>
     </div>
-  )
-}
-
+  );
+};

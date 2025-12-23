@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { RenderButton } from "@/components/ui/Button";
-import {
+import { useState, useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import { RenderButton } from '@/components/ui/Button'
+import { 
   MAX_RATING,
   CLASS_LABEL_REVIEW,
   CLASS_TEXT_RED_500,
@@ -9,18 +9,18 @@ import {
   CLASS_SVG_FILL_CURRENT,
 } from "@/constants/common";
 import { createReview, hasUserReviewedProduct } from "@/apis/reviews";
-import { useAuth } from "@/contexts";
+import { useAuth } from "@/contexts/AuthContext";
 import { useTranslation } from "@/hooks";
 import { logError } from "@/lib/logger";
 
 interface ReviewFormProps {
-  productId: number;
-  onReviewSubmitted: () => void;
+  productId: number
+  onReviewSubmitted: () => void
 }
 
 interface ReviewFormData {
-  rating: number;
-  comment: string;
+  rating: number
+  comment: string
 }
 
 export const ReviewForm = ({
@@ -43,11 +43,11 @@ export const ReviewForm = ({
   } = useForm<ReviewFormData>({
     defaultValues: {
       rating: MAX_RATING,
-      comment: "",
+      comment: '',
     },
-  });
+  })
 
-  const rating = watch("rating");
+  const rating = watch('rating')
 
   // Kiểm tra user đã review chưa
   useEffect(() => {
@@ -57,33 +57,33 @@ export const ReviewForm = ({
         .catch((err) => {
           logError({
             error: err,
-            context: "ReviewForm",
-            action: "checkHasReviewed",
+            context: 'ReviewForm',
+            action: 'checkHasReviewed',
             productId,
             userId: user.id,
             timestamp: new Date().toISOString(),
-            message: "Error checking if user has reviewed",
-          });
+            message: 'Error checking if user has reviewed',
+          })
           // Default to false to allow review attempt, but log the error
-          setHasReviewed(false);
-        });
+          setHasReviewed(false)
+        })
     } else {
-      setHasReviewed(false);
+      setHasReviewed(false)
     }
-  }, [user, productId]);
+  }, [user, productId])
 
   const handleRatingClick = (value: number) => {
-    setValue("rating", value, { shouldValidate: true });
-  };
+    setValue('rating', value, { shouldValidate: true })
+  }
 
   const onSubmit = async (data: ReviewFormData) => {
     if (!user) {
-      setError("Vui lòng đăng nhập để bình luận");
-      return;
+      setError('Vui lòng đăng nhập để bình luận')
+      return
     }
 
-    setIsSubmitting(true);
-    setError(null);
+    setIsSubmitting(true)
+    setError(null)
 
     try {
       await createReview({
@@ -92,33 +92,31 @@ export const ReviewForm = ({
         userName: user.fullName,
         rating: data.rating,
         comment: data.comment.trim(),
-      });
+      })
 
-      setHasReviewed(true);
-      onReviewSubmitted();
-
+      setHasReviewed(true)
+      onReviewSubmitted()
+      
       // Reset form
-      setValue("rating", MAX_RATING);
-      setValue("comment", "");
+      setValue('rating', MAX_RATING)
+      setValue('comment', '')
     } catch (err) {
-      const isErrorMessage = err instanceof Error;
-      const errorMessage = isErrorMessage
-        ? err.message
-        : "Không thể gửi đánh giá";
-      setError(errorMessage);
+      const isErrorMessage = err instanceof Error
+      const errorMessage = isErrorMessage ? err.message : 'Không thể gửi đánh giá'
+      setError(errorMessage)
       logError({
         error: err,
-        context: "ReviewForm",
-        action: "submitReview",
+        context: 'ReviewForm',
+        action: 'submitReview',
         productId,
         userId: user.id,
         timestamp: new Date().toISOString(),
-        message: "Error submitting review",
-      });
+        message: 'Error submitting review',
+      })
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   if (hasReviewed) {
     return (
@@ -127,15 +125,13 @@ export const ReviewForm = ({
           {t("products.alreadyReviewed")}
         </p>
       </div>
-    );
+    )
   }
 
   return (
-    <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-      <h3 className="text-xl font-semibold text-gray-900 mb-4">
-        Viết đánh giá
-      </h3>
-
+    <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Viết đánh giá</h3>
+      
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
           <label className={CLASS_LABEL_REVIEW}>
@@ -147,10 +143,8 @@ export const ReviewForm = ({
               onMouseLeave={() => setHoveredRating(null)}
             >
               {[...Array(MAX_RATING)].map((_, i) => {
-                const value = i + 1;
-                const isFilled = hoveredRating
-                  ? value <= hoveredRating
-                  : value <= rating;
+                const value = i + 1
+                const isFilled = hoveredRating ? value <= hoveredRating : value <= rating
                 return (
                   <button
                     key={i}
@@ -184,22 +178,19 @@ export const ReviewForm = ({
                       </svg>
                     )}
                   </button>
-                );
+                )
               })}
             </div>
             <span className="text-sm text-gray-600 ml-2">
-              {rating > 0 ? `${rating} sao` : "Chưa chọn"}
+              {rating > 0 ? `${rating} sao` : 'Chưa chọn'}
             </span>
           </div>
           <input
             type="hidden"
-            {...register("rating", {
-              required: "Vui lòng chọn đánh giá",
-              min: { value: 1, message: "Đánh giá tối thiểu là 1 sao" },
-              max: {
-                value: MAX_RATING,
-                message: `Đánh giá tối đa là ${MAX_RATING} sao`,
-              },
+            {...register('rating', {
+              required: 'Vui lòng chọn đánh giá',
+              min: { value: 1, message: 'Đánh giá tối thiểu là 1 sao' },
+              max: { value: MAX_RATING, message: `Đánh giá tối đa là ${MAX_RATING} sao` },
             })}
           />
           {errors.rating && (
@@ -213,15 +204,15 @@ export const ReviewForm = ({
           </label>
           <textarea
             id="comment"
-            {...register("comment", {
-              required: "Vui lòng nhập bình luận",
+            {...register('comment', {
+              required: 'Vui lòng nhập bình luận',
               minLength: {
                 value: 10,
-                message: "Bình luận phải có ít nhất 10 ký tự",
+                message: 'Bình luận phải có ít nhất 10 ký tự',
               },
               maxLength: {
                 value: 1000,
-                message: "Bình luận không được vượt quá 1000 ký tự",
+                message: 'Bình luận không được vượt quá 1000 ký tự',
               },
             })}
             rows={4}
@@ -252,5 +243,6 @@ export const ReviewForm = ({
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
+

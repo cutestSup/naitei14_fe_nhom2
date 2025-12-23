@@ -60,7 +60,13 @@ const Alert: React.FC<AlertProps> = ({ type, title, message, className }) => {
         {title && (
           <p className={cn("text-sm font-medium", config.textColor)}>{title}</p>
         )}
-        <p className={cn("text-sm", title ? "mt-1" : "", config.textColor)}>
+        <p
+          className={cn(
+            "text-smbreak-words",
+            title ? "mt-1" : "",
+            config.textColor
+          )}
+        >
           {message}
         </p>
       </div>
